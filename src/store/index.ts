@@ -8,6 +8,10 @@ import userReducer from "./slice/userSlice";
 //   },
 // });
 
+const defaultMiddlewareConfig = {
+  serializableCheck: false,
+};
+
 // export default store;
 
 import {
@@ -22,6 +26,8 @@ export const store = configureStore({
     user: userReducer,
     // Add other reducers if needed
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware(defaultMiddlewareConfig),
 });
 
 export type AppDispatch = typeof store.dispatch;

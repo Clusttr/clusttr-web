@@ -41,7 +41,7 @@ export default function PersistLayout({
   const [provider, setProvider] = useState<IProvider | null>(null);
   const [loggedIn, setLoggedIn] = useState(false);
 
-  console.log(provider);
+  // console.log(provider);
 
   const dispatch = useAppDispatch();
 
@@ -49,13 +49,19 @@ export default function PersistLayout({
     if (web3auth) {
       const init = async () => {
         await dispatch(Web3Authentication(web3auth));
-        await dispatch(Web3Provider(provider));
       };
-
       init();
-      // dispatch()
     }
   }, [web3auth]);
+
+  useEffect(() => {
+    if (provider) {
+      const init = async () => {
+        await dispatch(Web3Provider(provider));
+      };
+      init();
+    }
+  }, [provider]);
 
   useEffect(() => {
     const init = async () => {
