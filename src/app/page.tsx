@@ -105,16 +105,16 @@ export default function Home() {
     init();
   }, []);
 
-  function uiConsole(...args: any[]): void {
-    const el = document.querySelector("#console>p");
-    if (el) {
-      el.innerHTML = JSON.stringify(args || {}, null, 2);
-    }
-  }
+  // function uiConsole(...args: any[]): void {
+  //   const el = document.querySelector("#console>p");
+  //   if (el) {
+  //     el.innerHTML = JSON.stringify(args || {}, null, 2);
+  //   }
+  // }
 
   const login = async () => {
     if (!web3auth) {
-      uiConsole("web3auth not initialized yet");
+      // uiConsole("web3auth not initialized yet");
       return;
     }
     const web3authProvider = await web3auth.connect();
@@ -123,36 +123,36 @@ export default function Home() {
     // getUserInfo();
   };
 
-  const authenticateUser = async () => {
-    console.log(web3auth);
+  // const authenticateUser = async () => {
+  //   console.log(web3auth);
 
-    if (!web3auth) {
-      uiConsole("web3auth not initialized yet");
-      return;
-    }
-    const idToken = await web3auth.authenticateUser();
-    uiConsole(idToken);
-  };
+  //   if (!web3auth) {
+  //     uiConsole("web3auth not initialized yet");
+  //     return;
+  //   }
+  //   const idToken = await web3auth.authenticateUser();
+  //   uiConsole(idToken);
+  // };
 
-  const getUserInfo = async () => {
-    if (!web3auth) {
-      uiConsole("web3auth not initialized yet");
-      return;
-    }
-    const user = await web3auth.getUserInfo();
-    uiConsole(user);
+  // const getUserInfo = async () => {
+  //   if (!web3auth) {
+  //     uiConsole("web3auth not initialized yet");
+  //     return;
+  //   }
+  //   const user = await web3auth.getUserInfo();
+  //   uiConsole(user);
 
-    console.log(user);
+  //   console.log(user);
 
-    // Dispatch the user information to Redux
-    // if (user) {
-    //   dispatch(setUser(user));
-    // }
-  };
+  //   // Dispatch the user information to Redux
+  //   // if (user) {
+  //   //   dispatch(setUser(user));
+  //   // }
+  // };
 
   const logout = async () => {
     if (!web3auth) {
-      uiConsole("web3auth not initialized yet");
+      // uiConsole("web3auth not initialized yet");
       return;
     }
     await web3auth.logout();
@@ -160,61 +160,61 @@ export default function Home() {
     setLoggedIn(false);
   };
 
-  const getAccounts = async () => {
-    if (!provider) {
-      uiConsole("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const address = await rpc.getAccounts();
-    uiConsole(address);
-  };
+  // const getAccounts = async () => {
+  //   if (!provider) {
+  //     uiConsole("provider not initialized yet");
+  //     return;
+  //   }
+  //   const rpc = new RPC(provider);
+  //   const address = await rpc.getAccounts();
+  //   uiConsole(address);
+  // };
 
-  const getBalance = async () => {
-    if (!provider) {
-      uiConsole("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const balance = await rpc.getBalance();
-    uiConsole(balance);
-  };
+  // const getBalance = async () => {
+  //   if (!provider) {
+  //     uiConsole("provider not initialized yet");
+  //     return;
+  //   }
+  //   const rpc = new RPC(provider);
+  //   const balance = await rpc.getBalance();
+  //   uiConsole(balance);
+  // };
 
-  const sendTransaction = async () => {
-    if (!provider) {
-      uiConsole("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const receipt = await rpc.sendTransaction();
-    uiConsole(receipt);
-  };
+  // const sendTransaction = async () => {
+  //   if (!provider) {
+  //     uiConsole("provider not initialized yet");
+  //     return;
+  //   }
+  //   const rpc = new RPC(provider);
+  //   const receipt = await rpc.sendTransaction();
+  //   uiConsole(receipt);
+  // };
 
-  const signMessage = async () => {
-    if (!provider) {
-      uiConsole("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const signedMessage = await rpc.signMessage();
-    uiConsole(signedMessage);
-  };
+  // const signMessage = async () => {
+  //   if (!provider) {
+  //     uiConsole("provider not initialized yet");
+  //     return;
+  //   }
+  //   const rpc = new RPC(provider);
+  //   const signedMessage = await rpc.signMessage();
+  //   uiConsole(signedMessage);
+  // };
 
-  const getPrivateKey = async () => {
-    if (!provider) {
-      uiConsole("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    const privateKey = await rpc.getPrivateKey();
-    uiConsole(privateKey);
-  };
-  getPrivateKey();
+  // const getPrivateKey = async () => {
+  //   if (!provider) {
+  //     uiConsole("provider not initialized yet");
+  //     return;
+  //   }
+  //   const rpc = new RPC(provider);
+  //   const privateKey = await rpc.getPrivateKey();
+  //   uiConsole(privateKey);
+  // };
+  // getPrivateKey();
 
   const loggedInView = (
     <>
       <div className="flex-container">
-        <div>
+        {/* <div>
           <button onClick={getUserInfo} className="card">
             Get User Info
           </button>
@@ -253,11 +253,11 @@ export default function Home() {
           <button onClick={logout} className="card">
             Log Out
           </button>
-        </div>
+        </div> */}
       </div>
-      <div id="console" style={{ whiteSpace: "pre-line" }}>
+      {/* <div id="console" style={{ whiteSpace: "pre-line" }}>
         <p style={{ whiteSpace: "pre-line" }}></p>
-      </div>
+      </div> */}
     </>
   );
 

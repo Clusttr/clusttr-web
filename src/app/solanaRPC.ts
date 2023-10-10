@@ -126,10 +126,15 @@ export default class SolanaRpc {
   };
 
   getPrivateKey = async (): Promise<string> => {
-    const privateKey = await this.provider.request({
-      method: "solanaPrivateKey",
-    });
+    try {
+      const privateKey = await this.provider.request({
+        method: "solanaPrivateKey",
+      });
 
-    return privateKey as string;
+      return privateKey as string;
+    } catch (error) {
+      console.error("Error fetching private key:", error);
+      throw new Error("Failed to fetch private key");
+    }
   };
 }
