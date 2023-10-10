@@ -5,6 +5,7 @@ import { useAppSelector } from "@/store/hooks";
 import { createAccount } from "@/constants/publicKey";
 import { IProvider } from "@web3auth/base";
 import RPC from "@/app/solanaRPC";
+import { SolanaPrivateKeyProvider } from "@web3auth/solana-provider";
 
 const Login = () => {
   const { web3auth, web3provider } = useAppSelector((state) => state.user);
@@ -50,7 +51,7 @@ const Login = () => {
 
           // console.log(publicKey);
 
-          // const key = await createAccount(privateKey);
+          const key = createAccount(privateKey);
           // console.log(key);
         };
         authenticateProvider();
