@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { IProvider } from "@web3auth/base";
 import { Web3Auth } from "@web3auth/modal";
 
 const Web3Authentication = createAsyncThunk(
@@ -22,7 +23,7 @@ const Web3Authentication = createAsyncThunk(
 
 const Web3Provider = createAsyncThunk(
   "web3/provider",
-  async (userData: any, thunkAPI) => {
+  async (userData: IProvider, thunkAPI) => {
     try {
       return userData;
     } catch (error: any) {
@@ -39,4 +40,23 @@ const Web3Provider = createAsyncThunk(
   }
 );
 
-export { Web3Authentication, Web3Provider };
+const Address = createAsyncThunk(
+  "web3/address",
+  async (userData: string, thunkAPI) => {
+    try {
+      return userData;
+    } catch (error: any) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      console.log(message);
+
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+export { Web3Authentication, Web3Provider, Address };
