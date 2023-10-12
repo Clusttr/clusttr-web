@@ -18,15 +18,15 @@ import {
   Web3Provider,
   Address,
 } from "@/store/service/web3auth";
+import RPC from "@/app/solanaRPC";
+import { Keypair } from "@solana/web3.js";
 
 export default function Home() {
+  const clientId =
+    "BEglQSgt4cUWcj6SKRdu5QkOXTsePmMcusG5EAoyjyOYKlVRjIF1iCNnMOTfpzCiunHRrMui8TIwQPXdkQ8Yxuk";
   const [web3auths, setWeb3auth] = useState<Web3Auth | null>(null);
   const [provider, setProvider] = useState<IProvider | null>(null);
   const [account, setAccoiunt] = useState<string>("");
-
-  // console.log(web3auths);
-  // console.log(provider);
-  // console.log(account);
 
   const dispatch = useAppDispatch();
 
@@ -60,29 +60,49 @@ export default function Home() {
   const handle = async () => {
     try {
       const web3auth = new Web3Auth({
-        clientId:
-          "BPi5PB_UiIZ-cPz1GtV5i1I2iOSOHuimiXBI0e-Oe_u6X3oVAbCiAZOTEBtTXw4tsluTITPqA8zMsfxIKMjiqNQ", // get it from Web3Auth Dashboard
+        clientId,
         web3AuthNetwork: "cyan",
         chainConfig: {
           chainNamespace: CHAIN_NAMESPACES.SOLANA,
-          chainId: "0x3", // Please use 0x1 for Mainnet, 0x2 for Testnet, 0x3 for Devnet
-          rpcTarget: "https://api.devnet.solana.com/",
-          blockExplorer: "https://explorer.solana.com",
+          chainId: "0x3",
+          rpcTarget: "https://api.devnet.solana.com",
         },
       });
       await web3auth.initModal();
 
-      const web3authProvider = await web3auth.connect();
+      await web3auth.connect();
 
-      if (web3authProvider) {
-        const solanaWallet = new SolanaWallet(web3authProvider);
-        const userAccounts = await solanaWallet.requestAccounts();
-        setProvider(solanaWallet.provider);
-        setAccoiunt(userAccounts[0]);
+      if (web3auth) {
+        setWeb3auth(web3auth);
       }
 
-      setWeb3auth(web3auth);
-    } catch (error) {}
+      if (web3auth?.provider) {
+        setProvider(web3auth.provider);
+        await getPrivateKey();
+      }
+    } catch (error) {
+      console.log(error as TypeError);
+    }
+  };
+
+  const getPrivateKey = async () => {
+    if (provider) {
+      const rpc = new RPC(provider);
+      const privateKey = await rpc.getPrivateKey();
+      console.log({ privateKey });
+
+      const account = await rpc.getAccounts();
+      console.log({ account });
+
+      const privateKeyBinary = Uint8Array.from(Buffer.from(privateKey, "hex"));
+      const keypair = Keypair.fromSecretKey(privateKeyBinary);
+      const publicKey = keypair.publicKey;
+
+      const Pkey = publicKey.toString();
+      setAccoiunt(Pkey);
+
+      console.log({ keypair });
+    }
   };
 
   const login = () => {

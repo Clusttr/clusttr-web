@@ -7,12 +7,12 @@ import { IProvider } from "@web3auth/base";
 // import RPC from "@/app/solanaRPC";
 
 const Login = () => {
-  const { web3auth, web3provider } = useAppSelector((state) => state.user);
+  const { web3auth, accountKey } = useAppSelector((state) => state.user);
   const [token, setToken] = useState<{ idToken: string }>();
   const [webAuth, setWebAuth] = useState<Web3Auth | null>();
   const [webAuthProvider, setWebAuthProvider] = useState<IProvider | null>();
 
-  console.log("Token", token);
+  console.log(accountKey, web3auth);
 
   useEffect(() => {
     try {
