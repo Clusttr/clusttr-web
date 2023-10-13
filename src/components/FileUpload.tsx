@@ -29,7 +29,7 @@ const FileUpload = () => {
         }
       });
 
-      const tokenRes = await getAssetToken(res.data)
+      const tokenRes = await createAssetToken(res.data)
     } catch (err) {
       console.log(err)
     }
