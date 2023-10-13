@@ -29,12 +29,35 @@ const FileUpload = () => {
         }
       });
 
-      console.log(res.data)
+      const tokenRes = await getAssetToken(res.data)
     } catch (err) {
       console.log(err)
     }
   }
 
+  const createAssetToken = async ({ IpfsHash }: { IpfsHash: string }) => {
+    if (!IpfsHash) return null; //TODO: throw error 
+
+    try {
+      const data = {
+        "name": "Lotus ex suite",
+        "symbol": "LEX",
+        "uri": `https://gateway.pinata.cloud/ipfs/${IpfsHash}`,
+        "maxSupply": 999
+      }
+
+      const res = await axios.post("https://clusttr.up.railway.app/asset/create", data, {
+        headers: {
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjJkNzM4ZGY2MmQ0ZWE0NTRlYjdkNiIsImlhdCI6MTY5Njc4MjEzNiwiZXhwIjoxNzA0NTU4MTM2fQ.uQBcCj_JLTdZbpQJi2Uzc-qsEVXzxFDMVbGjvrtSSSs'
+        }
+      })
+
+      return res.data;
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
   return (
     <div style={{ marginTop: 300, marginBottom: 100, marginLeft: 50 }}>
       <input type="file" onChange={(e) => readFile(e)} />
