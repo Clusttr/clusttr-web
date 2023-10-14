@@ -30,8 +30,10 @@ const FileUpload = () => {
       });
 
       const tokenRes = await createAssetToken(res.data)
+      alert("Token created successfully")
     } catch (err) {
       console.log(err)
+      alert("We could not create token. Please try again")
     }
   }
 
@@ -48,7 +50,7 @@ const FileUpload = () => {
 
       const res = await axios.post("https://clusttr.up.railway.app/asset/create", data, {
         headers: {
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjJkNzM4ZGY2MmQ0ZWE0NTRlYjdkNiIsImlhdCI6MTY5Njc4MjEzNiwiZXhwIjoxNzA0NTU4MTM2fQ.uQBcCj_JLTdZbpQJi2Uzc-qsEVXzxFDMVbGjvrtSSSs'
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_CLUSTTR_JWT_TOKEN}`
         }
       })
 
