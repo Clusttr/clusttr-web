@@ -29,12 +29,37 @@ const FileUpload = () => {
         }
       });
 
-      console.log(res.data)
+      const tokenRes = await createAssetToken(res.data)
+      alert("Token created successfully")
     } catch (err) {
       console.log(err)
+      alert("We could not create token. Please try again")
     }
   }
 
+  const createAssetToken = async ({ IpfsHash }: { IpfsHash: string }) => {
+    if (!IpfsHash) return null; //TODO: throw error 
+
+    try {
+      const data = {
+        "name": "Lotus ex suite",
+        "symbol": "LEX",
+        "uri": `https://gateway.pinata.cloud/ipfs/${IpfsHash}`,
+        "maxSupply": 999
+      }
+
+      const res = await axios.post("https://clusttr.up.railway.app/asset/create", data, {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_CLUSTTR_JWT_TOKEN}`
+        }
+      })
+
+      return res.data;
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
   return (
     <div style={{ marginTop: 300, marginBottom: 100, marginLeft: 50 }}>
       <input type="file" onChange={(e) => readFile(e)} />
