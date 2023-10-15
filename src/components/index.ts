@@ -8,6 +8,7 @@ import ClusttrWorks from "./ClusttrWorks";
 import FirstToKnow from "./FirstToKnow";
 import MintTable from "./MintTable";
 import MinterModal from "./MinterModal";
+import FileUpload from "./FileUpload";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   FirstToKnow,
   MintTable,
   MinterModal,
+  FileUpload,
 };
