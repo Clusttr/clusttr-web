@@ -6,27 +6,24 @@ import Link from "next/link";
 import { Web3Auth } from "@web3auth/modal";
 import { type } from "os";
 import { NavbarProps } from "@/types";
+import { reset } from "@/store/slice/userSlice";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
 
 const Navbar = ({ login }: NavbarProps) => {
+  const { accountKey, web3auth } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
+
+  const handleLogout = () => {
+    if (web3auth) {
+      web3auth.logout();
+      dispatch(reset());
+    }
+  };
+
   const whitePaper = () => {
     console.log("White Paper");
   };
 
-  // function uiConsole(...args: any[]): void {
-  //   const el = document.querySelector("#console>p");
-  //   if (el) {
-  //     el.innerHTML = JSON.stringify(args || {}, null, 2);
-  //   }
-  // }
-
-  // const login = async () => {
-  //   console.log(Web3Auth);
-
-  //   if (!Web3Auth) {
-  //     uiConsole("web3auth not initialized yet");
-  //     return;
-  //   }
-  // };
   return (
     <header className="w-full absolute z-10">
       <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4">
@@ -47,12 +44,21 @@ const Navbar = ({ login }: NavbarProps) => {
             handleClick={whitePaper}
           />
           {/* <Link href={`/login`}> */}
-          <CustomButton
-            title="Try DEMO"
-            // onClick={() => handleLib()}
-            customStyles={`bg-[#4F7FDB] text-base rounded-2xl text-white hover:bg-blue-600 ml-3`}
-            handleClick={login}
-          />
+          {!accountKey ? (
+            <CustomButton
+              title="Try DEMO"
+              // onClick={() => handleLib()}
+              customStyles={`bg-[#4F7FDB] text-base rounded-2xl text-white hover:bg-blue-600 ml-3`}
+              handleClick={login}
+            />
+          ) : (
+            <CustomButton
+              title="Logout"
+              // onClick={() => handleLib()}
+              customStyles={`bg-[#4F7FDB] text-base rounded-2xl text-white hover:bg-blue-600 ml-3`}
+              handleClick={() => handleLogout()}
+            />
+          )}
           {/* </Link> */}
           {/* <button onClick={() => login()}>clickme</button> */}
         </div>

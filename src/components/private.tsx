@@ -15,7 +15,7 @@ const PrivateRoute = () => {
 
       //   console.log("private", authToken);
 
-      if (!authToken?.sessionId) {
+      if (!authToken) {
         return router.push("/");
       }
     } catch (error) {

@@ -6,6 +6,8 @@ import InfoSection from "./InfoSection";
 import InfoCard from "./InfoCard";
 import ClusttrWorks from "./ClusttrWorks";
 import FirstToKnow from "./FirstToKnow";
+import MintTable from "./MintTable";
+import MinterModal from "./MinterModal";
 import FileUpload from "./FileUpload";
 
 export {
@@ -17,5 +19,7 @@ export {
   InfoCard,
   ClusttrWorks,
   FirstToKnow,
+  MintTable,
+  MinterModal,
   FileUpload,
 };

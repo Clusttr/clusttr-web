@@ -1,89 +1,102 @@
-"use client";
-import { Web3Auth } from "@web3auth/modal";
-import React, { useEffect, useState } from "react";
-import { useAppSelector } from "@/store/hooks";
-import { createAccount } from "@/constants/publicKey";
-import { IProvider } from "@web3auth/base";
-import RPC from "@/app/solanaRPC";
-import { SolanaPrivateKeyProvider } from "@web3auth/solana-provider";
+"use client"
+import { useState, useEffect } from "react";
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import { baseUrl } from "@/constants";
+
+interface LoginFormValues {
+  idToken: string | null;
+  publicKey: string | null;
+  pin: string;
+}
 
 const Login = () => {
-  const { web3auth, web3provider } = useAppSelector((state) => state.user);
-  const [token, setToken] = useState<{ idToken: string }>();
-  const [webAuth, setWebAuth] = useState<Web3Auth | null>();
-  const [webAuthProvider, setWebAuthProvider] = useState<IProvider | null>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [idTokenLocal, setIdTokenLocal] = useState<string | null>("");
+  const [publicKeyLocal, setPublicKeyLocal] = useState<string | null>("");
 
-  // console.log("Token", token);
-  // console.log("giveWebAuthPriv", webAuthProvider);
+  const router = useRouter();
 
-  useEffect(() => {
-    try {
-      const uiConsole = (...args: any[]): void => {
-        const el = document.querySelector("#console>p");
-        if (el) {
-          el.innerHTML = JSON.stringify(args || {}, null, 2);
-        }
-      };
+  const initialValues: LoginFormValues = {
+    idToken: '',
+    publicKey: '',
+    pin: '',
+  };
 
-      if (web3auth) {
-        const authenticateUser = async () => {
-          if (webAuth && webAuth.connected) {
-            const idToken = await web3auth.authenticateUser();
-            uiConsole(idToken);
-            setToken(idToken);
-          }
-        };
-        authenticateUser();
-      }
-
-      if (webAuthProvider && webAuth?.connected) {
-        const authenticateProvider = async () => {
-          const rpc = new RPC(web3provider!);
-          const privateKey = await rpc.getPrivateKey();
-          uiConsole(privateKey);
-          // const SECRET_KEY = privateKey;
-
-          // // Create a key pair from the secret key
-          // const keyPair = createAccount(SECRET_KEY);
-
-          // // Get the public key from the key pair
-          // const publicKey = keyPair.publicKey;
-
-          // console.log(publicKey);
-
-          const key = createAccount(privateKey);
-          // console.log(key);
-        };
-        authenticateProvider();
-      }
-    } catch (error) {
-      console.log(error as TypeError);
-    }
-  }, [webAuth, webAuthProvider]);
+  const validationSchema = Yup.object().shape({
+    pin: Yup.string().required('Required').min(6, 'must be at least 6 characters long'),
+  });
 
   useEffect(() => {
-    try {
-      if (web3auth && web3auth.connected) {
-        setWebAuth(web3auth);
-      }
-      if (web3provider && web3auth?.connected) {
-        setWebAuthProvider(web3provider);
-      }
-    } catch (error) {
-      console.log(error as TypeError);
+    const storedIdToken = localStorage.getItem("idToken");
+    if (storedIdToken) {
+      setIdTokenLocal(storedIdToken);
     }
-  }, [web3auth?.connected]);
+    const publicKey = localStorage.getItem("publicKey");
+    if (publicKey) {
+      setPublicKeyLocal(publicKey);
+    }
+  }, []);
 
-  // useEffect(() => {
-  //   try {
-  //     console.log("webAuth", web3auth);
-  //     console.log("webAuthProv", web3provider);
-  //   } catch (error) {
-  //     console.log(error as TypeError);
-  //   }
-  // }, [string]);
+  const onSubmit = async (values: LoginFormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      values.idToken = idTokenLocal;
+      values.publicKey = publicKeyLocal;
+      
+      const response = await axios.post(`${baseUrl}/auth/login`, values, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      response.data;
+      console.log(response.data);
+      localStorage.setItem("token", response.data.token);
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('Error signing In:', error);
+    }
+    setIsSubmitting(false);
+  };
 
-  return <div>Login Page</div>;
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit,
+  });
+
+  return (
+    <div className="w-full flex justify-center items-center h-screen">
+      <form onSubmit={formik.handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-[20rem]">
+        <h1 className="text-lg font-bold mb-4 text-center">Login</h1>
+        
+        <input
+          type="text"
+          name="pin"
+          placeholder="Enter password"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.pin}
+          className={`w-full p-2 border rounded mb-4 ${formik.errors.pin && formik.touched.pin ? 'border-red-500' : ''}`}
+        />
+        {formik.errors.pin && formik.touched.pin && (
+          <div className="text-red-500 text-sm mb-4">{formik.errors.pin}</div>
+        )}
+
+        <button
+          type="submit"
+          className={`w-full p-2 rounded-full bg-blue-500 text-white ${isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Logging In...' : 'Login'}
+        </button>
+      </form>
+    </div>
+  );
 };
 
 export default Login;

@@ -44,3 +44,6 @@ export const infoData = [
     text: "Your payments are safe and secure with us.",
   },
 ];
+
+
+export const baseUrl = `https://clusttr.up.railway.app`
