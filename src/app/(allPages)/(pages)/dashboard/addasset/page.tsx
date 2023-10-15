@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
 const AddAsset = () => {
   return (
-    <div>AddAsset</div>
-  )
-}
+    <div>
+      <h1 className="text-center font-bold text-lg">Create an Assett</h1>
+      {/* <MintTable /> */}
+    </div>
+  );
+};
 
-export default AddAsset
+export default AddAsset;

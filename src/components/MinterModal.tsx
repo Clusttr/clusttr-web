@@ -66,7 +66,7 @@ function MinterModal({
 
   useEffect(() => {
     if (IsSuccessModalOpen) {
-      console.log("sucess Modal is Open");
+      // console.log("sucess Modal is Open");
 
       setTimeout(() => {
         onRequestClose();
@@ -77,13 +77,13 @@ function MinterModal({
 
   const onSubmit = async (values: MintFormBodyType) => {
     setIsSubmitting(true);
-    console.log(values);
+    // console.log(values);
     setAmountMinted(values.amount);
 
     try {
       values.assetAddress = tokenId;
       values.privateKey = privateKeyLocal;
-      console.log(values);
+      // console.log(values);
       const response = await axios.post(`${baseUrl}/asset/mint`, values, {
         // method: "POST",
         headers: {
@@ -92,7 +92,7 @@ function MinterModal({
         },
       });
       response.data;
-      console.log(response.data);
+      // console.log(response.data);
       //   use returned data
       setSuccess(true);
       setIsSuccessModalOpen(true);

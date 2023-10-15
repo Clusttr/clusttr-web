@@ -34,7 +34,7 @@ import { baseUrl } from "@/constants";
 import { Nft, NftResponse } from "@/types";
 import Image from "next/image";
 import { MinterModal } from ".";
-import SuccessModal from "./SuccessModal";
+import Link from "next/link";
 
 declare module "@tanstack/table-core" {
   interface FilterFns {
@@ -85,7 +85,7 @@ const MintTable = () => {
   const [IsSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [tokenId, setTokenId] = useState(null);
   const [assetName, setAssetName] = useState<string | null>("");
-
+  const [publicKeyLocal, setPublicKeyLocal] = useState<string | null>("");
   const [tokenLocal, setTokenLocal] = useState<string | null>(
     localStorage.getItem("token")
   );
@@ -111,9 +111,27 @@ const MintTable = () => {
         },
       },
       { header: "Name", accessorKey: "name" },
-      { header: "Id", accessorKey: "id" },
+      // { header: "Id", accessorKey: "id" },
       {
-        header: "Action",
+        header: "Asset Id",
+        accessorKey: "id",
+        // Set the cell renderer for the "Progress" column
+        cell: ({ row }: { row: Row<Nft> }) => {
+          return (
+            <span className="underline text-blue-600">
+              <Link
+                href={`https://solscan.io/token/${row.original.id}?cluster=devnet`}
+                target="_blank"
+              >
+                {formatText(row.original.id)}
+              </Link>
+            </span>
+          );
+        },
+      },
+      { header: "Supply", accessorKey: "supply" },
+      {
+        header: "Mint",
         accessorKey: "mint",
         // Set the cell renderer for the "Progress" column
         cell: ({ row }: { row: Row<Nft> }) => {
@@ -124,18 +142,6 @@ const MintTable = () => {
                   handleMint(row.original.id);
                   setAssetName(row.original.name);
                 }}
-                // onClick={() => {
-                //   console.log(row.original.id);
-
-                //   axios
-                //     .post(`${baseUrl}/nft/mint`, {
-                //       id: row.original.id,
-                //     })
-                //     .then((res) => {
-                //       console.log(res);
-                //       rerender();
-                //     });
-                // }}
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Mint
@@ -156,11 +162,18 @@ const MintTable = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const publicKey = localStorage.getItem("publicKey");
+    if (publicKey) {
+      setPublicKeyLocal(publicKey);
+    }
+  }, []);
+
   const fetchData = async () => {
     console.log(tokenLocal);
     try {
       const response = await axios.get(
-        `${baseUrl}/asset/creator/HkkVS92U3WwxZz1VKJ2ocD4S4prjHiKz9EBCaGD2s8Fb`,
+        `${baseUrl}/asset/creator/${publicKeyLocal}`,
         {
           headers: {
             Authorization: `Bearer ${tokenLocal}`,
@@ -191,6 +204,17 @@ const MintTable = () => {
       }, 2000);
     }
   }, [IsSuccessModalOpen]);
+
+  function formatText(text: string) {
+    if (text.length <= 8) {
+      return text; // No need for trimming if the text is already 8 characters or less
+    }
+
+    const start = text.slice(0, 4);
+    const end = text.slice(-4);
+
+    return `${start}...${end}`;
+  }
 
   console.log(data);
 
@@ -396,11 +420,6 @@ const MintTable = () => {
         assetName={assetName}
         // onSubmit={handleSubmitModal}
       />
-      {/* <SuccessModal
-        isOpen={IsSuccessModalOpen}
-        onRequestClose={successModal}
-        assetName={assetName}
-      /> */}
 
       {/* <div>{table.getPrePaginationRowModel().rows.length} Rows</div> */}
       {/* <div>
