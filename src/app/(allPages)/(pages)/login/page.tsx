@@ -49,6 +49,7 @@ const Login = () => {
     if (publicKey) {
       setPublicKeyLocal(publicKey);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onSubmit = async (values: LoginFormValues) => {

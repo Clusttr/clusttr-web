@@ -85,10 +85,10 @@ const MintTable = () => {
   const [IsSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [tokenId, setTokenId] = useState(null);
   const [assetName, setAssetName] = useState<string | null>("");
-  const [publicKeyLocal, setPublicKeyLocal] = useState<string | null>("");
-  const [tokenLocal, setTokenLocal] = useState<string | null>(
-    localStorage.getItem("token")
-  );
+  // const [publicKeyLocal, setPublicKeyLocal] = useState<string | null>("");
+  // const [tokenLocal, setTokenLocal] = useState<string | null>(
+  //   localStorage.getItem("token")
+  // );
   // const refreshData = () => setData((old) => makeData(50000));
 
   const columns = useMemo<ColumnDef<Nft>[]>(
@@ -192,6 +192,7 @@ const MintTable = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -200,6 +201,7 @@ const MintTable = () => {
         setIsSuccessModalOpen(false);
       }, 2000);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [IsSuccessModalOpen]);
 
   function formatText(text: string) {
@@ -427,6 +429,7 @@ function Filter({
       typeof firstValue === "number"
         ? []
         : Array.from(column.getFacetedUniqueValues().keys()).sort(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [column.getFacetedUniqueValues()]
   );
 
@@ -509,6 +512,7 @@ function DebouncedInput({
     }, debounce);
 
     return () => clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return (

@@ -47,7 +47,7 @@ function MinterModal({
   );
   const [errorMessage, setErrorMessage] = useState<string | null>("");
   const [success, setSuccess] = useState<boolean>(false);
-  const [amountMinted, setAmountMinted] = useState<number>(0);
+  // const [amountMinted, setAmountMinted] = useState<number>(0);
 
   // Created a state to manage the Success Modal visibility
   const [IsSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
@@ -68,19 +68,20 @@ function MinterModal({
 
   useEffect(() => {
     if (IsSuccessModalOpen) {
-      // console.log("sucess Modal is Open");
+      console.log(success);
 
       setTimeout(() => {
         onRequestClose();
         setIsSuccessModalOpen(false);
       }, 2000);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [IsSuccessModalOpen]);
 
   const onSubmit = async (values: MintFormBodyType) => {
     setIsSubmitting(true);
     // console.log(values);
-    setAmountMinted(values.amount);
+    // setAmountMinted(values.amount);
 
     try {
       values.assetAddress = tokenId;

@@ -40,6 +40,7 @@ export default function Home() {
       };
       init();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [web3auths]);
 
   useEffect(() => {
@@ -50,6 +51,7 @@ export default function Home() {
       init();
     }
     getPrivateKey();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [provider]);
 
   useEffect(() => {
@@ -59,6 +61,7 @@ export default function Home() {
       };
       init();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account]);
 
   const handle = async () => {
