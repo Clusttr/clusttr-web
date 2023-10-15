@@ -36,10 +36,11 @@ export default function Home() {
     if (web3auths) {
       const init = async () => {
         await dispatch(Web3Authentication(web3auths));
-        console.log(web3auths);
+        // console.log(web3auths);
       };
       init();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [web3auths]);
 
   useEffect(() => {
@@ -50,6 +51,7 @@ export default function Home() {
       init();
     }
     getPrivateKey();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [provider]);
 
   useEffect(() => {
@@ -59,6 +61,7 @@ export default function Home() {
       };
       init();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account]);
 
   const handle = async () => {
@@ -86,8 +89,8 @@ export default function Home() {
 
         const user = await web3auth.authenticateUser();
         const idToken = user.idToken;
-        console.log({ user });
-        console.log({ idToken });
+        // console.log({ user });
+        // console.log({ idToken });
         localStorage.setItem("idToken", idToken);
 
         router.push("/login");
@@ -101,10 +104,10 @@ export default function Home() {
     if (provider) {
       const rpc = new RPC(provider);
       const privateKey = await rpc.getPrivateKey();
-      console.log({ privateKey });
+      // console.log({ privateKey });
       localStorage.setItem("privateKey", privateKey);
       const account = await rpc.getAccounts();
-      console.log({ account });
+      // console.log({ account });
 
       const privateKeyBinary = Uint8Array.from(Buffer.from(privateKey, "hex"));
       const keypair = Keypair.fromSecretKey(privateKeyBinary);
@@ -114,7 +117,7 @@ export default function Home() {
       setAccount(Pkey);
 
       localStorage.setItem("publicKey", Pkey);
-      console.log({ keypair });
+      // console.log({ keypair });
       // console.log(Pkey);
       // console.log(account[0]);
     }

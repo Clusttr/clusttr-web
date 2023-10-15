@@ -21,6 +21,7 @@ const PrivateRoute = () => {
     } catch (error) {
       console.log("Error: ", error as TypeError);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

@@ -39,11 +39,6 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
     setToAdd(true);
     setToMint(false);
   };
-  // const handleChangeToAdd = () => {
-  //   router.push('/dashboard/addasset');
-  //   setToAdd(true)
-  //   setToMint(false)
-  // };
 
   return (
     <div className="h-screen flex">
