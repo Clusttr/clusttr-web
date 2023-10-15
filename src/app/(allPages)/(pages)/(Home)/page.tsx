@@ -20,20 +20,23 @@ import {
 } from "@/store/service/web3auth";
 import RPC from "@/app/solanaRPC";
 import { Keypair } from "@solana/web3.js";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const clientId =
     "BEglQSgt4cUWcj6SKRdu5QkOXTsePmMcusG5EAoyjyOYKlVRjIF1iCNnMOTfpzCiunHRrMui8TIwQPXdkQ8Yxuk";
   const [web3auths, setWeb3auth] = useState<Web3Auth | null>(null);
   const [provider, setProvider] = useState<IProvider | null>(null);
-  const [account, setAccoiunt] = useState<string>("");
+  const [account, setAccount] = useState<string>("");
 
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
   useEffect(() => {
     if (web3auths) {
       const init = async () => {
         await dispatch(Web3Authentication(web3auths));
+        console.log(web3auths);
       };
       init();
     }
@@ -46,6 +49,7 @@ export default function Home() {
       };
       init();
     }
+    getPrivateKey();
   }, [provider]);
 
   useEffect(() => {
@@ -79,6 +83,14 @@ export default function Home() {
       if (web3auth?.provider) {
         setProvider(web3auth.provider);
         await getPrivateKey();
+
+        const user = await web3auth.authenticateUser();
+        const idToken = user.idToken;
+        console.log({ user });
+        console.log({ idToken });
+        localStorage.setItem("idToken", idToken);
+
+        router.push("/login");
       }
     } catch (error) {
       console.log(error as TypeError);
@@ -90,7 +102,7 @@ export default function Home() {
       const rpc = new RPC(provider);
       const privateKey = await rpc.getPrivateKey();
       console.log({ privateKey });
-
+      localStorage.setItem("privateKey", privateKey);
       const account = await rpc.getAccounts();
       console.log({ account });
 
@@ -99,9 +111,12 @@ export default function Home() {
       const publicKey = keypair.publicKey;
 
       const Pkey = publicKey.toString();
-      setAccoiunt(Pkey);
+      setAccount(Pkey);
 
+      localStorage.setItem("publicKey", Pkey);
       console.log({ keypair });
+      // console.log(Pkey);
+      // console.log(account[0]);
     }
   };
 
