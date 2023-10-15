@@ -99,7 +99,6 @@ const MintTable = () => {
         cell: ({ row }: { row: Row<Nft> }) => {
           return (
             <span>
-              {/* {row.original.image} */}
               <Image
                 src={`${row.original.image}`}
                 height={50}
@@ -132,7 +131,7 @@ const MintTable = () => {
       { header: "Supply", accessorKey: "supply" },
       {
         header: "Mint",
-        accessorKey: "mint",
+        accessorKey: "",
         // Set the cell renderer for the "Progress" column
         cell: ({ row }: { row: Row<Nft> }) => {
           return (
@@ -154,36 +153,36 @@ const MintTable = () => {
     []
   );
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setTokenLocal(token);
-      console.log(token);
-    }
-  }, []);
+  // useEffect(() => {
 
-  useEffect(() => {
-    const publicKey = localStorage.getItem("publicKey");
-    if (publicKey) {
-      setPublicKeyLocal(publicKey);
-    }
-  }, []);
+  // }, []);
+
+  const publicKey = localStorage.getItem("publicKey");
+  const token = localStorage.getItem("token");
+  // useEffect(() => {
+  //   if (publicKey) {
+  //     setPublicKeyLocal(publicKey);
+  //   }
+  //   if (token) {
+  //     setTokenLocal(token);
+  //   }
+  // }, []);
 
   const fetchData = async () => {
-    console.log(tokenLocal);
+    // console.log(tokenLocal);
     try {
       const response = await axios.get(
-        `${baseUrl}/asset/creator/${publicKeyLocal}`,
+        `${baseUrl}/asset/creator/${publicKey}`,
         {
           headers: {
-            Authorization: `Bearer ${tokenLocal}`,
+            Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
         }
       );
       const data = response.data;
-      console.log(data);
-      console.log(response);
+      // console.log(data);
+      // console.log(response);
 
       setData(response.data);
     } catch (error) {
@@ -197,8 +196,6 @@ const MintTable = () => {
 
   useEffect(() => {
     if (IsSuccessModalOpen) {
-      console.log("sucess Modal is Open");
-
       setTimeout(() => {
         setIsSuccessModalOpen(false);
       }, 2000);
@@ -207,7 +204,7 @@ const MintTable = () => {
 
   function formatText(text: string) {
     if (text.length <= 8) {
-      return text; // No need for trimming if the text is already 8 characters or less
+      return text;
     }
 
     const start = text.slice(0, 4);
@@ -216,7 +213,7 @@ const MintTable = () => {
     return `${start}...${end}`;
   }
 
-  console.log(data);
+  // console.log(data);
 
   const handleMint = (id: any) => {
     setTokenId(id);
@@ -227,19 +224,6 @@ const MintTable = () => {
     setIsModalOpen(false);
     setTokenId(null);
   };
-
-  // const successModal = () => {
-  //   setIsSuccessModalOpen(false);
-  //   setAssetName(null);
-  // };
-
-  // const handleSubmitModal = (amount: number, privateKey: string) => {
-  //   // Handle the form submission here, e.g., send data to the server
-  //   // You can access the selectedId here too
-  //   console.log("Minting with ID:", tokenId);
-  //   console.log("Amount:", amount);
-  //   console.log("Private Key:", privateKey);
-  // };
 
   const table = useReactTable({
     data: data || [],
@@ -265,14 +249,6 @@ const MintTable = () => {
     debugHeaders: true,
     debugColumns: false,
   });
-
-  // useEffect(() => {
-  //   if (table.getState().columnFilters[0]?.id === "fullName") {
-  //     if (table.getState().sorting[0]?.id !== "fullName") {
-  //       table.setSorting([{ id: "fullName", desc: false }]);
-  //     }
-  //   }
-  // }, [table.getState().columnFilters[0]?.id]);
 
   return (
     <div className="p-2 w-full overflow-auto min-h-[33rem] bg-gray-300 rounded-xl">

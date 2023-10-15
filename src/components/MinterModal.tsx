@@ -42,7 +42,9 @@ function MinterModal({
     localStorage.getItem("token")
   );
 
-  const [privateKeyLocal, setPrivateKeyLocal] = useState<string | null>("");
+  const [privateKeyLocal, setPrivateKeyLocal] = useState<string | null>(
+    localStorage.getItem("privateKey")
+  );
   const [errorMessage, setErrorMessage] = useState<string | null>("");
   const [success, setSuccess] = useState<boolean>(false);
   const [amountMinted, setAmountMinted] = useState<number>(0);
@@ -50,12 +52,12 @@ function MinterModal({
   // Created a state to manage the Success Modal visibility
   const [IsSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   //   const tokenIdAdrress = "MfitNBze2L8GdMBzuarup5Lffy1sWyJJDdnxSMS6cr4";
-  useEffect(() => {
-    const privateKey = localStorage.getItem("privateKey");
-    if (privateKey) {
-      setPrivateKeyLocal(privateKey);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const privateKey = localStorage.getItem("privateKey");
+  //   if (privateKey) {
+  //     setPrivateKeyLocal(privateKey);
+  //   }
+  // }, []);
 
   const initialValues: MintFormBodyType = {
     assetAddress: "",
