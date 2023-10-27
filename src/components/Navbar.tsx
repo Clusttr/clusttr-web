@@ -38,24 +38,28 @@ const Navbar = ({ login }: NavbarProps) => {
         </Link>
 
         <div className="flex">
-          <CustomButton
-            title="white paper"
-            customStyles={`bg-white text-base rounded-2xl text-[#4F7FDB] hover:bg-blue-600 hover:text-white`}
-            handleClick={whitePaper}
-          />
+          <Link
+            href="https://clusttr.gitbook.io/clusttrs-white-paper"
+            target="_blank"
+          >
+            <CustomButton
+              title="white paper"
+              customStyles={`bg-transparent text-sm border hidden sm:inline-block border-primary-100 rounded-xl min-w-[7rem] ml-1 text-primary-100 hover:bg-primary-100 hover:text-white`}
+              handleClick={whitePaper}
+            />
+          </Link>
           {/* <Link href={`/login`}> */}
           {!accountKey ? (
             <CustomButton
               title="Try DEMO"
-              // onClick={() => handleLib()}
-              customStyles={`bg-[#4F7FDB] text-base rounded-2xl text-white hover:bg-blue-600 ml-3`}
+              customStyles={`bg-primary-100 text-sm rounded-xl min-w-[6.5rem] text-white hover:bg-primary-200 ml-1 sm:ml-3`}
               handleClick={login}
             />
           ) : (
             <CustomButton
               title="Logout"
               // onClick={() => handleLib()}
-              customStyles={`bg-[#4F7FDB] text-base rounded-2xl text-white hover:bg-blue-600 ml-3`}
+              customStyles={`bg-red-600 text-sm rounded-xl text-white hover:bg-red-500 ml-3`}
               handleClick={() => handleLogout()}
             />
           )}

@@ -6,6 +6,7 @@ export interface CustomButtonProps {
   // onClick?: () => void;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   btnType?: "button" | "submit";
+  disabled?: boolean;
 }
 
 export interface InfocardsProps {
@@ -20,16 +21,16 @@ export interface NavbarProps {
 
 // NFT mint api response
 
-export type Attribute =  {
+export type Attribute = {
   value: string;
   traitType: string;
-}
+};
 
 export type File = {
   uri: string;
   cdn_uri?: string;
   mime: string;
-}
+};
 
 export type Nft = {
   id: string;
@@ -42,6 +43,6 @@ export type Nft = {
   files: File[];
   supply: number;
   maxSupply: number;
-}
+};
 
 export type NftResponse = Nft[];
