@@ -48,7 +48,7 @@ const FirstToKnow = () => {
   return (
     <div className="w-full flex items-center">
       <div className="flex flex-col w-full gap-4 justify-center max-w-[1440px] py-10">
-        <div className=" flex flex-col-reverse sm:flex-row sm:justify-center gap-7 px-16 pt-6">
+        <div className=" flex flex-col-reverse md:flex-row md:justify-center gap-7 lg:gap-16 px-5 md:px-0 pt-6">
           <div>
             <Image
               src="/assets/image/first-to-know.png"
@@ -58,14 +58,34 @@ const FirstToKnow = () => {
               className="mx-auto"
             />
           </div>
-          <div className="max-w-[27rem] flex flex-col justify-center">
+          <div className="max-w-[24rem] flex flex-col justify-center">
             <h5 className="text-3xl text-center font-semibold">
               Be the first to know when we launch
             </h5>
+
+            <form className="flex-col sm:flex-row justify-center items-center gap-4 hidden md:flex mt-10">
+              <div className="min-w-[10rem] px-4 sm:px-0 sm:w-60 h-full">
+                <input
+                  type="email"
+                  required
+                  className="border py-1.5 px-2.5 border-primary-100 rounded-xl text-primary-100 w-full  outline-none"
+                  placeholder="Enter Your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <CustomButton
+                title="Join Waitlist"
+                btnType="submit"
+                customStyles="bg-primary-100 text-sm rounded-xl text-white hover:bg-primary-200 min-w-[7rem]"
+                handleClick={joinWaitlist}
+                disabled={isSubmitting}
+              />
+            </form>
           </div>
         </div>
 
-        <form className="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <form className="flex flex-col sm:flex-row justify-center items-center gap-4 md:hidden">
           <div className="min-w-[10rem] px-4 sm:px-0 sm:w-60 h-full">
             <input
               type="email"

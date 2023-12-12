@@ -8,8 +8,8 @@ const InfoCard = ({ iconsrc, title, text, alt }: InfocardsProps) => {
       <div className="flex justify-center items-center">
         <Image src={iconsrc} height={100} width={100} alt={`${alt}`} />
       </div>
-      <h3 className="text-xl font-semibold mt-4">{title}</h3>
-      <p className="mt-8 text-sm">{text}</p>
+      <h3 className="text-xl font-semibold mt-4 text-primary-100">{title}</h3>
+      <p className="mt-8 text-sm text-primary-100">{text}</p>
     </div>
   );
 };

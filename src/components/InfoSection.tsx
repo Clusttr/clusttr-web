@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const InfoSection = () => {
   return (
-    <div className="w-full flex justify-center items-center bg-white">
+    <div className="w-full flex justify-center items-center bg-white pt-12 md:pt-16">
       <div className="flex flex-col items-center justify-center max-w-[1440px] py-12">
-        <h2 className="text-3xl mb-3 font-bold flex items-center justify-center">
-          Why
+        <h2 className="text-3xl text-primary-200 mb-3 font-bold flex items-center justify-center">
+          <span>Why </span>
           <span>
             <Image
               src={"/logo.svg"}
@@ -17,11 +17,11 @@ const InfoSection = () => {
               alt="Clusttr logo"
             />
           </span>
-          ?
+          <span> ?</span>
         </h2>
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center px-4 md:px-0">
           <div className="flex w-full gap-4 items-center mt-6">
-            <article className="flex flex-col md:flex-row items-center gap-x-12 gap-y-4 justify-center px-16 w-full">
+            <article className="flex flex-col md:flex-row items-center gap-x-12 gap-y-4 justify-center md:justify-around w-full">
               <div className="max-w-[27rem] flex flex-col items-center md:justify-center text-primary-100">
                 <h4 className="md:ml-28 text-lg text-center md:text-end font-semibold">
                   Unlock Your Real Estate Potential
@@ -44,8 +44,8 @@ const InfoSection = () => {
               </div>
             </article>
           </div>
-          <div className="flex w-full gap-4 items-center mt-6">
-            <article className="flex flex-col-reverse md:flex-row items-center gap-x-12 gap-y-4 justify-center px-16 w-full">
+          <div className="flex w-full gap-4 items-center mt-16">
+            <article className="flex flex-col-reverse md:flex-row items-center gap-x-12 gap-y-4 justify-center md:justify-around w-full">
               <div className="">
                 <Image
                   src="/assets/image/why-clusttr-financing.png"
@@ -68,8 +68,8 @@ const InfoSection = () => {
               </div>
             </article>
           </div>
-          <div className="flex w-full gap-4 items-center mt-6">
-            <article className="flex flex-col md:flex-row items-center gap-x-12 gap-y-4 justify-center px-16 w-full">
+          <div className="flex w-full gap-4 items-center mt-16">
+            <article className="flex flex-col md:flex-row items-center gap-x-12 gap-y-4 justify-center md:justify-around w-full">
               <div className="max-w-[27rem] flex flex-col justify-center text-primary-100">
                 <h4 className="md:ml-28 text-lg text-center md:text-end font-semibold">
                   Intelligent Co-Ownership Platform
@@ -91,8 +91,8 @@ const InfoSection = () => {
               </div>
             </article>
           </div>
-          <div className="flex w-full gap-4 items-center mt-6">
-            <article className="flex flex-col-reverse md:flex-row items-center gap-x-12 gap-y-4 justify-center px-16 w-full">
+          <div className="flex w-full gap-4 items-center mt-16">
+            <article className="flex flex-col-reverse md:flex-row items-center gap-x-12 gap-y-4 justify-center md:justify-around w-full">
               <div className="">
                 <Image
                   src="/assets/image/why-clusttr-community.png"

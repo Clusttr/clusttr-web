@@ -46,9 +46,9 @@ const Hero = () => {
     }
   };
   return (
-    <div className=" text-white flex items-center justify-center bg-secondary ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-20 pb-8 sm:px-16 px-6 items-center max-w-[1440px]">
-        <div className="text-center md:text-left">
+    <div className="pt-14 lg:pt-4 xl:pt-0 text-white flex items-center justify-center bg-secondary ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-20 sm:px-16 px-6 lg:px-0 2xl:px-16 items-center xl:justify-between 2xl:max-w-[1440px]">
+        <div className="text-center md:text-left lg:pl-16 xl:pl-24">
           <h2 className="text-3xl font-semibold text-gray-800 md:text-4xl lg:text-5xl">
             Empowering Individuals to <b>Co-Own, Invest, and Prosper</b>{" "}
             Together
@@ -77,7 +77,7 @@ const Hero = () => {
             </div>
           </form>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center xl:justify-end items-center">
           <Image
             src="/assets/image/hero-image.png"
             alt="hero-image"

@@ -22,7 +22,7 @@ const Footer = () => {
           </p>
         </div> */}
         <div className="flex-1 w-full flex md:justify-between flex-wrap max-md:mt-7 gap-10">
-          <div className="flex flex-col items-center md:items-start text-base w-[230px] mt-7">
+          <div className="flex flex-col text-base md:w-[230px] mt-7">
             <h4 className="font-semibold text-2xl mb-5">Contact Us</h4>
             <p>
               Have more questions? Reach out to our dedicated support team at
@@ -43,7 +43,7 @@ const Footer = () => {
           {footerLinks.map((link) => (
             <div
               key={link.title}
-              className="flex flex-col items-center md:items-start text-base min-w-[170px] mt-7"
+              className="flex flex-col text-base md:min-w-[170px] mt-7"
             >
               <h4 className="font-semibold text-2xl mb-5">{link.title}</h4>
               {link.links.map((item) => (
@@ -59,7 +59,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center max-w-[1440px]">
+      {/* <div className="flex justify-center max-w-[1440px]">
         <article className="max-w-[768px] text-center">
           <b>Disclaimer: </b>
           <em>Clusttr</em> is a platform that facilitates real estate
@@ -67,7 +67,7 @@ const Footer = () => {
           and past performance does not guarantee future results. Please consult
           with a financial advisor before making any investment decisions.
         </article>
-      </div>
+      </div> */}
       <div className="flex flex-col sm:flex-row justify-between items-center flex-wrap mt-7 border-t border-gray-100 sm:px-16 px-6 py-7">
         <p className="text-center">@2023 Clusttr. All rights reserved &copy;</p>
         <div className="flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10">
