@@ -2,6 +2,7 @@ import styled from "styled-components";
 // import Spline from "@splinetool/react-spline";
 import NavBar from "./views/components/nev_bar";
 import HeroView from "./views/landing_page/hero";
+import Features from "./views/landing_page/features";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     {/* <p>Hello world</p> */}
       <NavBar />
       <HeroView />
+      <Features />
     </Base>
   );
 }
