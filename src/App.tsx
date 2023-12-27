@@ -3,6 +3,7 @@ import styled from "styled-components";
 import NavBar from "./views/components/nev_bar";
 import HeroView from "./views/landing_page/hero";
 import Features from "./views/landing_page/features";
+import Social from "./views/landing_page/social_proof";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <HeroView />
       <Features />
+      <Social />
     </Base>
   );
 }
