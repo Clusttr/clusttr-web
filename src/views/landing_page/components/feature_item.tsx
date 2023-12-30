@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Feature } from "../models/Feature";
+import Text from "../../components/texts";
 
 interface Props {
   feature: Feature;
@@ -10,13 +11,19 @@ interface Props {
 function FeatureItem({ feature, isActive, onClick }: Props) {
   return (
     <Card
-    style={{opacity: isActive ? 1 : 0.6}}
-      onClick={_ => onClick(feature)}
+      style={{ opacity: isActive ? 1 : 0.6 }}
+      onClick={(_) => onClick(feature)}
     >
-      <IconView style={{backgroundColor: isActive ? "palevioletred" : "transparent"}}>
+      <IconView
+        style={{ backgroundColor: isActive ? "palevioletred" : "transparent" }}
+      >
         <Icon src={feature.image} />
       </IconView>
-      <Title style={{fontWeight: isActive ? 600 : 100}}>{feature.title}</Title>
+      <Text.Subheadline
+        style={{ fontWeight: isActive ? 600 : 100, textAlign: "center" }}
+      >
+        {feature.title}
+      </Text.Subheadline>
     </Card>
   );
 }
@@ -42,10 +49,4 @@ const IconView = styled.div`
 const Icon = styled.img`
   width: 75px;
   height: 75px;
-`;
-
-const Title = styled.p`
-  color: black;
-  text-align: center;
-  margin-top: 8;
 `;

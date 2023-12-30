@@ -2,13 +2,14 @@ import styled from "styled-components";
 import bubble from "../../assets/bubble.png";
 import gradient from "../../assets/gradient.png";
 import WaitListForm from "./components/waitlist_form";
+import Text from "../components/texts"
 
 function HeroView() {
   return (
     <Body>
       <Main>
-        <Phrase>Fractional property ownership for everyone</Phrase>
-        <Explainer>
+        <Text.LargeTitle>Fractional property ownership for everyone</Text.LargeTitle>
+        <Text.Headline style={{color: "#6c6c6c"}}>
           Experience hassle-free property investment with clusttr's fractional
           ownership Your future hub for easy and accessible real estate
           investing. We're in the process of building an experience where anyone
@@ -16,7 +17,7 @@ function HeroView() {
           branching out to offer dynamic financial services. Want to be ahead of
           the pack? Enter your email and we'll keep you posted on the Clusttr
           journey.
-        </Explainer>
+        </Text.Headline>
         <WaitListForm />
       </Main>
       <Image src={bubble} />
@@ -41,19 +42,6 @@ const Main = styled.div`
   width: 584px;
   height: 100%;
   justify-content: center;
-`;
-
-const Phrase = styled.text`
-  font-family: "Telex";
-  font-size: 57px;
-`;
-
-const Explainer = styled.text`
-  font-family: "Telex";
-  font-size: 16px;
-  line-height: 161.5%;
-  color: #6c6c6c;
-  padding-top: 16px;
 `;
 
 const Image = styled.img`

@@ -2,15 +2,16 @@ import styled from "styled-components";
 import FeatureItem from "./components/feature_item";
 import { Feature, features } from "./models/Feature";
 import { useState } from "react";
+import Text from "../components/texts"
 
 function Features() {
   const [activeFeature, setActiveFeature] = useState<Feature>(features[0]);
   return (
     <Body>
       <MainCard>
-        <Heading>Features</Heading>
+        <Text.Title style={{margin: 0}}>Features</Text.Title>
 
-        <Subheadline>{activeFeature.description}</Subheadline>
+        <Text.Subheadline style={{width: "50%", color: "#6c6c6c"}}>{activeFeature.description}</Text.Subheadline>
 
         <FeatureList>
           {features.map((item) => (
@@ -50,6 +51,7 @@ const MainCard = styled.div`
   border-radius: 18px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 12px;
 `;
 
@@ -61,19 +63,6 @@ const SubCard = styled.div`
     border-radius: 18px;
     background-color: gray;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 12px;
-`;
-
-const Heading = styled.h1`
-  font-size: 40px;
-  font-weight: 600;
-`;
-
-const Subheadline = styled.p`
-  color: black;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 900;
-  width: 50%;
 `;
 
 const FeatureList = styled.div`
