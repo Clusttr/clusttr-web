@@ -18,8 +18,8 @@ function WaitList() {
       <div>
         <Lottie
           options={defaultOptions}
-          height={250}
-          width={300}
+          height={200}
+          width={180}
         //   style={{ background: "green" }}
         />
       </div>
