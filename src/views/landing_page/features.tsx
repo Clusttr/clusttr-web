@@ -3,15 +3,16 @@ import FeatureItem from "./components/feature_item";
 import { Feature, features } from "./models/feature";
 import { useState } from "react";
 import Text from "../components/texts"
+import colors from "../components/colors";
 
 function Features() {
   const [activeFeature, setActiveFeature] = useState<Feature>(features[0]);
   return (
-    <Body>
+    <Body style={{backgroundColor: colors.brown1}}>
       <MainCard>
-        <Text.Title style={{margin: 0}}>Features</Text.Title>
+        <Text.Title style={{margin: 0, color: colors.grey3}}>Features</Text.Title>
 
-        <Text.Subheadline style={{width: "50%", color: "#6c6c6c"}}>{activeFeature.description}</Text.Subheadline>
+        <Text.Subheadline style={{width: "50%", color: colors.grey2}}>{activeFeature.description}</Text.Subheadline>
 
         <FeatureList>
           {features.map((item) => (
@@ -33,7 +34,7 @@ export default Features;
 
 const Body = styled.div`
   display: flex;
-  height: 100vh;
+  height: 80vh;
   background-color: wheat;
   justify-content: center;
   align-items: center;
@@ -45,7 +46,7 @@ const Body = styled.div`
 
 const MainCard = styled.div`
   width: 70%;
-  height: 70%;
+  height: 80%;
   background-color: white;
   padding: 70px;
   border-radius: 18px;
@@ -68,4 +69,5 @@ const SubCard = styled.div`
 const FeatureList = styled.div`
   display: flex;
   margin-top: 60px;
+  gap: 16px;
 `;

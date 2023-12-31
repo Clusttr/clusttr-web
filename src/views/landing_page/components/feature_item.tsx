@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Feature } from "../models/feature";
 import Text from "../../components/texts";
+import colors from "../../components/colors";
 
 interface Props {
   feature: Feature;
@@ -15,12 +16,12 @@ function FeatureItem({ feature, isActive, onClick }: Props) {
       onClick={(_) => onClick(feature)}
     >
       <IconView
-        style={{ backgroundColor: isActive ? "palevioletred" : "transparent" }}
+        style={{ backgroundColor: isActive ? colors.blue1 : "transparent" }}
       >
         <Icon src={feature.image} />
       </IconView>
       <Text.Subheadline
-        style={{ fontWeight: isActive ? 600 : 100, textAlign: "center" }}
+        style={{ fontWeight: isActive ? 600 : 100, textAlign: "center", color: colors.grey3}}
       >
         {feature.title}
       </Text.Subheadline>
@@ -42,7 +43,7 @@ const IconView = styled.div`
   padding-block: 28px;
   padding-inline: 26px;
   justify-content: center;
-  background-color: palevioletred;
+  /* background-color: palevioletred; */
   border-radius: 12px;
 `;
 

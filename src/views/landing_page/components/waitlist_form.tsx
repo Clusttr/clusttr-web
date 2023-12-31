@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import colors from "../../components/colors";
 
 function WaitListForm() {
   return (
-    <div style={{ gap: 120 }}>
-      <WaitListButton>Join Waitlist</WaitListButton>
-      <TextInput />
+    <div style={{ gap: 120}}>
+      <WaitListButton style={{backgroundColor: colors.blue3, color: colors.brown1 }}>Join Waitlist</WaitListButton>
+      <TextInput style={{backgroundColor: colors.brown1}} />
     </div>
   );
 }
@@ -15,10 +16,8 @@ const WaitListButton = styled.button`
   height: 40px;
   font-size: 12px;
   font-weight: 500;
-  color: black;
   padding-inline: 12px;
   border-radius: 12px;
-  background-color: black;
   color: white;
 `;
 

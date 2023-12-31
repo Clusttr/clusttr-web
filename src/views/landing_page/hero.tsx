@@ -2,21 +2,19 @@ import styled from "styled-components";
 import bubble from "../../assets/bubble.png";
 import gradient from "../../assets/gradient.png";
 import WaitListForm from "./components/waitlist_form";
-import Text from "../components/texts"
+import Text from "../components/texts";
+import colors from "../components/colors";
 
 function HeroView() {
   return (
     <Body>
       <Main>
-        <Text.LargeTitle>Fractional property ownership for everyone</Text.LargeTitle>
-        <Text.Headline style={{color: "#6c6c6c"}}>
+        <Text.LargeTitle style={{ color: colors.grey3 }}>
+          Real Estate Ownership for everyone
+        </Text.LargeTitle>
+        <Text.Headline style={{ color: colors.grey2, marginBottom: "40px" }}>
           Experience hassle-free property investment with clusttr's fractional
-          ownership Your future hub for easy and accessible real estate
-          investing. We're in the process of building an experience where anyone
-          can be part of the property market. And that's not all - we're
-          branching out to offer dynamic financial services. Want to be ahead of
-          the pack? Enter your email and we'll keep you posted on the Clusttr
-          journey.
+          ownership.
         </Text.Headline>
         <WaitListForm />
       </Main>

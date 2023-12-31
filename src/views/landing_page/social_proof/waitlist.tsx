@@ -20,11 +20,10 @@ function WaitList() {
           options={defaultOptions}
           height={200}
           width={180}
-        //   style={{ background: "green" }}
         />
       </div>
       <div>
-        <Text.Title style={{marginBottom: "16px"}}>Be the first to know when we launch</Text.Title>
+        <Text.Headline style={{marginBottom: "16px"}}>Be the first to know when we launch</Text.Headline>
         <WaitListForm />
       </div>
     </Body>

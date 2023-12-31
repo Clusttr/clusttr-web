@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import Color from "../components/colors"
 
 function NavBar() {
   return (
-    <Navbar>
+    <Navbar style={{backgroundColor: Color.brown1}}>
       <Logo>clusttr</Logo>
 
       <NavLinkGroup>
@@ -26,8 +27,8 @@ const Navbar = styled.div`
   padding: 0 70px;
   padding-top: 30px;
   padding-bottom: 20px;
-  /* background-color: red; */
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 24px;;
 `;
 
 const Logo = styled.text`

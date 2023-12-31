@@ -2,29 +2,22 @@ import styled from "styled-components";
 import x_logo from "../../../assets/x-logo.png";
 import { Tweet } from "react-tweet";
 import Text from "../../components/texts";
+import colors from "../../components/colors";
 
 function Tweets() {
   return (
     <Body>
       <Heading>
         <div style={{ display: "flex", alignItems: "baseline" }}>
-          <Text.Title>Testimonial</Text.Title>
-          <TwitterButton>
+          <Text.Title style={{color: colors.grey3}}>Testimonial</Text.Title>
+          <TwitterButton style={{backgroundColor: colors.blue2}}>
             <XImage src={x_logo} />
-            <p
-              style={{
-                color: "white",
-                padding: "0px",
-                margin: "0px",
-                fontSize: "12px",
-                fontWeight: "800",
-              }}
-            >
+            <Text.Caption style={{color: "white"}}>
               Follow Clusttr
-            </p>
+            </Text.Caption>
           </TwitterButton>
         </div>
-        <Text.Headline>
+        <Text.Headline style={{color: colors.grey2}}>
           Here’s what some users who have hopped on the PocketApp train have to
           say.
         </Text.Headline>

@@ -20,8 +20,8 @@ const Title = styled.p`
 `
 
 const Headline = styled.p`
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 800;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 `;
