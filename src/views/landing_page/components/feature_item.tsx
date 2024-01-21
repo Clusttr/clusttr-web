@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Feature } from "../models/Feature";
+import { Feature } from "../models/feature";
 
 interface Props {
   feature: Feature;
