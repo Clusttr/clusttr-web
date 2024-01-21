@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FeatureItem from "./components/feature_item";
-import { Feature, features } from "./models/Feature";
+import { Feature, features } from "./models/feature";
 import { useState } from "react";
 
 function Features() {
