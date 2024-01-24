@@ -11,7 +11,7 @@ function LandingPage() {
       <HeroView />
       <Features />
       <Social />
-      <Footer />
+      {/* <Footer /> */}
     </Base>
   );
 }

@@ -19,6 +19,8 @@ const WaitListButton = styled.button`
   padding-inline: 12px;
   border-radius: 12px;
   color: white;
+  border: none;
+  cursor: pointer;
 `;
 
 const TextInput = styled.input`

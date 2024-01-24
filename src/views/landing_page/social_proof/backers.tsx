@@ -29,9 +29,9 @@ function BackerItem(image: string, caption: string) {
 export default Backers;
 
 const Body = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-inline: 10%;
+  margin-left: 100px;
+  margin-right: 50px;
+  padding-top: 90px;
 `;
 const BackersList = styled.div`
   margin-top: 24px;

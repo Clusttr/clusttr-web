@@ -8,11 +8,11 @@ import colors from "../components/colors";
 function Features() {
   const [activeFeature, setActiveFeature] = useState<Feature>(features[0]);
   return (
-    <Body style={{backgroundColor: colors.brown1}}>
+    <Body style={{ backgroundColor: colors.brown1 }}>
       <MainCard>
-        <Text.Title style={{margin: 0, color: colors.grey3}}>Features</Text.Title>
+        <Text.Title style={{ margin: 0, color: colors.grey3 }}>Features</Text.Title>
 
-        <Text.Subheadline style={{width: "50%", color: colors.grey2}}>{activeFeature.description}</Text.Subheadline>
+        <Text.Subheadline style={{ width: "50%", color: colors.grey2, marginTop: "20px", marginBottom: "20px", cursor: "pointer" }}>{activeFeature.description}</Text.Subheadline>
 
         <FeatureList>
           {features.map((item) => (
@@ -24,7 +24,7 @@ function Features() {
           ))}
         </FeatureList>
 
-        <SubCard></SubCard>
+        {/* <SubCard></SubCard> */}
       </MainCard>
     </Body>
   );
@@ -68,6 +68,5 @@ const SubCard = styled.div`
 
 const FeatureList = styled.div`
   display: flex;
-  margin-top: 60px;
   gap: 16px;
 `;

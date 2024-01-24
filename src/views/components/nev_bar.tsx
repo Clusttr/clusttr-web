@@ -8,7 +8,7 @@ function NavBar() {
 
       <NavLinkGroup>
         <NavLink>WhitePaper</NavLink>
-        <NavLink>Contact us</NavLink>
+        <NavLink>Contact</NavLink>
       </NavLinkGroup>
     </Navbar>
   );
@@ -28,11 +28,12 @@ const Navbar = styled.div`
   padding-top: 30px;
   padding-bottom: 20px;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 24px;;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 24px;
+  gap: 20px;
 `;
 
 const Logo = styled.text`
-  font-family: "Pacifico";
+  font-family: 'DM Sans', sans-serif;
   font-size: 25px;
   font-weight: 600;
 `;
@@ -44,5 +45,5 @@ const NavLinkGroup = styled.div`
 
 const NavLink = styled.div`
   margin: 0 10px;
-  font-family: "Telex";
+  font-family: 'DM Sans', sans-serif;
 `;
