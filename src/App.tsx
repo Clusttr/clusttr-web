@@ -4,21 +4,25 @@ import NavBar from "./views/components/nev_bar";
 
 function App() {
   return (
-    <Base>
-      <NavContainer>
-        <NavBar />
-      </NavContainer>
+    // <Base>
+    //   <NavContainer>
+    //     <NavBar />
+    //   </NavContainer>
+    //   <LandingPage />
+    // </Base>
+    <>
+      <NavBar />
       <LandingPage />
-    </Base>
+    </>
   );
 }
 
 export default App;
 
-const Base = styled.div``;
+// const Base = styled.div``;
 
-const NavContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 0px;
-`;
+// const NavContainer = styled.div`
+//   position: absolute;
+//   width: 100%;
+//   top: 0px;
+// `;

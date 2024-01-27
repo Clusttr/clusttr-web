@@ -3,14 +3,19 @@ import colors from "../../components/colors";
 
 function WaitListForm() {
   return (
-    <div style={{ gap: 120}}>
-      <WaitListButton style={{backgroundColor: colors.blue3, color: colors.brown1 }}>Join Waitlist</WaitListButton>
+    <WaitListContainer>
       <TextInput style={{backgroundColor: colors.brown1}} />
-    </div>
+      <WaitListButton style={{backgroundColor: colors.blue3, color: colors.brown1 }}>Join Waitlist</WaitListButton>
+    </WaitListContainer>
   );
 }
 
 export default WaitListForm;
+
+const WaitListContainer = styled.div`
+  display: flex;
+  gap: 2px;
+`
 
 const WaitListButton = styled.button`
   height: 40px;
@@ -26,7 +31,6 @@ const WaitListButton = styled.button`
 const TextInput = styled.input`
   width: 70%;
   height: 40px;
-  margin-left: 16px;
   border-color: black;
   border-radius: 12px;
   padding-inline: 12px;

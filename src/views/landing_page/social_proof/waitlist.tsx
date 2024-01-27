@@ -38,4 +38,5 @@ const Body = styled.div`
   margin: 0px;
   align-items: center;
   justify-content: center;
+  height:100vh;
 `;

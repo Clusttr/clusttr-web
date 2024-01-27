@@ -29,13 +29,18 @@ function BackerItem(image: string, caption: string) {
 export default Backers;
 
 const Body = styled.div`
-  margin-left: 100px;
-  margin-right: 50px;
-  padding-top: 90px;
+  // margin-left: 100px;
+  // margin-right: 50px;
+  // padding-top: 90px;
+  margin-left: 4rem;
+  margin-right: 2rem;
+  padding-top: 3rem;
+  margin-top: 100px;
 `;
 const BackersList = styled.div`
   margin-top: 24px;
   display: flex;
+  flex-wrap: wrap
 `;
 
 const Item = styled.div`

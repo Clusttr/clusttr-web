@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import HeroView from "./hero";
 import Features from "./features";
-import Social from "./social_proof";
+import Social from "./social_proof/index";
 import Footer from "./footer";
 import colors from "../components/colors";
 
@@ -19,4 +19,5 @@ function LandingPage() {
 export default LandingPage;
 
 const Base = styled.div`
+
 `;

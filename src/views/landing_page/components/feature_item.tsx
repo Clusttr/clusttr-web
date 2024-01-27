@@ -13,7 +13,7 @@ function FeatureItem({ feature, isActive, onClick }: Props) {
   return (
     <Card
       style={{ opacity: isActive ? 1 : 0.6 }}
-      onClick={(_) => onClick(feature)}
+      onClick={() => onClick(feature)}
     >
       <IconView
         style={{ backgroundColor: isActive ? colors.blue1 : "transparent" }}
@@ -37,6 +37,7 @@ const Card = styled.div`
   width: 145px;
   background: "red";
   align-items: center;
+  cursor: pointer;
 `;
 
 const IconView = styled.div`

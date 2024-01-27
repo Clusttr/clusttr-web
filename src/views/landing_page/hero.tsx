@@ -18,8 +18,8 @@ function HeroView() {
         </Text.Headline>
         <WaitListForm />
       </Main>
-      <Image src={bubble} />
-      <BackgroundGradient src={gradient} />
+      {/* <Image src={bubble} />
+      <BackgroundGradient src={gradient} /> */}
     </Body>
   );
 }
@@ -27,17 +27,35 @@ function HeroView() {
 export default HeroView;
 
 const Body = styled.div`
-  margin-left: 100px;
-  margin-right: 50px;
-  padding-top: 90px;
+  margin-left: 4rem;
+  margin-right: 2rem;
+  padding-top: 3rem;
   height: 100vh;
+  display: flex;
+  position: relative; /* Add this line to set position relative */
+
+  ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%; /* Adjusted to 100% */
+    width: 100%; /* Adjusted to 100% */
+    background-image: url('../../assets/bubble.png');
+    background-size: cover;
+    background-position: right;
+    opacity: 0.8; /* Adjust the overlay opacity if needed */
+    z-index: -1; /* Ensure the overlay is behind the content */
+  }
 `;
+
 
 const Main = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 584px;
   height: 100%;
   justify-content: center;
 `;
@@ -45,17 +63,17 @@ const Main = styled.div`
 const Image = styled.img`
   position: absolute;
   z-index: 1;
-  top: 50%;
-  right: 100px;
+  top: 25%;
+  right: 0;
   height: 50%;
   width: 50%;
-  margin-top: -15%;
+  // margin-top: -15%;
   object-fit: contain;
 `;
 const BackgroundGradient = styled.img`
-  position: absolute;
-  top: -20px;
-  right: 0%;
-  height: 100vh;
+  // position: absolute;
+  // top: 0px;
+  // right: 0%;
+  // height: 100vh;
   opacity: 0.5;
 `;

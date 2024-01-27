@@ -5,7 +5,7 @@ import WaitList from "./waitlist";
 
 function Social() {
     return <Body>
-        <Tweets />
+        {/* <Tweets /> */}
         <Backers />
         <WaitList />
     </Body>
@@ -14,6 +14,6 @@ function Social() {
 export default Social
 
 const Body = styled.div`
-    height: 100vh;
+    // height: 100vh;
     /* margin-inline: 10%; */
 `

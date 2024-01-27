@@ -12,7 +12,7 @@ function Features() {
       <MainCard>
         <Text.Title style={{ margin: 0, color: colors.grey3 }}>Features</Text.Title>
 
-        <Text.Subheadline style={{ width: "50%", color: colors.grey2, marginTop: "20px", marginBottom: "20px", cursor: "pointer" }}>{activeFeature.description}</Text.Subheadline>
+        <Text.Subheadline style={{ color: colors.grey2, marginTop: "20px", marginBottom: "20px", cursor: "pointer" }}>{activeFeature.description}</Text.Subheadline>
 
         <FeatureList>
           {features.map((item) => (
@@ -34,14 +34,14 @@ export default Features;
 
 const Body = styled.div`
   display: flex;
-  height: 80vh;
-  background-color: wheat;
+  // height: 80vh;
+  //background-color: wheat;
   justify-content: center;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  padding-top: 50px;
-  padding-inline: 100px;
+  // align-items: center;
+  // align-self: center;
+  // align-content: center;
+  // padding-top: 50px;
+  // padding-inline: 100px;
 `;
 
 const MainCard = styled.div`
@@ -69,4 +69,6 @@ const SubCard = styled.div`
 const FeatureList = styled.div`
   display: flex;
   gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
 `;

@@ -7,8 +7,8 @@ function NavBar() {
       <Logo>clusttr</Logo>
 
       <NavLinkGroup>
-        <NavLink>WhitePaper</NavLink>
-        <NavLink>Contact</NavLink>
+        <NavLink target="_blank" href="https://docs.google.com/document/d/1tkANVMx8HQ0SMi8FSqRw3aK_HctQ1oV233Hoh23jGV0/edit#heading=h.lvoq9wifstgz">LitePaper</NavLink>
+        <NavLink target="_blank" href="mailto:matthew.chukwuemeka40@gmail.com">Contact</NavLink>
       </NavLinkGroup>
     </Navbar>
   );
@@ -43,7 +43,10 @@ const NavLinkGroup = styled.div`
   flex-direction: row;
 `;
 
-const NavLink = styled.div`
+const NavLink = styled.a`
   margin: 0 10px;
   font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
+  color: #44404e;
+  cursor: pointer;}
 `;
