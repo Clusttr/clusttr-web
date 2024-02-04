@@ -5,7 +5,7 @@ import WaitList from "./waitlist";
 
 function Social() {
     return <Body>
-        {/* <Tweets /> */}
+        <Tweets />
         <Backers />
         <WaitList />
     </Body>

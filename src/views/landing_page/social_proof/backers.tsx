@@ -35,12 +35,13 @@ const Body = styled.div`
   margin-left: 4rem;
   margin-right: 2rem;
   padding-top: 3rem;
-  margin-top: 100px;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 `;
 const BackersList = styled.div`
   margin-top: 24px;
   display: flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 `;
 
 const Item = styled.div`

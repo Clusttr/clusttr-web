@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import bubble from "../../assets/bubble.png";
-import gradient from "../../assets/gradient.png";
+import liveHouse from "../../assets/clustrr.svg";
+// import bubble from "../../assets/bubble.png";
+// import gradient from "../../assets/gradient.png";
 import WaitListForm from "./components/waitlist_form";
 import Text from "../components/texts";
 import colors from "../components/colors";
@@ -10,14 +11,16 @@ function HeroView() {
     <Body>
       <Main>
         <Text.LargeTitle style={{ color: colors.grey3 }}>
-          Real Estate Ownership for everyone
+          Real Estate Ownership <br /> for everyone
         </Text.LargeTitle>
         <Text.Headline style={{ color: colors.grey2, marginBottom: "40px" }}>
-          Experience hassle-free property investment with clusttr's fractional
+          Experience hassle-free property investment with <br/> clusttr's fractional
           ownership.
         </Text.Headline>
         <WaitListForm />
       </Main>
+      <Image className="hidden lg:block" src={liveHouse} />
+      {/* <LogoIcon /> */}
       {/* <Image src={bubble} />
       <BackgroundGradient src={gradient} /> */}
     </Body>
@@ -63,12 +66,12 @@ const Main = styled.div`
 const Image = styled.img`
   position: absolute;
   z-index: 1;
-  top: 25%;
   right: 0;
-  height: 50%;
-  width: 50%;
-  // margin-top: -15%;
   object-fit: contain;
+  display: none;
+  @media (min-width: 768px) {
+   display: block;
+  }
 `;
 const BackgroundGradient = styled.img`
   // position: absolute;

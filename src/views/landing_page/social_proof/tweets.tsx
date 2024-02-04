@@ -8,32 +8,32 @@ function Tweets() {
   return (
     <Body>
       <Main>
-        <div style={{ display: "flex", alignItems: "baseline" }}>
+        <Testimonial style={{ display: "flex", alignItems: "baseline" }}>
           <Text.Title style={{color: colors.grey3}}>Testimonial</Text.Title>
-          {/* <TwitterButton style={{backgroundColor: colors.blue2}}>
+          <TwitterButton target="_blank" href="https://twitter.com/clusttr_io" style={{backgroundColor: colors.blue2}}>
             <XImage src={x_logo} />
             <Text.Caption style={{color: "white"}}>
               Follow Clusttr
             </Text.Caption>
-          </TwitterButton> */}
-        </div>
+          </TwitterButton>
+        </Testimonial>
         <Text.Description style={{color: colors.grey2}}>
           Here’s what some users who have to say about Clustrr
         </Text.Description>
 
         <TweetList >
-          <div style={{flex: 1}}>
+          <TweetContainer>
             <Tweet id="1720448733433770333" />
-          </div>
-          {/* <div style={{flex: 1}}>
+          </TweetContainer>
+          <TweetContainer>
             <Tweet id="1730717325244977239" />
-          </div> */}
-          <div style={{flex: 1}}>
+          </TweetContainer>
+          <TweetContainer>
             <Tweet id="1730014717958131910" />
-          </div>
-          {/* <div style={{flex: 1}}>
+          </TweetContainer>
+          <TweetContainer>
             <Tweet id="1733976874437529978" />
-          </div> */}
+          </TweetContainer>
         </TweetList>
       </Main>
     </Body>
@@ -42,11 +42,6 @@ function Tweets() {
 
 export default Tweets;
 
-// const Body = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   padding-top: 60px;
-// `;
 const Body = styled.div`
   // margin-left: 100px;
   // margin-right: 50px;
@@ -62,7 +57,7 @@ const Heading = styled.div`
   margin-inline: 10%;
 `;
 
-const TwitterButton = styled.div`
+const TwitterButton = styled.a`
   height: 30px;
   margin-left: 12px;
   display: flex;
@@ -71,6 +66,7 @@ const TwitterButton = styled.div`
   padding: 16px;
   background-color: gray;
   border-radius: 18px;
+  text-decoration: none;
 `;
 
 const XImage = styled.img`
@@ -81,20 +77,31 @@ const XImage = styled.img`
 
 
 const TweetList = styled.div`
-  //scale: 0.8;
-  //height: 475px;
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
-  gap: 0.2rem;
-  // margin: 0px;
-  //margin-top: -25px;
+  gap: 8rem;
+  @media (min-width: 768px) {
+    gap: 0.2rem;
+  }
+`;
+
+const TweetContainer = styled.div`
+  //flex: 1;
+  min-width: 0; /* Allow the container to shrink on smaller screens */
+  height: 300px; /* Set a fixed height for each tweet container */
+  flex: 1 0 calc(100% - 1rem); /* Adjust width based on the number of tweets you want in a row */
+  
+  @media (min-width: 768px) {
+    flex: 1
+  }
 `;
 
 const Main = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  // width: 584px;
-  // height: 100%;
   justify-content: center;
 `;
+
+const Testimonial  = styled.div`
+`

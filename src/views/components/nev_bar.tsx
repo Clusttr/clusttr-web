@@ -33,7 +33,7 @@ const Navbar = styled.div`
 `;
 
 const Logo = styled.text`
-  font-family: 'DM Sans', sans-serif;
+  font-family: "'Pacifico', cursive";
   font-size: 25px;
   font-weight: 600;
 `;

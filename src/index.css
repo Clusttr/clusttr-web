@@ -8,3 +8,7 @@ body {
     height: 100%;
     font-family: 'DM Sans', sans-serif;
 }
+
+.react-tweet-theme{
+  max-height: 410px;
+}
