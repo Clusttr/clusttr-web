@@ -57,7 +57,7 @@ function Landing() {
 export default Landing;
 
 const Style = styled.div`
-	height: 90vh;
+	height: 100vh;
 	text-align: center;
 	background-color: #05020d;
 	color: white;
@@ -81,6 +81,7 @@ const Style = styled.div`
 			line-height: 19.2px;
 			font-weight: 500;
 			color: #c8e3df;
+			margin-top: 16px;
 		}
 
 		@media (min-width: 400px) {
@@ -94,6 +95,7 @@ const Style = styled.div`
 		padding-top: 125px;
 		background-image: url(/background.png);
 		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 	& .join-waitlist {
@@ -138,6 +140,9 @@ const Style = styled.div`
 					font-size: 13px;
 					color: #c8e3df;
 					font-size: 500;
+				}
+				&:focus {
+					outline: none;
 				}
 			}
 		}
