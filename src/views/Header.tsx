@@ -42,16 +42,20 @@ function Header() {
 					<div className="menu-links">
 						<ul>
 							<li>
-								<a href="#">Blog</a>
+								<a>Blog</a>
 							</li>
 							<li>
 								<Link to="/">About Us</Link>
 							</li>
 							<li>
-								<a href="#">Clusttr World(NFT)</a>
+								<a>Clusttr World(NFT)</a>
 							</li>
 							<li>
-								<a id="whitepaper" href="#">
+								<a
+									id="whitepaper"
+									target="_blank"
+									href="https://clusttr.gitbook.io/clusttrs-white-paper/"
+								>
 									whitepaper
 								</a>
 							</li>
@@ -66,16 +70,20 @@ function Header() {
 			<MobileDropdownMenu open={open}>
 				<ul>
 					<li>
-						<a href="#">Blog</a>
+						<a>Blog</a>
 					</li>
 					<li>
 						<Link to="/">About Us</Link>
 					</li>
 					<li>
-						<a href="#">Clusttr World(NFT)</a>
+						<a>Clusttr World(NFT)</a>
 					</li>
 					<li>
-						<a id="whitepaper" href="#">
+						<a
+							id="whitepaper"
+							target="_blank"
+							href="https://clusttr.gitbook.io/clusttrs-white-paper/"
+						>
 							whitepaper
 						</a>
 					</li>
