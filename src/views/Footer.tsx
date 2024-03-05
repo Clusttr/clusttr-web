@@ -16,7 +16,7 @@ const Style = styled.footer`
 	& .made-in-abuja {
 		color: white;
 		text-align: center;
-		margin: 32px 20px;
+		margin: 62px 20px;
 
 		@media (min-width: 400px) {
 			text-align: left;
