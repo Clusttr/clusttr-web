@@ -3,9 +3,9 @@ import { styled } from 'styled-components';
 const Footer = () => {
 	return (
 		<Style>
-			<div className="made-in-abuja">
+			{/* <div className="made-in-abuja">
 				<p>Made in Abuja, Available to the 🌍</p>
-			</div>
+			</div> */}
 		</Style>
 	);
 };
