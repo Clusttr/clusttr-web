@@ -36,7 +36,9 @@ function Header() {
 		<>
 			<Style>
 				<div>
-					<Logo width={state.width} height={state.height} />
+					<Link to="/">
+						<Logo width={state.width} height={state.height} />
+					</Link>
 				</div>
 				<div>
 					<div className="menu-links">
@@ -45,7 +47,7 @@ function Header() {
 								<a>Blog</a>
 							</li>
 							<li>
-								<Link to="/">About Us</Link>
+								<Link to="/about-us">About Us</Link>
 							</li>
 							<li>
 								<a>Clusttr World(NFT)</a>
@@ -73,7 +75,7 @@ function Header() {
 						<a>Blog</a>
 					</li>
 					<li>
-						<Link to="/">About Us</Link>
+						<Link to="/about-us">About Us</Link>
 					</li>
 					<li>
 						<a>Clusttr World(NFT)</a>
@@ -107,11 +109,12 @@ const Style = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 16px;
+	padding: 14px;
+	padding-left:40px;
 
 	& button#menu {
 		border: none;
-		background: transparent;
+		background: transparent;  
 		cursor: pointer;
 
 		@media (min-width: 400px) {

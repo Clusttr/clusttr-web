@@ -114,7 +114,6 @@ const Style = styled.div`
 	}
 
 	@media (min-width: 400px) {
-		justify-content: flex-start;
 		padding-top: 205px;
 		background-image: url(/background.png);
 		background-size: cover;

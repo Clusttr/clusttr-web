@@ -3,9 +3,9 @@ import { styled } from 'styled-components';
 const Footer = () => {
 	return (
 		<Style>
-			<div className="made-in-abuja">
+			{/* <div className="made-in-abuja">
 				<p>Made in Abuja, Available to the 🌍</p>
-			</div>
+			</div> */}
 		</Style>
 	);
 };
@@ -16,7 +16,7 @@ const Style = styled.footer`
 	& .made-in-abuja {
 		color: white;
 		text-align: center;
-		margin: 32px 20px;
+		margin: 62px 20px;
 
 		@media (min-width: 400px) {
 			text-align: left;
