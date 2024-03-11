@@ -6,7 +6,7 @@ import HeroView from './views/landing_page/hero';
 import Features from './views/landing_page/features';
 import Social from './views/landing_page/social_proof';
 import Landing from './views/landing';
-import About from './views/about_us/About.tsx';
+import About from './views/about_us/index.tsx';
 
 function App() {
 	return (
