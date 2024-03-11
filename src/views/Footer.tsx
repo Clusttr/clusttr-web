@@ -4,7 +4,7 @@ const Footer = () => {
 	return (
 		<Style>
 			<div className="made-in-abuja">
-				<p>Made in Abuja, Available to the 🌍</p>
+				{/* <p>Made in Abuja, Available to the 🌍</p> */}
 			</div>
 		</Style>
 	);
