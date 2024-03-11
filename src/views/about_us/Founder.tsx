@@ -2,15 +2,15 @@ import styled from 'styled-components';
 import founder from '../../assets/tochi.png';
 import leftQuote from '../../assets/quotes_left.png';
 import rightQuote from '../../assets/quotes_right.png';
-// import strokes from '../../assets/founder_bg/strokes.png';
-// import fade from '../../assets/founder_bg/fade.png';
+import ellipse_1 from '../../assets/founder_bg/ellipse_1.png';
+import ellipse_2 from '../../assets/founder_bg/ellipse_2.png';
 
 const Founder = () => {
 	return (
 		<FounderStyle>
-			{/* <img src={strokes} alt="image" className="strokes" />
-			<img src={fade} alt="image" className="fade" /> */}
 			<div className="founder_container">
+				<img src={ellipse_1} alt="image" className="ellipse_1" />
+
 				<div className="founder_details">
 					<div className="founder_image_container">
 						<img
@@ -37,6 +37,7 @@ const Founder = () => {
 						<img src={rightQuote} className=" quote right_quote" alt="image" />
 					</div>
 				</div>
+				<img src={ellipse_2} alt="image" className="ellipse_2" />
 			</div>
 		</FounderStyle>
 	);
@@ -52,17 +53,15 @@ const FounderStyle = styled.div`
 	padding: 120px 55px 120px 55px;
 	position: relative;
 	overflow: hidden;
-	& .strokes {
+	& .ellipse_1 {
 		position: absolute;
 		right: 0;
 		top: 0;
 	}
-	& .fade {
+	& .ellipse_2 {
 		position: absolute;
-		right: 0;
+		left: 0;
 		bottom: 0;
-
-		rotate: 90deg;
 	}
 	& .founder_container {
 		display: flex;
@@ -74,7 +73,6 @@ const FounderStyle = styled.div`
 		flex-direction: column;
 		gap: 9px;
 		align-items: center;
-
 	}
 	& .founder_image_container {
 		border-radius: 50%;
@@ -102,7 +100,7 @@ const FounderStyle = styled.div`
 	}
 	& .founder_comment_container {
 		width: 100%;
-		max-width: 57%;
+		max-width: 56%;
 		display: flex;
 		flex-direction: column;
 		gap: 38px;
