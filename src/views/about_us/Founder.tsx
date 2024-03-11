@@ -19,12 +19,12 @@ const Founder = () => {
 							alt="founder's image"
 						/>
 					</div>
-					<div>Tochukwu</div>
-					<div>Founder, Clusttr</div>
+					<div className="founder_name">Tochukwu</div>
+					<div className="founder_title">Founder, Clusttr</div>
 				</div>
 				<div className="founder_comment_container">
-					<div>
-						<img src={leftQuote} alt="image" />
+					<div className="left_quote_container">
+						<img className="left_quote quote" src={leftQuote} alt="image" />
 					</div>
 					<div className="founder_comment">
 						In an era defined by digital innovation and the democratization of
@@ -33,8 +33,8 @@ const Founder = () => {
 						invest in, and co-own real estate assets in a way that benefits all,
 						not just the rich.
 					</div>
-					<div>
-						<img src={rightQuote} alt="image" />
+					<div className="right_quote_container">
+						<img src={rightQuote} className=" quote right_quote" alt="image" />
 					</div>
 				</div>
 			</div>
@@ -67,31 +67,69 @@ const FounderStyle = styled.div`
 	& .founder_container {
 		display: flex;
 		justify-content: center;
-		gap: 5rem;
+		gap: 6rem;
+	}
+	& .founder_details {
+		display: flex;
+		flex-direction: column;
+		gap: 9px;
+		align-items: center;
+
 	}
 	& .founder_image_container {
 		border-radius: 50%;
 		overflow: hidden;
-		width: 130px;
-		height: 130px;
+		width: 135px;
+		height: 135px;
 	}
 	& .founder_image {
 		width: 100%;
 	}
+	& .founder_name {
+		background-color: #064624;
+		color: #00c187;
+		padding: 9px 0;
+		border-radius: 20px;
+		text-align: center;
+		font-size: 0.8rem;
+		width: 70%;
+		font-weight: 500;
+	}
+	& .founder_title {
+		color: #00c187;
+		font-weight: 500;
+		font-size: 0.85rem;
+	}
 	& .founder_comment_container {
 		width: 100%;
-		max-width: 54%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+		max-width: 57%;
+		display: flex;
+		flex-direction: column;
+		gap: 38px;
 	}
 
 	& .founder_comment {
 		text-align: center;
 		font-weight: 500;
-		font-size: 1.15rem;
+		font-size: 1.2rem;
 		line-height: 1.9rem;
-
+	}
+	& .quote {
+		width: 6%;
+	}
+	& .left_quote_container {
+		position: relative;
+	}
+	& .left_quote {
+		position: absolute;
+		left: -2.4rem;
+	}
+	& .right_quote_container {
+		position: relative;
+	}
+	& .right_quote {
+		position: absolute;
+		right: -2rem;
 	}
 `;
 
