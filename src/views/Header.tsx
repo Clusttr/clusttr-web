@@ -110,11 +110,12 @@ const Style = styled.header`
 	justify-content: space-between;
 	align-items: center;
 	padding: 14px;
-	padding-left:40px;
+	padding-left: 40px;
+	z-index: 4;
 
 	& button#menu {
 		border: none;
-		background: transparent;  
+		background: transparent;
 		cursor: pointer;
 
 		@media (min-width: 400px) {

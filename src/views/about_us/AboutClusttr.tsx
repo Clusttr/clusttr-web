@@ -4,7 +4,7 @@ import aboutBG from '../../assets/desktop-about-us-bg.png';
 const AboutClusttr = () => {
 	return (
 		<>
-			<Style>
+			<AboutClusttrStyle>
 				<div className="about_clusttr_header_container">
 					<div className="about_clusttr_header">About Clusttr</div>
 				</div>
@@ -18,13 +18,14 @@ const AboutClusttr = () => {
 					issues of housing illiquidity and restricted access, aiming to provide
 					practical solutions for the real estate market.
 				</div>
-			</Style>
+			</AboutClusttrStyle>
 		</>
 	);
 };
 
-const Style = styled.div`
+const AboutClusttrStyle = styled.div`
 	height: 100vh;
+
 	text-align: center;
 	background-color: #05020d;
 	color: white;
