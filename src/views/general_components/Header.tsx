@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Logo from '../assets/Logo';
+import Logo from '../../assets/Logo';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 

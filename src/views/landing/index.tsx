@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import Header from '../Header';
+import Header from '../general_components/Header';
 import { useState } from 'react';
 import axios from 'axios';
-import Footer from '../Footer';
+import Footer from '../general_components/Footer';
+import JoinClusttr from '../general_components/JoinClusttr';
 
 function Landing() {
 	const [email, setEmail] = useState('');
@@ -71,6 +72,8 @@ function Landing() {
 					</span>
 				</p>
 			</Mission>
+
+			<JoinClusttr />
 
 			<Footer />
 		</>
