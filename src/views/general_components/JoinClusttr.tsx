@@ -114,6 +114,7 @@ const JoinClusttrStyle = styled.div`
 		padding: 17px 22px 17px 20px;
 		color: white;
 		border-radius: 0 30px 30px 0;
+		cursor: pointer;
 	}
 `;
 
