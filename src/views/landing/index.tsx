@@ -4,6 +4,7 @@ import Footer from '../general_components/Footer';
 import JoinClusttr from '../general_components/JoinClusttr';
 import Start from './Start';
 import Mission from './Mission';
+import WhyClusttr from './WhyClusttr';
 
 function Landing() {
 	return (
@@ -11,6 +12,7 @@ function Landing() {
 			<Header />
 			<Start />
 			<Mission />
+			<WhyClusttr />
 			<JoinClusttr />
 			<Footer />
 		</>
