@@ -13,7 +13,7 @@ const WhyClusttr = () => {
 				</div>
 
 				<div className="why_clusttr_top">
-					<div className="why_clusttr_small_box">
+					<div className="why_clusttr_small_box selected_box">
 						<div className="why_clusttr_small_box_icon_container">
 							<img src={house} alt="" className="why_clusttr_icon" />
 						</div>
@@ -94,31 +94,36 @@ const WhyClusttrStyle = styled.div`
 
 	& .why_clusttr_top {
 		display: grid;
-		grid-template-columns: 0.5fr 1.5fr;
+		grid-template-columns: 0.9fr 2.1fr;
 		gap: 15px;
 	}
 
 	& .why_clusttr_bottom {
 		display: grid;
-		grid-template-columns: 1.5fr 0.5fr;
+		grid-template-columns: 2.1fr 0.9fr;
 		gap: 15px;
 	}
+
 	& .why_clusttr_small_box {
 		background-color: #081517;
 		padding: 20px 20px 125px 20px;
-
 		border-radius: 20px;
 		display: flex;
 		flex-direction: column;
 		gap: 11px;
+		border: 2px solid #132325;
 	}
 	& .why_clusttr_big_box {
 		background-color: #081517;
-		padding: 20px 40% 125px 20px;
+		padding: 20px 35% 125px 20px;
 		border-radius: 20px;
 		display: flex;
 		flex-direction: column;
 		gap: 11px;
+		border: 2px solid #132325;
+	}
+	& .selected_box {
+		border: 2px solid #77859b;
 	}
 	& .why_clusttr_small_box_icon_container {
 		width: 20%;
@@ -131,13 +136,13 @@ const WhyClusttrStyle = styled.div`
 	}
 	& .why_clusttr_box_header {
 		font-weight: 500;
-		font-size: 0.95rem;
+		font-size: 1rem;
 	}
 	& .why_clusttr_box_info {
 		font-weight: 500;
-		font-size: 0.85rem;
+		font-size: 0.9rem;
 		color: #c7d5d2;
-		line-height: 20px;
+		line-height: 22px;
 	}
 `;
 

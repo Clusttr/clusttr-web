@@ -57,11 +57,12 @@ const JoinClusttr = () => {
 
 const JoinClusttrStyle = styled.div`
 	color: black;
-	width: 85%;
 	background-color: #f5f5f5;
-	margin: 90px auto 50px auto;
+	margin: 90px 70px 0 70px;
+
 	border-radius: 15px;
 	padding: 100px 120px;
+
 	position: relative;
 	overflow: hidden;
 	& .fade {

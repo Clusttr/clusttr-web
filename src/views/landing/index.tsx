@@ -5,6 +5,8 @@ import JoinClusttr from '../general_components/JoinClusttr';
 import Start from './Start';
 import Mission from './Mission';
 import WhyClusttr from './WhyClusttr';
+import HowClusttrWorks from './HowClusttrWorks';
+import JoinClusttrWaitlist from './JoinClusttrWaitlist';
 
 function Landing() {
 	return (
@@ -13,6 +15,8 @@ function Landing() {
 			<Start />
 			<Mission />
 			<WhyClusttr />
+			<HowClusttrWorks />
+			<JoinClusttrWaitlist />
 			<JoinClusttr />
 			<Footer />
 		</>
