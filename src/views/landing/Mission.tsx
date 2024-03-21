@@ -1,30 +1,44 @@
 import styled from 'styled-components';
+import BG from '../../assets/our_mission_bg.png';
 
 const Mission = () => {
 	return (
-		<MissionStyle>
-			<div className="title">
-				<h2>Our Mission</h2>
-			</div>
-			<p>
-				Over the years, the ability to acquire properties has continually
-				shrunk, with the housing market being the{' '}
-				<u>worst its been since 1984</u>. The average millennial can no longer
-				afford to participate in the real estate industry worldwide.
-			</p>
-			<br />
-			<p>
-				Blockchain technology is enabling the team behind clusttr solve this
-				problem by{' '}
-				<span className="highlighted-text">
-					democratising real estate investment in through fractional ownership
-					and easy access to liquidity.
-				</span>
-			</p>
-		</MissionStyle>
+		<MissionContainer>
+			<img className="mission_bg" src={BG} alt="" />
+			<MissionStyle>
+				<div className="title">
+					<h2>Our Mission</h2>
+				</div>
+				<p>
+					Over the years, the ability to acquire properties has continually
+					shrunk, with the housing market being the{' '}
+					<u>worst its been since 1984</u>. The average millennial can no longer
+					afford to participate in the real estate industry worldwide.
+				</p>
+				<br />
+				<p>
+					Blockchain technology is enabling the team behind clusttr solve this
+					problem by{' '}
+					<span className="highlighted-text">
+						democratising real estate investment in through fractional ownership
+						and easy access to liquidity.
+					</span>
+				</p>
+			</MissionStyle>
+		</MissionContainer>
 	);
 };
 
+const MissionContainer = styled.div`
+	& .mission_container {
+		position: relative;
+	}
+	& .mission_bg {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+`;
 const MissionStyle = styled.div`
 	color: white;
 	text-align: center;
