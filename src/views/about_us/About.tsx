@@ -24,4 +24,5 @@ const About = () => {
 const Style = styled.div`
 	overflow: hidden;
 `;
+
 export default About;

@@ -30,9 +30,7 @@ const Mission = () => {
 };
 
 const MissionContainer = styled.div`
-	& .mission_container {
-		position: relative;
-	}
+	position: relative;
 	& .mission_bg {
 		position: absolute;
 		left: 0;
