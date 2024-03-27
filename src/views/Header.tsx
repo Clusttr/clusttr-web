@@ -50,7 +50,7 @@ function Header() {
 								<Link to="/about-us">About Us</Link>
 							</li>
 							<li>
-								<a>Clusttr World(NFT)</a>
+								<Link to="/clustrr-world">Clusttr World(NFT)</Link>
 							</li>
 							<li>
 								<a

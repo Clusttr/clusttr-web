@@ -7,6 +7,7 @@ import Features from './views/landing_page/features';
 import Social from './views/landing_page/social_proof';
 import Landing from './views/landing';
 import About from './views/about_us/index.tsx';
+import ClustrrWorld from './views/clustrr_world/ClustrrWorld.tsx';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Landing />} />
 				<Route path="/about-us" element={<About />} />
+				<Route path="/clustrr-world" element={<ClustrrWorld />} />
 				<Route
 					path="/former"
 					element={
