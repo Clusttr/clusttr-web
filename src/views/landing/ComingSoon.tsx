@@ -89,14 +89,12 @@ const ComingSoonStyle = styled.div`
 
 	& .coming_soon_boxes {
 		display: flex;
-
-		// padding: 110px 50px 110px;
-
 		animation: slide 15s infinite linear;
 	}
-	// & .coming_soon_boxes:last-child {
-	// 	margin-right: 350px;
-	// }
+
+	& .coming_soon_boxes:hover {
+		animation-play-state: paused;
+	}
 
 	& .coming_soon {
 		font-size: 1.8rem;
