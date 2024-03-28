@@ -26,12 +26,13 @@ const ComingSoonCard = ({
 }: CardType) => {
 	return (
 		<CardStyle>
+			<img className="grid" src={grid} alt="" />
 			<div className="card_info_container">
 				<div>
 					<img src={house} alt="" />
 				</div>
 				<div className="card_info_inner_container">
-					<div>
+					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={windowEdge} alt="" />
 							<div>{windowLength}</div>
@@ -45,7 +46,7 @@ const ComingSoonCard = ({
 							<div>{bathrooms}</div>
 						</div>
 					</div>
-					<div>
+					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={coinsIcon} alt="" />
 							<div>{coins}</div>
@@ -68,25 +69,40 @@ const ComingSoonCard = ({
 
 const CardStyle = styled.div`
 	display: flex;
-	gap: 80px;
+	gap: 30px;
 	background-color: #081517;
 	padding: 20px;
 	border-radius: 20px;
 	border: 2px solid #132325;
 	align-items: center;
+	position: relative;
+	overflow: hidden;
 
+	& .grid {
+		position: absolute;
+		right: 0;
+	}
 	& .card_info_container {
 		display: flex;
 		gap: 20px;
 	}
 	& .card_info_inner_container {
 		display: flex;
-
+		width: 100%;
+		min-width: 300px;
+		gap: 20px;
+	}
+	& .card_info_inner_container_contents {
+		display: flex;
+		flex-direction: column;
 		gap: 10px;
 	}
 	& .card_info {
 		display: flex;
-		gap: 5px;
+		align-items: center;
+		gap: 8px;
+		font-weight: 500;
+		font-size: 0.8rem;
 	}
 `;
 
