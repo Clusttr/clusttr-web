@@ -1,68 +1,72 @@
-import React from 'react';
 import styled from 'styled-components';
 import ComingSoonBox from './ComingSoonBox';
+
+const ComingSoonBoxes = () => {
+	return (
+		<div className="coming_soon_boxes">
+			<ComingSoonBox
+				address="5135 How...."
+				region="London, UK"
+				windowLength="22,350.75 ft"
+				beds={7}
+				bathrooms={8}
+				coins={22456.05}
+				dollar={100.54}
+			/>
+			<ComingSoonBox
+				address="5135 How...."
+				region="London, UK"
+				windowLength="22,350.75 ft"
+				beds={7}
+				bathrooms={8}
+				coins={22456.05}
+				dollar={100.54}
+			/>
+			<ComingSoonBox
+				address="5135 How...."
+				region="London, UK"
+				windowLength="22,350.75 ft"
+				beds={7}
+				bathrooms={8}
+				coins={22456.05}
+				dollar={100.54}
+			/>
+			<ComingSoonBox
+				address="5135 How...."
+				region="London, UK"
+				windowLength="22,350.75 ft"
+				beds={7}
+				bathrooms={8}
+				coins={22456.05}
+				dollar={100.54}
+			/>
+			<ComingSoonBox
+				address="5135 How...."
+				region="London, UK"
+				windowLength="22,350.75 ft"
+				beds={7}
+				bathrooms={8}
+				coins={22456.05}
+				dollar={100.54}
+			/>
+			<ComingSoonBox
+				address="5135 How...."
+				region="London, UK"
+				windowLength="22,350.75 ft"
+				beds={7}
+				bathrooms={8}
+				coins={22456.05}
+				dollar={100.54}
+			/>
+		</div>
+	);
+};
 
 const ComingSoon = () => {
 	return (
 		<ComingSoonStyle>
-			{React.cloneElement(
-				<div className="coming_soon_boxes">
-					<ComingSoonBox
-						address="5135 How...."
-						region="London, UK"
-						windowLength="22,350.75 ft"
-						beds={7}
-						bathrooms={8}
-						coins={22456.05}
-						dollar={100.54}
-					/>
-					<ComingSoonBox
-						address="5135 How...."
-						region="London, UK"
-						windowLength="22,350.75 ft"
-						beds={7}
-						bathrooms={8}
-						coins={22456.05}
-						dollar={100.54}
-					/>
-					<ComingSoonBox
-						address="5135 How...."
-						region="London, UK"
-						windowLength="22,350.75 ft"
-						beds={7}
-						bathrooms={8}
-						coins={22456.05}
-						dollar={100.54}
-					/>
-					<ComingSoonBox
-						address="5135 How...."
-						region="London, UK"
-						windowLength="22,350.75 ft"
-						beds={7}
-						bathrooms={8}
-						coins={22456.05}
-						dollar={100.54}
-					/>
-					<ComingSoonBox
-						address="5135 How...."
-						region="London, UK"
-						windowLength="22,350.75 ft"
-						beds={7}
-						bathrooms={8}
-						coins={22456.05}
-						dollar={100.54}
-					/>
-					<ComingSoonBox
-						address="5135 How...."
-						region="London, UK"
-						windowLength="22,350.75 ft"
-						beds={7}
-						bathrooms={8}
-						coins={22456.05}
-						dollar={100.54}
-					/>
-				</div>
-			)}
+			<ComingSoonBoxes />
+			<ComingSoonBoxes />
 
 			<div className="coming_soon">Coming soon</div>
 		</ComingSoonStyle>
