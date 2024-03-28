@@ -1,47 +1,87 @@
 import styled from 'styled-components';
 import ComingSoonBox from './ComingSoonBox';
+import overlay from '../../assets/coming_soon/coming_soon_bg.png';
+
+const fakeData = [
+	{
+		address: '5135 How....',
+		region: 'London, UK',
+		windowLength: 22350.75,
+		beds: 7,
+		bathrooms: 8,
+		coins: 22456.05,
+		dollar: 100.54,
+	},
+	{
+		address: '5135 How....',
+		region: 'Paris, France',
+		windowLength: 22350.75,
+		beds: 7,
+		bathrooms: 8,
+		coins: 22456.05,
+		dollar: 100.54,
+	},
+	{
+		address: '1212 General Za...',
+		region: 'Sydney, Australia',
+		windowLength: 10525275,
+		beds: 3,
+		bathrooms: 3,
+		coins: 2456.05,
+		dollar: 1374536.54,
+	},
+	{
+		address: '224 Fishers...',
+		region: 'Ottawa, Canada',
+		windowLength: 155625,
+		beds: 4,
+		bathrooms: 9,
+		coins: 42255.05,
+		dollar: 14525663.54,
+	},
+	{
+		address: '9012 Lake...',
+		region: 'New York City, US',
+		windowLength: 255209,
+		beds: 1,
+		bathrooms: 2,
+		coins: 5100,
+		dollar: 12235,
+	},
+];
+
+const ComingSoonBoxes = () => {
+	return (
+		<div className="coming_soon_boxes">
+			{fakeData.map(
+				({ windowLength, beds, bathrooms, coins, dollar, address, region }) => {
+					console.log('hey');
+					return (
+						<ComingSoonBox
+							address={address}
+							region={region}
+							windowLength={windowLength}
+							beds={beds}
+							bathrooms={bathrooms}
+							coins={coins}
+							dollar={dollar}
+						/>
+					);
+				}
+			)}
+		</div>
+	);
+};
 
 const ComingSoon = () => {
 	return (
 		<ComingSoonStyle>
-			<div className="coming_soon_boxes">
-				<ComingSoonBox
-					address="5135 How...."
-					region="London, UK"
-					windowLength="22,350.75 ft"
-					beds={7}
-					bathrooms={8}
-					coins={22456.05}
-					dollar={100.54}
-				/>
-				<ComingSoonBox
-					address="5135 How...."
-					region="London, UK"
-					windowLength="22,350.75 ft"
-					beds={7}
-					bathrooms={8}
-					coins={22456.05}
-					dollar={100.54}
-				/>
-				<ComingSoonBox
-					address="5135 How...."
-					region="London, UK"
-					windowLength="22,350.75 ft"
-					beds={7}
-					bathrooms={8}
-					coins={22456.05}
-					dollar={100.54}
-				/>
-				<ComingSoonBox
-					address="5135 How...."
-					region="London, UK"
-					windowLength="22,350.75 ft"
-					beds={7}
-					bathrooms={8}
-					coins={22456.05}
-					dollar={100.54}
-				/>
+			<img src={overlay} alt="" className="overlay" />
+			<div className="comingSoonBoxesClones">
+				<ComingSoonBoxes />
+				<ComingSoonBoxes />
 			</div>
+
 			<div className="coming_soon">Coming soon</div>
 		</ComingSoonStyle>
 	);
@@ -49,10 +89,33 @@ const ComingSoon = () => {
 
 const ComingSoonStyle = styled.div`
 	color: white;
+	padding-bottom: 60px;
+	display: flex;
+	// background: white;
+	position: relative;
 
+	& .overlay {
+		position: absolute;
+	}
+
+	@keyframes slide {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-100%);
+		}
+	}
+	& .comingSoonBoxesClones {
+		display: flex;
+	}
 	& .coming_soon_boxes {
 		display: flex;
-		gap: 20px;
+		animation: slide 30s infinite linear;
+	}
+
+	& .comingSoonBoxesClones:hover .coming_soon_boxes {
+		animation-play-state: paused;
 	}
 
 	& .coming_soon {
