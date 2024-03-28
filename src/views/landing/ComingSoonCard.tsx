@@ -26,7 +26,7 @@ const ComingSoonCard = ({
 }: CardType) => {
 	return (
 		<CardStyle>
-			<img className="grid" src={grid} alt="" />
+			<img className="grid_img" src={grid} alt="" />
 			<div className="card_info_container">
 				<div>
 					<img src={house} alt="" />
@@ -78,7 +78,7 @@ const CardStyle = styled.div`
 	position: relative;
 	overflow: hidden;
 
-	& .grid {
+	& .grid_img {
 		position: absolute;
 		right: 0;
 	}
