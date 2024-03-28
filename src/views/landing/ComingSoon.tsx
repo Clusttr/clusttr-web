@@ -55,7 +55,6 @@ const ComingSoonBoxes = () => {
 		<div className="coming_soon_boxes">
 			{fakeData.map(
 				({ windowLength, beds, bathrooms, coins, dollar, address, region }) => {
-					console.log('hey');
 					return (
 						<ComingSoonBox
 							address={address}
@@ -76,10 +75,12 @@ const ComingSoonBoxes = () => {
 const ComingSoon = () => {
 	return (
 		<ComingSoonStyle>
-			<img src={overlay} alt="" className="overlay" />
-			<div className="comingSoonBoxesClones">
-				<ComingSoonBoxes />
-				<ComingSoonBoxes />
+			<div className="overlay_bg">
+				<div className="comingSoonBoxesClones">
+					<ComingSoonBoxes />
+					<ComingSoonBoxes />
+					<img src={overlay} alt="" className="overlay" />
+				</div>
 			</div>
 
 			<div className="coming_soon">Coming soon</div>
@@ -90,12 +91,17 @@ const ComingSoon = () => {
 const ComingSoonStyle = styled.div`
 	color: white;
 	padding-bottom: 60px;
-	display: flex;
-	// background: white;
-	position: relative;
 
+	& .overlay_bg {
+		position: relative;
+		overflow: hidden;
+	}
 	& .overlay {
 		position: absolute;
+		top: 0;
+		left: 0;
+		righ11: 02;
+		// background-color: red;
 	}
 
 	@keyframes slide {
@@ -108,6 +114,7 @@ const ComingSoonStyle = styled.div`
 	}
 	& .comingSoonBoxesClones {
 		display: flex;
+		margin: 110px 0 30px;
 	}
 	& .coming_soon_boxes {
 		display: flex;

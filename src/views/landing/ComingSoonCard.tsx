@@ -35,7 +35,7 @@ const ComingSoonCard = ({
 					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={windowEdge} alt="" />
-							<div>{windowLength} ft</div>
+							<div>{windowLength.toLocaleString()} ft</div>
 						</div>
 						<div className="card_info">
 							<img src={bed} alt="" />
@@ -49,12 +49,12 @@ const ComingSoonCard = ({
 					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={coinsIcon} alt="" />
-							<div>${coins}</div>
+							<div>${coins.toLocaleString()}</div>
 							<img src={angle} alt="" />
 						</div>
 						<div className="card_info">
 							<img src={dollarIcon} alt="" />
-							<div>${dollar}</div>
+							<div>${dollar.toLocaleString()}</div>
 							<img src={angle} alt="" />
 						</div>
 					</div>
