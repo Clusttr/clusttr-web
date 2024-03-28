@@ -6,7 +6,7 @@ import ComingSoonCard from './ComingSoonCard';
 type BoxTypes = {
 	address: string;
 	region: string;
-	windowLength: string;
+	windowLength: number;
 	beds: number;
 	bathrooms: number;
 	coins: number;
