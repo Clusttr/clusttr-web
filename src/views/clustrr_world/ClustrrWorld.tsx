@@ -196,7 +196,6 @@ const RotatingImage = styled.img`
     /* top: 50%;
     left: 50%; */
     transform-origin: center;
-    /* transform: translate(-50%, -50%) rotate(${(props) => props.rotation}deg) translateX(${props => props.distance}px); */  // I don't think this line has any effect
     animation: ${hold} 75s linear reverse infinite;
     /* animation: ${orbit} 10s linear reverse infinite, */
 `;
