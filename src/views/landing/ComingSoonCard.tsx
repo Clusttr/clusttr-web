@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import chart from '../../assets/coming_soon/chart_line.png';
 import house from '../../assets/coming_soon/house.png';
-// import grid from '../../assets/coming_soon/grid.png';
+import grid from '../../assets/coming_soon/grid.png';
 import windowEdge from '../../assets/coming_soon/window_edge.png';
 import bed from '../../assets/coming_soon/bed.png';
 import bathroom from '../../assets/coming_soon/bathroom.png';
