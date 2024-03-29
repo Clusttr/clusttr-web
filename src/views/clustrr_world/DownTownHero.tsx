@@ -84,6 +84,10 @@ const ConnectButton = styled.button`
     @media (max-width: 48em) {
         padding-left: 0.4rem;
         padding-right: 0.4rem;
+
+        span{
+            display: none;
+        }
     }
     
 `;
