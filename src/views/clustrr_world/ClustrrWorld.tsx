@@ -160,7 +160,7 @@ const RotatingImages = styled.div`
     list-style: none;
     z-index: 10;
     transform-origin: center;
-    animation: ${orbit} 15s linear infinite;
+    animation: ${orbit} 50s linear infinite;
   }
 
   li {
@@ -197,6 +197,6 @@ const RotatingImage = styled.img`
     left: 50%; */
     transform-origin: center;
     transform: translate(-50%, -50%) rotate(${(props) => props.rotation}deg) translateX(${props => props.distance}px);
-    animation: ${hold} 15s linear reverse infinite;
+    animation: ${hold} 50s linear reverse infinite;
     /* animation: ${orbit} 10s linear reverse infinite, */
 `;
