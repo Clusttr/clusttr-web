@@ -118,7 +118,7 @@ const ComingSoonStyle = styled.div`
 	}
 	& .coming_soon_boxes {
 		display: flex;
-		animation: slide 15s infinite linear;
+		animation: slide 30s infinite linear;
 	}
 
 	& .comingSoonBoxesClones:hover .coming_soon_boxes {

@@ -96,6 +96,7 @@ const WhyClusttrStyle = styled.div`
 		display: grid;
 		grid-template-columns: 0.9fr 2.1fr;
 		gap: 15px;
+		margin-top: 15px;
 	}
 
 	& .why_clusttr_bottom {
