@@ -102,6 +102,8 @@ const RoadMapContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    z-index: 20;
+    background-color: black;
 `;
 const Title = styled.h2`
     font-family: 'Druk Wide Trial', sans-serif;

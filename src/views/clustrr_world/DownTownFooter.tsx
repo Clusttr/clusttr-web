@@ -33,7 +33,20 @@ const Style = styled.div`
     /* padding: 20px 0; */
 `;
 const ImgContainer = styled.div`
+    max-width: 600px;
+    /* width: 500px; */
     display: flex;
     justify-content: center;
     align-items: center;
+    img{
+        width: 100%
+    }
+
+     @media (max-width: 48em) {
+    img {
+      width: 20rem;
+      height: auto;
+    }
+  }
+
 `;

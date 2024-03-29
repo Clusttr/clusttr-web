@@ -1,19 +1,24 @@
 import styled from 'styled-components';
 import DownTownLogo from "./DownTownLogo";
 
+
 const DownTownHero = () => {
+
+
+
     return (
         <Style>
             <HeroContainer>
                 <NavHeader>
                     <DownTownLogo />
-                    <ConnectButton>Connect Wallet</ConnectButton>
+                    <ConnectButton>Connect <span>Wallet</span></ConnectButton>
                 </NavHeader>
                 <HeroTextContainer>
                     <h1>Become a real estate mogul</h1>
-                    <p>Build your utopia onchain, earn xp from your properties <br /> and become the biggest real estate mogul around</p>
+                    <div>
+                        <p>Build your utopia onchain, earn xp from your properties and become the biggest real estate mogul around</p>
+                    </div>
                     <span>Coming Soon</span>
-                    {/* <button disabled>Coming Soon</button> */}
                 </HeroTextContainer>
             </HeroContainer>
         </Style>
@@ -31,6 +36,7 @@ const Style = styled.div`
 	display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 `;
 const HeroContainer = styled.div`
     height: 100%;
@@ -41,7 +47,6 @@ const HeroContainer = styled.div`
 	display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     /* border: 1px solid green; */
 `;
 const NavHeader = styled.nav`
@@ -54,6 +59,16 @@ const NavHeader = styled.nav`
     margin-top: 1rem;
     width: 100%;
     max-width: 1300px;
+    z-index: 20;
+
+    @media (max-width: 48em) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .img{
+            scale: 0.6;
+        }
+    }
 `;
 const ConnectButton = styled.button`
     height: 2.5rem;
@@ -64,6 +79,17 @@ const ConnectButton = styled.button`
     font-weight: bold;
     border: 1px solid #FB6841;
     border-radius: 8px;
+    
+
+    @media (max-width: 48em) {
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+
+        span{
+            display: none;
+        }
+    }
+    
 `;
 const HeroTextContainer = styled.article`
     text-align: center;
@@ -72,17 +98,22 @@ const HeroTextContainer = styled.article`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 8rem;
     h1{
-        font-size: 72px;
+        font-size: 60px;
         font-weight: 500;
         letter-spacing: -1px;
     }
-    p{
-        font-size: 16px;
-        /* letter-spacing: -6; */
-        padding: 20px 0px;
-        font-weight: 500;
-        color: #B7B7B7;
+    div{
+        max-width: 500px; 
+        /* border: 1px solid green; */
+        p{
+            font-size: 16px;
+            /* letter-spacing: -6; */
+            padding: 20px 0px;
+            font-weight: 500;
+            color: #B7B7B7;
+        }
     }
     span {
         font-family: 'Pricedown Bl', sans-serif;
@@ -101,4 +132,11 @@ const HeroTextContainer = styled.article`
         justify-content: center; 
         align-items: center;
     }
+
+    @media (max-width: 48em) {
+        h1 {
+        font-size: 50px;
+        }
+    }
 `;
+

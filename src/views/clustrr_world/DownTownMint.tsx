@@ -87,6 +87,7 @@ const MintContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    z-index: 20;
 `;
 const MintImageBackground = styled.div`
 	height: 100%;
@@ -95,6 +96,7 @@ const MintImageBackground = styled.div`
     background-image: url('https://res.cloudinary.com/stone-soft/image/upload/v1711329935/clustrr/dotted_Mint_rhqxik.svg');
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
     color: white;
 	display: flex;
     flex-direction: column;
@@ -108,11 +110,18 @@ const MintImageBackground = styled.div`
         position: absolute;
         top: 10px;
         right: 90px;
-        /* border: 1px solid red; */
         height: 200px;
     }
     .moon {
         height: 100%;
+    }
+    @media (max-width: 48em) {
+        .moon_house{
+            position: absolute;
+            top: 10px;
+            right: 4px;
+            height: 200px;
+        }
     }
 `;
 const HouseImageContainer = styled.div`
@@ -124,14 +133,14 @@ const HouseImageContainer = styled.div`
     .minthouse {
         /* height: 100%; */
         scale: 0.75;
-        z-index: 30;
+        z-index: 20;
     }
 
     .target {
         position: absolute;
         top: -75px;
         right: 0.5px;
-        z-index: 10;
+        z-index: 15;
         
         .target1 {
            scale: 0.75; 
@@ -142,7 +151,7 @@ const HouseImageContainer = styled.div`
         position: absolute;
         bottom: -80px;
         left: -55px;
-        z-index: 10;
+        z-index: 15;
 
         .target2 {
            scale: 0.75; 
