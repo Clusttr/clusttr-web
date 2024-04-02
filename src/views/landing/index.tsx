@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Header from '../general_components/Header';
 import Footer from '../general_components/Footer';
 import JoinClusttr from '../general_components/JoinClusttr';
@@ -8,11 +8,13 @@ import WhyClusttr from './WhyClusttr';
 import HowClusttrWorks from './HowClusttrWorks';
 import JoinClusttrWaitlist from './JoinClusttrWaitlist';
 import ComingSoon from './ComingSoon';
+import { useState } from 'react';
 
 function Landing() {
+	const [open, setOpen] = useState(false);
 	return (
-		<Style>
-			<Header />
+		<Style open={open}>
+			<Header open={open} setOpen={setOpen} />
 			<Start />
 			<Mission />
 			<ComingSoon />
@@ -25,7 +27,13 @@ function Landing() {
 	);
 }
 
-const Style = styled.div`
+const Style = styled.div<{ open: boolean }>`
 	overflow: hidden;
+
+	${(props) =>
+		props.open &&
+		css`
+			position: fixed;
+		`}
 `;
 export default Landing;

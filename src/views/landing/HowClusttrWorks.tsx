@@ -114,7 +114,7 @@ const HowClusttrWorksStyle = styled.div`
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		gap: 5px;
-		padding: 50px 70px 0 70px;
+		padding: 50px 70px 0;
 	}
 
 	& .how_clusttr_works_box_container {
@@ -135,6 +135,37 @@ const HowClusttrWorksStyle = styled.div`
 		font-size: 0.8rem;
 		color: #c7d5d2;
 		line-height: 20px;
+	}
+
+	@media (max-width: 480px) {
+		margin-top: 70px;
+
+		& .how_clusttr_works_info {
+			font-size: 0.9rem;
+			font-weight: 500;
+			max-width: 100%;
+			padding: 15px 17px;
+		}
+
+		& .how_clusttr_works_boxes {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			padding: 15px 35px;
+		}
+
+		& .how_clusttr_works_box_container {
+			padding: 35px 40px 45px 30px;
+			gap: 11px;
+		}
+
+		& .how_clusttr_works_box_header {
+			font-size: 1.1rem;
+		}
+
+		& .how_clusttr_works_box_info {
+			font-size: 0.95rem;
+		}
 	}
 `;
 

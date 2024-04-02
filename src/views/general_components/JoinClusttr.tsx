@@ -58,7 +58,7 @@ const JoinClusttr = () => {
 const JoinClusttrStyle = styled.div`
 	color: black;
 	background-color: #f5f5f5;
-	margin: 90px 70px 0 70px;
+	margin: 90px 70px 0;
 
 	border-radius: 15px;
 	padding: 100px 120px;
@@ -116,6 +116,34 @@ const JoinClusttrStyle = styled.div`
 		color: white;
 		border-radius: 0 30px 30px 0;
 		cursor: pointer;
+	}
+
+	@media (max-width: 480px) {
+		color: black;
+		background-color: #f5f5f5;
+		margin: 60px 20px;
+
+		border-radius: 15px;
+		padding: 25px 20px;
+
+		& .join_clusttr_container {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+		}
+		& .join_clusttr_image {
+			width: 100%;
+		}
+		& .join_clusttr_newsletter_container {
+			margin-left: 0;
+			gap: 10px;
+		}
+		& .join_clusttr_logo {
+			width: 30%;
+		}
+		& .join_clusttr_comment {
+			font-size: 1.1rem;
+		}
 	}
 `;
 

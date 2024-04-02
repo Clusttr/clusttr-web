@@ -119,6 +119,10 @@ const JoinClusttrWaitlistStyle = styled.div`
 			}
 		}
 	}
+
+	@media (max-width: 480px) {
+		display: none;
+	}
 `;
 
 export default JoinClusttrWaitlist;
