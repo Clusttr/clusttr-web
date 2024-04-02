@@ -94,7 +94,7 @@ const MintImageBackground = styled.div`
     width: 100%;
     max-width:1300px;
     background-image: url('https://res.cloudinary.com/stone-soft/image/upload/v1711329935/clustrr/dotted_Mint_rhqxik.svg');
-    background-position: center;
+    /* background-position: center; */
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
@@ -120,7 +120,7 @@ const MintImageBackground = styled.div`
             position: absolute;
             top: 10px;
             right: 4px;
-            height: 200px;
+            height: 160px;
         }
     }
 `;
@@ -156,6 +156,32 @@ const HouseImageContainer = styled.div`
         .target2 {
            scale: 0.75; 
         }
+    }
+    @media (max-width: 48em) {
+        .minthouse {
+            width: 300px;
+            height: auto;
+        }
+        .target {
+        position: absolute;
+        top: -35px;
+        right: -51px;
+        z-index: 15;
+        
+            .target1 {
+            scale: 0.5; 
+            }
+        }
+        .target_slant {
+        position: absolute;
+        bottom: -51px;
+        left: -92px;
+        z-index: 15;
+
+        .target2 {
+           scale: 0.5; 
+        }
+    }
     }
 `;
 const MintStartTime = styled.article`
@@ -193,9 +219,18 @@ const MintControls = styled.div`
             border-radius: 8px;
             border: none;
             color: white;
-            &:hover {
-                /* background-color: #c25435;  */
-                /* scale: 0.90; */
+        }
+        @media (max-width: 48em) {
+            height: auto; 
+            width: auto; 
+            max-width: 320px; 
+            flex-direction: column;
+            padding: 5px;
+
+            button {
+                margin-top: 13px;
+                width: 100%;
+                padding: 10px 12px;
             }
         }
     `;
@@ -207,6 +242,11 @@ const MintGeneral = styled.div`
         /* height: 75px;  */
         width: 420px; 
         border-radius: 8px;
+
+        @media (max-width: 48em) {
+           width: 310px;
+           padding-top: 7px;
+        }
     `;
 
 const InputContainer = styled.div`
@@ -282,4 +322,8 @@ const Quantity = styled.p`
         color: #020202;
         font-size: 14px; 
         font-weight: 700;
+        @media (max-width: 48em) {
+            font-size: 10px; 
+            font-weight: 600;
+        }
     `;
