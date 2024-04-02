@@ -13,7 +13,7 @@ const WhyClusttr = () => {
 				</div>
 
 				<div className="why_clusttr_top">
-					<div className="why_clusttr_small_box selected_box">
+					<div className="why_clusttr_small_box selected_box why_clusttr_box">
 						<div className="why_clusttr_small_box_icon_container">
 							<img src={house} alt="" className="why_clusttr_icon" />
 						</div>
@@ -23,7 +23,7 @@ const WhyClusttr = () => {
 							spread your investments across multiple properties and locations.
 						</div>
 					</div>
-					<div className="why_clusttr_big_box">
+					<div className="why_clusttr_big_box why_clusttr_box">
 						<div className="why_clusttr_big_box_icon_container">
 							<img src={land} alt="" className="why_clusttr_icon" />
 						</div>
@@ -37,7 +37,7 @@ const WhyClusttr = () => {
 					</div>
 				</div>
 				<div className="why_clusttr_bottom">
-					<div className="why_clusttr_big_box">
+					<div className="why_clusttr_big_box why_clusttr_box">
 						<div className="why_clusttr_big_box_icon_container">
 							<img src={coin} alt="" className="why_clusttr_icon" />
 						</div>
@@ -50,7 +50,7 @@ const WhyClusttr = () => {
 							transparent financial ecosystem for co-owners.
 						</div>
 					</div>
-					<div className="why_clusttr_small_box">
+					<div className="why_clusttr_small_box why_clusttr_box">
 						<div className="why_clusttr_small_box_icon_container">
 							<img src={community} alt="" className="why_clusttr_icon" />
 						</div>
@@ -144,6 +144,46 @@ const WhyClusttrStyle = styled.div`
 		font-size: 0.9rem;
 		color: #c7d5d2;
 		line-height: 22px;
+	}
+
+	@media (max-width: 480px) {
+		& .why_clusttr_container {
+			padding: 50px 20px 30px;
+			gap: 25px;
+		}
+
+		& .why_clusttr_top {
+			display: flex;
+			flex-direction: column;
+			gap: 25px;
+
+			margin-top: 0;
+		}
+
+		& .why_clusttr_bottom {
+			display: flex;
+			flex-direction: column;
+			gap: 25px;
+		}
+
+		& .why_clusttr_box {
+			gap: 15px;
+			padding: 20px;
+		}
+
+		& .why_clusttr_small_box_icon_container {
+			width: 17%;
+		}
+		& .why_clusttr_big_box_icon_container {
+			width: 25%;
+		}
+		& .why_clusttr_box_header {
+			font-size: 1.3rem;
+		}
+		& .why_clusttr_box_info {
+			font-size: 1.0rem;
+			line-height: 22px;
+		}
 	}
 `;
 

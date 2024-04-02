@@ -58,7 +58,7 @@ const Start = () => {
 							type="email"
 							placeholder="Enter your email"
 						/>
-						<button type="submit">
+						<button className="submitBtn" type="submit">
 							{loading ? '...Loading' : 'Join Waitlist'}
 						</button>
 					</div>
@@ -108,23 +108,11 @@ const Style = styled.div`
 		background-image: url(/background.png);
 		background-size: cover;
 		background-repeat: no-repeat;
-	}
 
-	@media (max-width: 480px) {
-		height: 74vh;
-		text-align: center;
-		background-color: #05020d;
-		color: white;
-		padding: 20px;
-		padding-top: 50%;
-		display: flex;
-		flex-direction: column;
-		// justify-content: center;
-
-		& .mobile_starter_bg {
-			position: absolute;
-			top: 0;
-			right: 0;
+		& .join-waitlist {
+			& button {
+				font-size: 13px;
+			}
 		}
 	}
 
@@ -150,7 +138,6 @@ const Style = styled.div`
 				border-radius: 40px;
 				background-color: #00c187;
 				cursor: pointer;
-				font-size: 13px;
 				line-height: 15.6px;
 				font-weight: 500;
 				height: 32px;
@@ -174,6 +161,31 @@ const Style = styled.div`
 				&:focus {
 					outline: none;
 				}
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		height: 74vh;
+		text-align: center;
+		background-color: #05020d;
+		color: white;
+		padding: 20px;
+		padding-top: 50%;
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+
+		& .mobile_starter_bg {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		& .join-waitlist {
+			& button {
+				font-size: 0.6rem;
+				background-color: red;
 			}
 		}
 	}
