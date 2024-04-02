@@ -143,7 +143,7 @@ const Line = styled.div`
          flex-direction: column;
          justify-content:space-between;
          align-items: center;
-         margin-left: -6.8px;
+         margin-left: -7px;
          z-index: 20;
     }
 `;
@@ -197,7 +197,7 @@ const RoadMapTitle = styled.h3`
 	font-size: 13px;
     font-weight: 700;
     color: #F7F7F7;
-    line-height: 9px;
+    /* line-height: 9px; */
     padding: 10px 0;
 `;
 const RoadMapDesc = styled.p`
@@ -228,7 +228,7 @@ const RoadMapTitleGray = styled.h3`
 	font-size: 13px;
     font-weight: 700;
     color: #353535;
-    line-height: 9px;
+    /* line-height: 9px; */
     padding: 10px 0;
 `;
 const RoadMapDescGray = styled.p`

@@ -4,6 +4,7 @@ import DownTownHero from "./DownTownHero";
 import DownTownFooter from "./DownTownFooter";
 import DownTownMint from "./DownTownMint";
 import DownTownRoadMap from "./DownTownRoadMap";
+import { useEffect, useState } from "react";
 
 
 const orbit = keyframes`
@@ -92,9 +93,23 @@ const images = [
 ]
 
 const ClustrrWorld = () => {
+    const [radius, setRadius] = useState(850);
+
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth < 768) {
+                setRadius(420);
+            } else {
+                setRadius(850);
+            }
+        }
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     const totalImages = images.length;
-    const radius = 850; // Adjust the radius as needed
+    // const radius = 850; // Adjust the radius as needed
     const angle = 360 / totalImages; // Angle between each image
+
     return (
         <Style>
             {/* <DowntownHeader /> */}
@@ -129,8 +144,6 @@ const Style = styled.div`
     color: white;
     flex-direction: column;
     position: relative;
-    /* background-color: black; */
-    /* width: 100vw; */
 `;
 const AnimationDiv = styled.div`
     display: grid; 
@@ -138,7 +151,7 @@ const AnimationDiv = styled.div`
 `
 const RotatingImages = styled.div`
     position: absolute;
-    top: 440px;
+    top: 435px;
     display: grid;
     place-items: center;
  
@@ -146,16 +159,14 @@ const RotatingImages = styled.div`
     aspect-ratio: 1/1;
    
     @media (max-width: 48em) {
-         top: 490px;
+         top: 40px;
     }
-    /* border: 1px solid green; */
 
      ul {
     display: grid;
     place-items: center;
     width: 1000px;
     height: 1000px;
-    /* border: 1px solid yellow; */
     position: relative;
     list-style: none;
     z-index: 10;
@@ -164,7 +175,6 @@ const RotatingImages = styled.div`
   }
 
   li {
-    /* background-color: blue; */
     position: absolute;
     width: 11rem;
     aspect-ratio: 1 / 1;
@@ -177,13 +187,12 @@ const RotatingImages = styled.div`
       height: 100%;
       display: grid;
       place-items: center;
-      /* border-radius: inherit; */
-
       position: absolute;
       transform-origin: center;
-      /* animation: ${orbit} 10s linear reverse infinite, */
-      /* animation-play-state: paused running, */
     }
+    @media (max-width: 48em) {
+      width: 7rem;
+  }
   }
 `;
 
@@ -197,5 +206,4 @@ const RotatingImage = styled.img`
     left: 50%; */
     transform-origin: center;
     animation: ${hold} 75s linear reverse infinite;
-    /* animation: ${orbit} 10s linear reverse infinite, */
 `;

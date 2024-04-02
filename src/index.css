@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/pricedown');
+@import url('https://fonts.cdnfonts.com/css/druk-trial');
+
 @font-face {
 	font-family: 'Roobert';
 	src: url(/Roobert-Regular.otf);
@@ -21,8 +24,6 @@
 	src: url(/Roobert-Bold.otf);
 	font-weight: bold;
 }
-@import url('https://fonts.cdnfonts.com/css/pricedown');
-@import url('https://fonts.cdnfonts.com/css/druk-trial');
 
 html,
 body,
