@@ -196,14 +196,17 @@ const MobileDropdownMenu = styled.aside<{ open: boolean }>`
 
 	& .top_ray {
 		position: absolute;
-
 		top: 0;
+		right: 0;
 		z-index: 1;
+		width: 100%;
 	}
 	& .bottom_ray {
 		position: absolute;
 		bottom: 0;
+		right: 0;
 		z-index: 1;
+		width: 100%;
 	}
 	& ul {
 		z-index: 2;
