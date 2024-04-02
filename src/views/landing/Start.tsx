@@ -49,7 +49,7 @@ const Start = () => {
 				ownership.
 			</p>
 
-			<form onSubmit={handleSubmit}>
+			<form className="join_waitlist_container" onSubmit={handleSubmit}>
 				<div className="join-waitlist">
 					<div>
 						<input
@@ -180,8 +180,11 @@ const Style = styled.div`
 			position: absolute;
 			top: 0;
 			right: 0;
+			z-index: 2;
 		}
-
+		& .join_waitlist_container {
+			z-index: 4;
+		}
 		& .join-waitlist {
 			& button {
 				font-size: 0.6rem;
