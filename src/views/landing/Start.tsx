@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import mobileStartBg from '../../assets/mobile_starter_bg.png';
 
 const Start = () => {
 	const [email, setEmail] = useState('');
 	const [loading, setLoading] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const handleSubmit = (e: any) => {
@@ -24,8 +26,23 @@ const Start = () => {
 			});
 	};
 
+	useEffect(() => {
+		if (screen.width <= 480) setIsMobile(true);
+		else setIsMobile(false);
+	}, []);
+
 	return (
 		<Style>
+			{isMobile ? (
+				<img
+					src={mobileStartBg}
+					alt="background"
+					className="mobile_starter_bg"
+				/>
+			) : (
+				<></>
+			)}
+
 			<h1>Empowering Individuals to Co-Own and Invest in real estate</h1>
 			<p>
 				At Clusttr, we are transforming the way you think about real estate
@@ -61,6 +78,7 @@ const Style = styled.div`
 	display: flex;
 	flex-direction: column;
 	// justify-content: center;
+	position: relative;
 
 	& h1 {
 		font-size: 32px;
@@ -79,17 +97,35 @@ const Style = styled.div`
 			margin-top: 16px;
 		}
 
-		@media (min-width: 400px) {
+		@media (min-width: 480px) {
 			font-size: 40px;
 			line-height: 48px;
 		}
 	}
 
-	@media (min-width: 400px) {
+	@media (min-width: 480px) {
 		padding-top: 205px;
 		background-image: url(/background.png);
 		background-size: cover;
 		background-repeat: no-repeat;
+	}
+
+	@media (max-width: 480px) {
+		height: 74vh;
+		text-align: center;
+		background-color: #05020d;
+		color: white;
+		padding: 20px;
+		padding-top: 50%;
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+
+		& .mobile_starter_bg {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
 	}
 
 	& .join-waitlist {

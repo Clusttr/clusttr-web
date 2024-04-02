@@ -67,6 +67,17 @@ const MissionStyle = styled.div`
 	& .highlighted-text {
 		color: #00c187;
 	}
+
+	@media (max-width: 480px) {
+		font-size: 17px;
+		padding: 50px 30px;
+
+		& .title {
+			& h2 {
+				font-size: 13px;
+			}
+		}
+	}
 `;
 
 export default Mission;

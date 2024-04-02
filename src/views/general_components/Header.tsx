@@ -14,7 +14,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: any }) {
 	const [state, setState] = useState({ width: 62.22, height: 20 });
 
 	const screenWidth = () => {
-		if (window.innerWidth >= 400) {
+		if (window.innerWidth >= 480) {
 			setState({ ...state, width: 99.56, height: 32 });
 		} else {
 			setState({ ...state, width: 62.22, height: 20 });
@@ -22,7 +22,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: any }) {
 	};
 
 	useEffect(() => {
-		if (window.innerWidth >= 400) {
+		if (window.innerWidth >= 480) {
 			setState({ ...state, width: 99.56, height: 32 });
 		} else {
 			setState({ ...state, width: 62.22, height: 20 });
