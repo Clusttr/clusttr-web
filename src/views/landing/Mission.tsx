@@ -79,6 +79,7 @@ const MissionStyle = styled.div`
 	@media (max-width: 480px) {
 		font-size: 17px;
 		padding: 50px 30px;
+		margin-top: 15rem;
 
 		& .title {
 			& h2 {
