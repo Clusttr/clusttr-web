@@ -120,7 +120,7 @@ const HowWeStartedStyle = styled.div`
 		& .how_we_started {
 			max-width: 100%;
 			font-size: 1rem;
-			padding: 14px 12px 0;
+			padding: 1px 12px 0;
 		}
 	}
 `;
