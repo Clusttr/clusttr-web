@@ -1,10 +1,18 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import BG from '../../assets/our_mission_bg.png';
 
 const Mission = () => {
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		if (screen.width <= 480) setIsMobile(true);
+		else setIsMobile(false);
+	}, []);
+
 	return (
 		<MissionContainer>
-			<img className="mission_bg" src={BG} alt="" />
+			{isMobile ? <></> : <img className="mission_bg" src={BG} alt="" />}
 			<MissionStyle>
 				<div className="title">
 					<h2>Our Mission</h2>

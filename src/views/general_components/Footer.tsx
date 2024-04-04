@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import ClusttrLogo from '../../assets/footer/clusttr_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,9 +8,16 @@ import {
 	faLinkedinIn,
 	faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	const year = new Date().getFullYear();
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		if (screen.width <= 480) setIsMobile(true);
+		else setIsMobile(false);
+	}, []);
 
 	return (
 		<Style>
@@ -37,10 +45,21 @@ const Footer = () => {
 							<div className="footer_details_link">Terms of Use</div>
 							<div className="footer_details_link">Privacy Policy</div>
 						</div>
+						{isMobile ? (
+							<div className="footer_details_links">
+								<div className="footer_details_links_header">Community</div>
+								<div className="footer_details_link">Twitter</div>
+								<div className="footer_details_link">Github</div>
+								<div className="footer_details_link">Linkedin</div>
+								<div className="footer_details_link">Discord</div>
+							</div>
+						) : (
+							<></>
+						)}
 					</div>
-					<div className="made-in-abuja">
-						{/* <p>Made in Abuja, Available to the 🌍</p> */}
-					</div>
+					{/* <div className="made-in-abuja">
+						<p>Made in Abuja, Available to the 🌍</p>
+					</div> */}
 				</div>
 				<div className="more_details_container">
 					<div className="more_details_rights">
@@ -51,14 +70,21 @@ const Footer = () => {
 						financial services. All investments involve risks, and past
 						performance does not guarantee future results. Please consult with a
 						financial advisor before making any investment decisions and read
-						our Terms of Use.
+						our{' '}
+						<Link className="terms_of_use" to={'/'}>
+							Terms of Use.
+						</Link>
 					</div>
-					<div className="more_details_brand_icons">
-						<FontAwesomeIcon icon={faXTwitter} size="lg" />
-						<FontAwesomeIcon icon={faGithub} size="lg" />
-						<FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-						<FontAwesomeIcon icon={faDiscord} size="lg" />
-					</div>
+					{isMobile ? (
+						<></>
+					) : (
+						<div className="more_details_brand_icons">
+							<FontAwesomeIcon icon={faXTwitter} size="lg" />
+							<FontAwesomeIcon icon={faGithub} size="lg" />
+							<FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+							<FontAwesomeIcon icon={faDiscord} size="lg" />
+						</div>
+					)}
 				</div>
 			</div>
 		</Style>
@@ -92,6 +118,7 @@ const Style = styled.footer`
 	& .footer_details_links_container {
 		display: flex;
 		gap: 150px;
+		padding-bottom: 110px;
 	}
 	& .footer_details_links {
 		display: flex;
@@ -105,8 +132,11 @@ const Style = styled.footer`
 	& .footer_details_link {
 		font-size: 0.8rem;
 		font-weight: 500;
-		color: #687370;
 		cursor: pointer;
+		color: #687370;
+	}
+	& .terms_of_use {
+		color: #687370;
 	}
 	& .made-in-abuja {
 		// text-align: center;
@@ -114,7 +144,7 @@ const Style = styled.footer`
 		font-size: 0.85rem;
 		color: #687370;
 		font-weight: 500;
-		@media (min-width: 400px) {
+		@media (min-width: 480px) {
 			text-align: left;
 		}
 	}
@@ -134,11 +164,60 @@ const Style = styled.footer`
 		font-weight: 500;
 		font-size: 0.95rem;
 		line-height: 22px;
+		color: #687370;
 	}
 	& .more_details_brand_icons {
 		display: flex;
 		gap: 14px;
 		color: white;
 		cursor: pointer;
+	}
+
+	@media (max-width: 480px) {
+		& .footer_container {
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+		}
+
+		& .footer_details {
+			padding: 30px 40px 20px;
+			gap: 35px;
+			border-right: none;
+			border-bottom: 1px solid #252928;
+		}
+		& .footer_clusttr_logo_container {
+			width: 15%;
+		}
+		& .footer_details_links_container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 45px;
+			padding-bottom: 45px;
+		}
+		& .footer_details_links {
+			display: flex;
+			flex-direction: column;
+		}
+		& .footer_details_links_header {
+			font-size: 1.1rem;
+		}
+		& .footer_details_link {
+			font-size: 0.9rem;
+		}
+
+		& .more_details_container {
+			padding: 35px 15px 40px;
+			gap: 25px;
+		}
+		& .more_details_rights {
+			font-weight: 500;
+			font-size: 1rem;
+		}
+		& .more_details_about {
+			font-size: 1rem;
+			padding-right: 27px;
+			line-height: 25px;
+		}
 	}
 `;
