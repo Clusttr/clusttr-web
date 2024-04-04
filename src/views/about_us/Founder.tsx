@@ -140,7 +140,6 @@ const FounderStyle = styled.div`
 		font-size: 0.85rem;
 	}
 	& .founder_comment_container {
-		z-index: 10;
 		width: 100%;
 		max-width: 56%;
 		display: flex;

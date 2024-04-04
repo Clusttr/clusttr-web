@@ -166,7 +166,7 @@ const Style = styled.div`
 	}
 
 	@media (max-width: 480px) {
-		height: 74vh;
+		height: 100%;
 		text-align: center;
 		background-color: #05020d;
 		color: white;
