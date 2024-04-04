@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import aboutBGDesktop from '../../assets/desktop-about-us-bg.png';
 import aboutBGMobile from '../../assets/mobile-about-us-bg.png';
