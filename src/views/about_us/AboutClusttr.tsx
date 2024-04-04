@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import aboutBG from '../../assets/desktop-about-us-bg.png';
+import aboutBGDesktop from '../../assets/desktop-about-us-bg.png';
+import aboutBGMobile from '../../assets/mobile-about-us-bg.png';
 
 const AboutClusttr = () => {
 	return (
@@ -25,14 +27,17 @@ const AboutClusttr = () => {
 
 const AboutClusttrStyle = styled.div`
 	height: 100vh;
-
 	text-align: center;
 	background-color: #05020d;
 	color: white;
 	padding: 20px;
 	padding-top: 75px;
 	margin-top: 2rem;
-	
+
+	background-image: url(${aboutBGDesktop});
+	background-size: cover;
+	background-repeat: no-repeat;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -47,7 +52,7 @@ const AboutClusttrStyle = styled.div`
 
 	& .about_clusttr_header {
 		width: 100%;
-		font-size: 13px;
+		font-size: 0.85rem;
 		font-weight: 500;
 		font-family: Roobert;
 		border: 1px solid white;
@@ -58,6 +63,7 @@ const AboutClusttrStyle = styled.div`
 	& .about_clusttr_sub_header {
 		font-size: 2.8rem;
 		font-weight: 500;
+		line-height: 3.2rem;
 		width: 100%;
 		max-width: 80%;
 		margin-left: auto;
@@ -75,10 +81,26 @@ const AboutClusttrStyle = styled.div`
 		color: #c8e3df;
 	}
 
-	@media (min-width: 400px) {
-		background-image: url(${aboutBG});
+	@media (max-width: 480px) {
+		background-image: url(${aboutBGMobile});
 		background-size: cover;
 		background-repeat: no-repeat;
+		margin-top: 0;
+
+		& .about_clusttr_sub_header {
+			line-height: 2.4rem;
+			font-size: 1.9rem;
+			max-width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+		& .about_clusttr {
+			font-size: 1rem;
+			line-height: 1.4rem;
+			max-width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 `;
 

@@ -174,7 +174,6 @@ const Style = styled.div`
 		padding-top: 50%;
 		display: flex;
 		flex-direction: column;
-		// justify-content: center;
 
 		& .mobile_starter_bg {
 			position: absolute;
@@ -182,13 +181,12 @@ const Style = styled.div`
 			right: 0;
 			z-index: 2;
 		}
-		& .join_waitlist_container {
-			z-index: 4;
-		}
+     & .join_waitlist_container{
+		z-index: 3;
+
 		& .join-waitlist {
 			& button {
 				font-size: 0.6rem;
-				background-color: red;
 			}
 		}
 	}

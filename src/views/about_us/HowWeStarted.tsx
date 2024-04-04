@@ -1,10 +1,23 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import lightRay from '../../assets/light_ray.png';
+import mobileLightRay from '../../assets/how_we_started_and_our_values_border_ray.png';
 
 const HowWeStarted = () => {
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		if (screen.width <= 480) setIsMobile(true);
+		else setIsMobile(false);
+	}, []);
+
 	return (
 		<HowWeStartedStyle>
-			<img src={lightRay} alt="image" className="light_ray" />
+			{isMobile ? (
+				<img src={mobileLightRay} alt="image" className="light_ray" />
+			) : (
+				<img src={lightRay} alt="image" className="light_ray" />
+			)}
 			<div className="how_we_started_container">
 				<div className="how_we_started_header_container">
 					<div className="how_we_started_header">How we started</div>
@@ -46,16 +59,16 @@ const HowWeStartedStyle = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 20px;
+	gap: 2000px;
 
 	& .light_ray {
 		position: absolute;
 		top: -25rem;
-        right: -2rem;
+		right: 0;
 		z-index: 1;
 	}
 	& .how_we_started_container {
-        z-index:2;
+		z-index: 2;
 	}
 	& .how_we_started_header_container {
 		width: 100%;
@@ -85,10 +98,30 @@ const HowWeStartedStyle = styled.div`
 		max-width: 47%;
 		text-align: center;
 		margin: 14px auto 0 auto;
-        
 	}
 	& .how_we_started_highlight {
 		color: #00c187;
+	}
+	@media (max-width: 480px) {
+		margin: 85px 10px 50px;
+
+		& .light_ray {
+			top: -60%;
+			right: -50%;
+		}
+		& .how_we_started_header_container {
+			max-width: 8.5rem;
+			text-align: center;
+		}
+		& .how_we_started_header {
+			font-size: 0.9rem;
+			padding: 8px 13px;
+		}
+		& .how_we_started {
+			max-width: 100%;
+			font-size: 1rem;
+			padding: 14px 12px 0;
+		}
 	}
 `;
 
