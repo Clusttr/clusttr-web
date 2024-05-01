@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import aboutBGDesktop from '../../assets/desktop-about-us-bg.png';
 import aboutBGMobile from '../../assets/mobile-about-us-bg.png';
+import aboutBGTablet from '../../assets/tablet_about_us_bg.png';
 
 const AboutClusttr = () => {
 	return (
@@ -80,6 +81,38 @@ const AboutClusttrStyle = styled.div`
 		color: #c8e3df;
 	}
 
+	@media (max-width: 770px) {
+		height: 65vh;
+		align-items: center;
+		background-image: url(${aboutBGTablet});
+
+		& .about_clusttr_header_container {
+			max-width: 8.5rem;
+		}
+
+		& .about_clusttr_header {
+			font-size: 1rem;
+			padding: 10px;
+		}
+
+		& .about_clusttr_sub_header {
+			font-size: 2.7rem;
+			font-weight: 500;
+			line-height: 3.7rem;
+			width: 100%;
+			max-width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		& .about_clusttr {
+			font-size: 1.1rem;
+			line-height: 1.8rem;
+			max-width: 95%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
 	@media (max-width: 480px) {
 		background-image: url(${aboutBGMobile});
 		background-size: cover;
