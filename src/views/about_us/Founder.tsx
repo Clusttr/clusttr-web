@@ -230,6 +230,38 @@ const FounderStyle = styled.div`
 			width: 100%;
 		}
 	}
+	@media (max-width: 770px) {
+		margin: 90px auto 70px auto;
+
+		padding: 30px 25px;
+
+		& .founder_container {
+			align-items: center;
+			gap: 6rem;
+		}
+
+		& .founder_comment_container {
+			max-width: 100%;
+			gap: 20px;
+		}
+
+		& .founder_comment {
+			font-size: 1.1rem;
+			line-height: 1.7rem;
+			width: 100%;
+			padding: 10px 40px;
+		}
+		& .quote {
+			width: 10%;
+		}
+		& .left_quote {
+			left: -2rem;
+		}
+		& .right_quote {
+			right: -0.2rem;
+			top: -1.1rem;
+		}
+	}
 `;
 
 export default Founder;

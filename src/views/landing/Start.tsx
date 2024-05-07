@@ -181,12 +181,37 @@ const Style = styled.div`
 			right: 0;
 			z-index: 2;
 		}
-     & .join_waitlist_container{
-		z-index: 3;
+		& .join_waitlist_container {
+			z-index: 3;
 
-		& .join-waitlist {
-			& button {
-				font-size: 0.6rem;
+			& .join-waitlist {
+				& button {
+					font-size: 0.6rem;
+				}
+			}
+		}
+	}
+	@media (max-width: 770px) {
+		height: 65vh;
+		background-color: #05020d;
+		// padding: 20px;
+		padding-top: 40%;
+		display: flex;
+		flex-direction: column;
+
+		& .mobile_starter_bg {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 2;
+		}
+		& .join_waitlist_container {
+			z-index: 3;
+
+			& .join-waitlist {
+				& button {
+					font-size: 0.6rem;
+				}
 			}
 		}
 	}

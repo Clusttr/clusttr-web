@@ -46,7 +46,7 @@ const JoinClusttr = () => {
 							className="join_clusttr_email_button"
 							onClick={() => email && console.log('📧Email Sent!')}
 						>
-							<FontAwesomeIcon icon={faArrowRight} />
+							<FontAwesomeIcon icon={faArrowRight} className="email_icon" />
 						</div>
 					</div>
 				</div>
@@ -143,6 +143,47 @@ const JoinClusttrStyle = styled.div`
 		}
 		& .join_clusttr_comment {
 			font-size: 1.1rem;
+		}
+	}
+
+	@media (max-width: 770px) {
+		margin: 60px;
+
+		padding: 7rem 20px 5rem;
+
+		& .join_clusttr_container {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			align-items: center;
+		}
+		& .join_clusttr_image {
+			width: 100%;
+		}
+		& .join_clusttr_newsletter_container {
+			margin-left: 0;
+			gap: 20px;
+			align-items: center;
+		}
+		& .join_clusttr_logo {
+			width: 100%;
+		}
+		& .join_clusttr_comment {
+			font-size: 1.7rem;
+			text-align: center;
+			width: 75%;
+		}
+		& .join_clusttr_email {
+			padding: 18px 20px 18px 30px;
+			font-size: 1.6rem;
+		}
+		& .join_clusttr_email_button {
+			background-color: #00c187;
+			padding: 20px 30px 20px 25px;
+			color: white;
+		}
+		& .email_icon {
+			font-size: 1.5rem;
 		}
 	}
 `;

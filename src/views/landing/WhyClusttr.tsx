@@ -84,7 +84,7 @@ const WhyClusttrStyle = styled.div`
 
 	& .why_clusttr_header {
 		width: 100%;
-		font-size: 13px;
+		font-size: 0.8rem;
 		font-weight: 500;
 		font-family: Roobert;
 		border: 1px solid white;
@@ -181,8 +181,51 @@ const WhyClusttrStyle = styled.div`
 			font-size: 1.3rem;
 		}
 		& .why_clusttr_box_info {
-			font-size: 1.0rem;
+			font-size: 1rem;
 			line-height: 22px;
+		}
+	}
+	@media (max-width: 770px) {
+		& .why_clusttr_container {
+			padding: 50px 40px 30px;
+			gap: 15px;
+		}
+
+		& .why_clusttr_header {
+			
+			font-size: 0.9rem;
+		}
+
+		& .why_clusttr_top {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+			margin-top: 15px;
+		}
+
+		& .why_clusttr_bottom {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+		}
+
+		& .why_clusttr_box {
+			gap: 15px;
+			padding: 20px 20px 60px;
+		}
+
+		& .why_clusttr_small_box_icon_container {
+			width: 25%;
+		}
+		& .why_clusttr_big_box_icon_container {
+			width: 25%;
+		}
+		& .why_clusttr_box_header {
+			font-size: 1.1rem;
+		}
+		& .why_clusttr_box_info {
+			font-size: 1.07rem;
+			line-height: 30px;
 		}
 	}
 `;
