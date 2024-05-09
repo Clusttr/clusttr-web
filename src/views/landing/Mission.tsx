@@ -87,6 +87,9 @@ const MissionStyle = styled.div`
 			}
 		}
 	}
+	@media (max-width: 770px) {
+		font-size: 1.25rem;
+	}
 `;
 
 export default Mission;

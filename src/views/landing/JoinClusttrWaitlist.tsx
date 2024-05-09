@@ -31,7 +31,7 @@ const JoinClusttrWaitlist = () => {
 				<span>waitlist</span>
 			</div>
 
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className="join_waitlist_container">
 				<div className="join-waitlist">
 					<div>
 						<input
@@ -122,6 +122,50 @@ const JoinClusttrWaitlistStyle = styled.div`
 
 	@media (max-width: 480px) {
 		display: none;
+	}
+	@media (max-width: 770px) {
+		color: white;
+		background-color: transparent;
+		display: flex;
+		flex-direction: column;
+		margin: 50px 50px 0 70px;
+		align-items: flex-start;
+		padding: 12px 20px;
+		border-radius: 20px;
+
+		& .join_clusttr_waitlist_label {
+			font-size: 1.8rem;
+			font-weight: 500;
+			font-family: Roobert;
+			display: flex;
+			gap: 7px;
+			align-items: center;
+		}
+		& .logo {
+			width: 27%;
+		}
+
+		& .join_waitlist_container {
+			color: white;
+			background-color: #00c187;
+			display: flex;
+			justify-content: space-between;
+			margin: 20px 0 0;
+			align-items: center;
+			padding: 12px 20px 12px 20px;
+			border-radius: 20px;
+			width: 100%;
+		}
+
+		
+	& .join-waitlist {
+		max-width: 100%;
+
+
+		& > div {
+			width: 100%;
+
+		}
 	}
 `;
 

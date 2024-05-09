@@ -167,6 +167,30 @@ const HowClusttrWorksStyle = styled.div`
 			font-size: 0.95rem;
 		}
 	}
+	@media (max-width: 770px) {
+		& .how_clusttr_works_header {
+			padding: 7px 16px;
+		}
+		& .how_clusttr_works_info {
+			font-size: 1.05rem;
+			line-height: 30px;
+			max-width: 55%;
+		}
+		& .how_clusttr_works_boxes {
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+		}
+		& .how_clusttr_works_box_header {
+			font-weight: 500;
+			font-size: 1rem;
+		}
+		& .how_clusttr_works_box_info {
+			font-weight: 500;
+			font-size: 1rem;
+			color: #c7d5d2;
+			line-height: 20px;
+		}
+	}
 `;
 
 export default HowClusttrWorks;

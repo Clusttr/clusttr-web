@@ -7,7 +7,7 @@ const HowWeStarted = () => {
 	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
-		if (screen.width <= 480) setIsMobile(true);
+		if (screen.width <= 770) setIsMobile(true);
 		else setIsMobile(false);
 	}, []);
 
@@ -102,7 +102,7 @@ const HowWeStartedStyle = styled.div`
 	& .how_we_started_highlight {
 		color: #00c187;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 770px) {
 		margin: 85px 10px 50px;
 
 		& .light_ray {
@@ -121,6 +121,23 @@ const HowWeStartedStyle = styled.div`
 			max-width: 100%;
 			font-size: 1rem;
 			padding: 1px 12px 0;
+		}
+	}
+	@media (max-width: 770px) {
+		& .light_ray {
+			top: -25rem;
+			width: 130%;
+			right: -15%;
+		}
+		& .how_we_started_header {
+			padding: 8px 11px;
+		}
+		& .how_we_started {
+			max-width: 100%;
+			font-size: 1.3rem;
+
+			line-height: 35px;
+			padding: 10px 37px 0;
 		}
 	}
 `;
