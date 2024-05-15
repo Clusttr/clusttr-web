@@ -123,7 +123,7 @@ const HowWeStartedStyle = styled.div`
 			padding: 1px 12px 0;
 		}
 	}
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		& .light_ray {
 			top: -25rem;
 			width: 130%;
