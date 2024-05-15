@@ -230,7 +230,7 @@ const FounderStyle = styled.div`
 			width: 100%;
 		}
 	}
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		margin: 90px auto 70px auto;
 
 		padding: 30px 25px;

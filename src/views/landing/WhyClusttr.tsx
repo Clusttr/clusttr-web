@@ -185,14 +185,13 @@ const WhyClusttrStyle = styled.div`
 			line-height: 22px;
 		}
 	}
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		& .why_clusttr_container {
 			padding: 50px 40px 30px;
 			gap: 15px;
 		}
 
 		& .why_clusttr_header {
-			
 			font-size: 0.9rem;
 		}
 

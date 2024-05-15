@@ -167,7 +167,7 @@ const HowClusttrWorksStyle = styled.div`
 			font-size: 0.95rem;
 		}
 	}
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		& .how_clusttr_works_header {
 			padding: 7px 16px;
 		}

@@ -191,7 +191,7 @@ const Style = styled.div`
 			}
 		}
 	}
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		height: 65vh;
 		background-color: #05020d;
 		// padding: 20px;

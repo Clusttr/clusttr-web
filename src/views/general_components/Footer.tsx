@@ -221,7 +221,7 @@ const Style = styled.footer`
 		}
 	}
 
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		& .footer_details {
 			padding: 50px 20px 20px 60px;
 		}

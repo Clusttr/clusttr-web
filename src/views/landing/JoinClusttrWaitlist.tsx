@@ -123,7 +123,7 @@ const JoinClusttrWaitlistStyle = styled.div`
 	@media (max-width: 480px) {
 		display: none;
 	}
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		color: white;
 		background-color: transparent;
 		display: flex;
