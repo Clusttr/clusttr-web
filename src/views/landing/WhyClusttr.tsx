@@ -4,8 +4,10 @@ import styled from 'styled-components';
 // import coin from '../../assets/why_clusttr/coin.png';
 // import community from '../../assets/why_clusttr/community.png';
 import grid from '../../assets/why_clusttr/grid.png';
-
+import topLightRay from '../../assets/why_clusttr/first_box_top_light_ray.png';
+import underlayRay from '../../assets/why_clusttr/first_box_light_ray.png';
 import WhyClusttrCoOwnershipDesign from './WhyClusttrCoOwnershipDesign';
+import WhyClusttrEmpoweringDesign from './WhyClusttrEmpoweringDesign';
 
 const WhyClusttr = () => {
 	return (
@@ -16,7 +18,8 @@ const WhyClusttr = () => {
 				</div>
 
 				<div className="why_clusttr_top">
-					<div className="why_clusttr_big_box selected_box why_clusttr_box">
+					<div className="why_clusttr_top_big_box selected_box why_clusttr_box">
+						<img className="top_light_ray" src={topLightRay} alt="light_ray" />
 						{/* <div className="why_clusttr_small_box_icon_container">
 							<img src={house} alt="" className="why_clusttr_icon" />
 						</div> */}
@@ -25,8 +28,11 @@ const WhyClusttr = () => {
 							Invest in premium properties with a fraction of the upfront cost &
 							spread your investments across multiple properties and locations.
 						</div>
+
+						<WhyClusttrEmpoweringDesign />
+						<img className="underlay_ray" src={underlayRay} alt="light_ray" />
 					</div>
-					<div className="why_clusttr_small_box why_clusttr_box">
+					<div className="why_clusttr_top_small_box why_clusttr_box">
 						{/* <div className="why_clusttr_big_box_icon_container">
 							<img src={land} alt="" className="why_clusttr_icon" />
 						</div> */}
@@ -44,7 +50,7 @@ const WhyClusttr = () => {
 					</div>
 				</div>
 				<div className="why_clusttr_bottom">
-					<div className="why_clusttr_small_box why_clusttr_box">
+					<div className="why_clusttr_bottom_small_box why_clusttr_box">
 						{/* <div className="why_clusttr_big_box_icon_container">
 							<img src={coin} alt="" className="why_clusttr_icon" />
 						</div> */}
@@ -57,7 +63,7 @@ const WhyClusttr = () => {
 							transparent financial ecosystem for co-owners.
 						</div>
 					</div>
-					<div className="why_clusttr_big_box why_clusttr_box">
+					<div className="why_clusttr_bottom_big_box why_clusttr_box">
 						{/* <div className="why_clusttr_small_box_icon_container">
 							<img src={community} alt="" className="why_clusttr_icon" />
 						</div> */}
@@ -104,6 +110,7 @@ const WhyClusttrStyle = styled.div`
 		grid-template-columns: 1.8fr 1.2fr;
 		gap: 15px;
 		margin-top: 15px;
+		position: relative;
 	}
 	& .why_clusttr_top > div {
 		align-items: center;
@@ -116,11 +123,9 @@ const WhyClusttrStyle = styled.div`
 	& .why_clusttr_top > div > div:nth-child(2) {
 		width: 77%;
 	}
-
-	& .why_clusttr_bottom {
-		display: grid;
-		grid-template-columns: 1.2fr 1.8fr;
-		gap: 15px;
+	& .top_light_ray{
+		position: absolute;
+		top: 0;
 	}
 	& .why_clusttr_box {
 		background-color: #050e11;
@@ -129,22 +134,29 @@ const WhyClusttrStyle = styled.div`
 		flex-direction: column;
 		gap: 11px;
 		border: 2px solid #132325;
-		padding: 120px 20px 65px;
 		position: relative;
 		overflow: hidden;
 	}
+	
+	& .underlay_ray {
+		z-index: 0;
+		position: absolute;
+		top: auto;
+		bottom: -10%;
+	}
+
 	.background_grid {
 		bottom: 0;
 		right: 0;
 		width: 50%;
 		position: absolute;
 	}
-	// & .why_clusttr_big_box {
-	// 	padding: 60px 20px 125px;
-	// }
-	// & .why_clusttr_small_box {
-	// 	padding: 60px 20px 125px;
-	// }
+	& .why_clusttr_top_big_box {
+		padding: 100px 20px 200px;
+	}
+	& .why_clusttr_top_small_box {
+		padding: 100px 20px 70px;
+	}
 	& .selected_box {
 		border: 2px solid #77859b;
 	}
@@ -169,6 +181,17 @@ const WhyClusttrStyle = styled.div`
 		line-height: 22px;
 	}
 
+	& .why_clusttr_bottom {
+		display: grid;
+		grid-template-columns: 1.2fr 1.8fr;
+		gap: 15px;
+	}
+	& .why_clusttr_bottom_big_box {
+		padding: 100px 20px 200px;
+	}
+	& .why_clusttr_bottom_small_box {
+		padding: 100px 20px 70px;
+	}
 	@media (max-width: 480px) {
 		& .why_clusttr_container {
 			padding: 50px 20px 30px;

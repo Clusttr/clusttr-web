@@ -15,6 +15,7 @@ type CardType = {
 	bathrooms: number;
 	coins: number;
 	dollar: number;
+	fake: boolean;
 };
 
 const ComingSoonCard = ({
@@ -23,6 +24,7 @@ const ComingSoonCard = ({
 	bathrooms,
 	coins,
 	dollar,
+	fake,
 }: CardType) => {
 	return (
 		<CardStyle>
@@ -35,26 +37,46 @@ const ComingSoonCard = ({
 					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={windowEdge} alt="" />
-							<div>{windowLength.toLocaleString()} ft</div>
+							{fake === false ? (
+								<div>{windowLength.toLocaleString()} ft</div>
+							) : (
+								<div className="card_info_fake"></div>
+							)}
 						</div>
 						<div className="card_info">
 							<img src={bed} alt="" />
-							<div>{beds}</div>
+							{fake === false ? (
+								<div>{beds}</div>
+							) : (
+								<div className="card_info_fake"></div>
+							)}
 						</div>
 						<div className="card_info">
 							<img src={bathroom} alt="" />
-							<div>{bathrooms}</div>
+							{fake === false ? (
+								<div>{bathrooms}</div>
+							) : (
+								<div className="card_info_fake"></div>
+							)}
 						</div>
 					</div>
 					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={coinsIcon} alt="" />
-							<div>${coins.toLocaleString()}</div>
+							{fake === false ? (
+								<div>${coins.toLocaleString()}</div>
+							) : (
+								<div className="card_info_fake"></div>
+							)}
 							<img src={angle} alt="" />
 						</div>
 						<div className="card_info">
 							<img src={dollarIcon} alt="" />
-							<div>${dollar.toLocaleString()}</div>
+							{fake === false ? (
+								<div>${dollar.toLocaleString()}</div>
+							) : (
+								<div className="card_info_fake"></div>
+							)}
 							<img src={angle} alt="" />
 						</div>
 					</div>
@@ -103,6 +125,11 @@ const CardStyle = styled.div`
 		gap: 8px;
 		font-weight: 500;
 		font-size: 0.8rem;
+	}
+	& .card_info_fake {
+		width: 3.4rem;
+		height: 0.8rem;
+		background-color: #292929;
 	}
 `;
 
