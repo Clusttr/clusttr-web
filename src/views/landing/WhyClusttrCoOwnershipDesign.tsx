@@ -64,7 +64,6 @@ const WhyClusttrCoOwnershipDesign = () => {
 				</div>
 			</div>
 			<div className="second_dotted_box"></div>
-			
 		</BoxDesign>
 	);
 };
@@ -87,15 +86,15 @@ const BoxDesign = styled.div`
 		border: 2px dashed #00c187;
 		border-left: none;
 		border-bottom: none;
-		top:-58%;
-		left: -35%
+		top: -58%;
+		left: -35%;
 	}
 	.second_dotted_box {
 		border: 2px dashed #00c187;
 		border-top: none;
 		border-right: none;
-		bottom:-28%;
-		right:-30%;
+		bottom: -32%;
+		right: -30%;
 	}
 
 	.design_inner_container {
@@ -109,7 +108,8 @@ const BoxDesign = styled.div`
 		border: 1px solid #0b191b;
 		padding: 10px 13px;
 		border-radius: 10px;
-		z-index: 7;
+		gap: 8px;
+		z-index: 2;
 	}
 	.design_top_first_stack {
 		display: flex;
@@ -129,16 +129,15 @@ const BoxDesign = styled.div`
 	}
 	.design_top_second_stack {
 		width: 50%;
-		margin: 8px 0;
 		position: relative;
 	}
 	.design_fill_bar_inner {
-		padding: 2.6% 100%;
+		padding: 2.5% 100%;
 		background-color: #171723;
 		// z-index: 3;
 	}
 	.design_fill_bar_outer {
-		padding: 2.6% 70%;
+		padding: 2.5% 70%;
 		background-color: #00c187;
 		// z-index: 4;
 		position: absolute;

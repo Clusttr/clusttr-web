@@ -34,6 +34,7 @@ const ComingSoonBox = ({
 				bathrooms={bathrooms}
 				coins={coins}
 				dollar={dollar}
+				fake={false}
 			/>
 
 			<div className="coming_soon_icon_info_container">
