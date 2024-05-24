@@ -15,7 +15,8 @@ type CardType = {
 	bathrooms: number;
 	coins: number;
 	dollar: number;
-	fake: boolean;
+	blankDetails: boolean;
+	isEmpoweringDesign: boolean;
 };
 
 const ComingSoonCard = ({
@@ -24,7 +25,8 @@ const ComingSoonCard = ({
 	bathrooms,
 	coins,
 	dollar,
-	fake,
+	blankDetails,
+	isEmpoweringDesign,
 }: CardType) => {
 	return (
 		<CardStyle>
@@ -33,11 +35,14 @@ const ComingSoonCard = ({
 				<div>
 					<img src={house} alt="" />
 				</div>
-				<div className="card_info_inner_container">
+				<div
+					className="card_info_inner_container"
+					style={!isEmpoweringDesign ? { minWidth: '300px' } : { minWidth: 0 }}
+				>
 					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={windowEdge} alt="" />
-							{fake === false ? (
+							{blankDetails === false ? (
 								<div>{windowLength.toLocaleString()} ft</div>
 							) : (
 								<div className="card_info_fake"></div>
@@ -45,7 +50,7 @@ const ComingSoonCard = ({
 						</div>
 						<div className="card_info">
 							<img src={bed} alt="" />
-							{fake === false ? (
+							{blankDetails === false ? (
 								<div>{beds}</div>
 							) : (
 								<div className="card_info_fake"></div>
@@ -53,7 +58,7 @@ const ComingSoonCard = ({
 						</div>
 						<div className="card_info">
 							<img src={bathroom} alt="" />
-							{fake === false ? (
+							{blankDetails === false ? (
 								<div>{bathrooms}</div>
 							) : (
 								<div className="card_info_fake"></div>
@@ -63,7 +68,7 @@ const ComingSoonCard = ({
 					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={coinsIcon} alt="" />
-							{fake === false ? (
+							{blankDetails === false ? (
 								<div>${coins.toLocaleString()}</div>
 							) : (
 								<div className="card_info_fake"></div>
@@ -72,7 +77,7 @@ const ComingSoonCard = ({
 						</div>
 						<div className="card_info">
 							<img src={dollarIcon} alt="" />
-							{fake === false ? (
+							{blankDetails === false ? (
 								<div>${dollar.toLocaleString()}</div>
 							) : (
 								<div className="card_info_fake"></div>
@@ -111,7 +116,6 @@ const CardStyle = styled.div`
 	& .card_info_inner_container {
 		display: flex;
 		width: 100%;
-		min-width: 300px;
 		gap: 20px;
 	}
 	& .card_info_inner_container_contents {
