@@ -143,6 +143,7 @@ const WhyClusttrStyle = styled.div`
 		position: absolute;
 		top: auto;
 		bottom: -10%;
+		width: 100%;
 	}
 
 	.background_grid {

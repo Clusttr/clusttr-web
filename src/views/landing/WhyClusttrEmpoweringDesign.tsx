@@ -6,32 +6,34 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 const WhyClusttrEmpoweringDesign = () => {
 	return (
 		<EmpowerDesign>
-				<div className="empower_design_header">
-					<div>Sydney, Australia</div>
-					<div className="empower_design_price">
-						<div>PRICE </div>
-						<div>
-							<FontAwesomeIcon icon={faAngleDown} fontSize={8} />
-						</div>
+			<div className="empower_design_header">
+				<div>Sydney, Australia</div>
+				<div className="empower_design_price">
+					<div>PRICE </div>
+					<div>
+						<FontAwesomeIcon icon={faAngleDown} fontSize={8} />
 					</div>
 				</div>
+			</div>
 
-				<ComingSoonCard
-					windowLength={10.75}
-					beds={7}
-					bathrooms={8}
-					coins={2245.05}
-					dollar={10540000}
-					fake={false}
-				/>
-				<ComingSoonCard
-					windowLength={10.75}
-					beds={7}
-					bathrooms={8}
-					coins={2245.05}
-					dollar={10540000}
-					fake={true}
-				/>
+			<ComingSoonCard
+				windowLength={10.75}
+				beds={7}
+				bathrooms={8}
+				coins={2245.05}
+				dollar={10540000}
+				blankDetails={false}
+				isEmpoweringDesign={true}
+			/>
+			<ComingSoonCard
+				windowLength={10.75}
+				beds={7}
+				bathrooms={8}
+				coins={2245.05}
+				dollar={10540000}
+				blankDetails={true}
+				isEmpoweringDesign={true}
+			/>
 		</EmpowerDesign>
 	);
 };
@@ -43,6 +45,8 @@ const EmpowerDesign = styled.div`
 	position: absolute;
 	bottom: -10%;
 	z-index: 1;
+	width: 65%;
+
 	& .empower_design_header {
 		font-weight: 500;
 		display: flex;
