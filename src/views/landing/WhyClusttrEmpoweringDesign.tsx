@@ -45,7 +45,7 @@ const EmpowerDesign = styled.div`
 	position: absolute;
 	bottom: -10%;
 	z-index: 1;
-	width: 65%;
+	cursor: default;
 
 	& .empower_design_header {
 		font-weight: 500;
