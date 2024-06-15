@@ -9,6 +9,7 @@ import underlayRay from '../../assets/why_clusttr/first_box_light_ray.png';
 import WhyClusttrCoOwnershipDesign from './WhyClusttrCoOwnershipDesign';
 import WhyClusttrEmpoweringDesign from './WhyClusttrEmpoweringDesign';
 import WhyClusttrFinancialServicesDesign from './WhyClusttrFinancialServicesDesign';
+import WhyClusttrCommunityAligned from './WhyClusttrCommunityAligned';
 
 const WhyClusttr = () => {
 	return (
@@ -52,14 +53,18 @@ const WhyClusttr = () => {
 				</div>
 				<div className="why_clusttr_bottom">
 					<div className="why_clusttr_bottom_small_box why_clusttr_box">
+						
 						{/* <div className="why_clusttr_small_box_icon_container">
 							<img src={community} alt="" className="why_clusttr_icon" />
 						</div> */}
-						<div className="why_clusttr_box_header">Community Aligned</div>
-						<div className="why_clusttr_box_info">
-							Join a community with fellow co-owners, investors, and experts who
-							are here to share knowledge and insights.
+						<div>
+							<div className="why_clusttr_box_header">Community Aligned</div>
+							<div className="why_clusttr_box_info">
+								Join a community with fellow co-owners, investors, and experts
+								who are here to share knowledge and insights.
+							</div>
 						</div>
+						<WhyClusttrCommunityAligned />
 					</div>
 					<div className="why_clusttr_bottom_big_box why_clusttr_box">
 						{/* <div className="why_clusttr_big_box_icon_container">
@@ -75,6 +80,7 @@ const WhyClusttr = () => {
 								and transparent financial ecosystem for co-owners.
 							</div>
 						</div>
+
 						<WhyClusttrFinancialServicesDesign />
 					</div>
 				</div>
@@ -121,10 +127,10 @@ const WhyClusttrStyle = styled.div`
 		text-align: center;
 	}
 
-	& .why_clusttr_top > div:first-child > div:nth-child(2) {
+	& .why_clusttr_top > div:first-child > div:nth-child(3) {
 		width: 57%;
 	}
-	& .why_clusttr_top > div > div:nth-child(2) {
+	& .why_clusttr_top > div:last-child > div:nth-child(2) {
 		width: 77%;
 	}
 	& .top_light_ray {
@@ -176,11 +182,11 @@ const WhyClusttrStyle = styled.div`
 	// }
 	& .why_clusttr_box_header {
 		font-weight: 500;
-		font-size: 1rem;
+		font-size: 1.05rem;
 	}
 	& .why_clusttr_box_info {
 		font-weight: 500;
-		font-size: 0.9rem;
+		font-size: 0.92rem;
 		color: #5d7a76;
 		padding-bottom: 80px;
 		line-height: 22px;
@@ -199,8 +205,13 @@ const WhyClusttrStyle = styled.div`
 		display: flex;
 		flex-direction: column;
 		gap: 11px;
+		padding-bottom: 10px;
 	}
-	& .why_clusttr_bottom > div:first-child > div:nth-child(2) {
+	& .why_clusttr_bottom > div:first-child > div:first-child {
+		display: flex;
+		flex-direction: column;
+		gap: 11px;
+		padding-bottom: 10px;
 		width: 67%;
 	}
 	&
@@ -213,11 +224,12 @@ const WhyClusttrStyle = styled.div`
 	}
 
 	& .why_clusttr_bottom_small_box {
+		
 		padding: 30px 25px 70px;
 	}
 	& .why_clusttr_bottom_big_box {
 		// padding: 100px 20px 200px;
-		padding:  20px;
+		padding: 30px;
 	}
 	@media (max-width: 480px) {
 		& .why_clusttr_container {
