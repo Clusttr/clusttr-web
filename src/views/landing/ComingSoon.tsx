@@ -51,7 +51,6 @@ const fakeData = [
 ];
 
 const ComingSoonBoxes = () => {
-	
 	return (
 		<div className="coming_soon_boxes">
 			{fakeData.map(
