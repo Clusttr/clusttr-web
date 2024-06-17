@@ -55,7 +55,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: any }) {
 								<Link to="/about-us">About Us</Link>
 							</li>
 							<li>
-								<Link to="/clustrr-world">Clusttr World(NFT)</Link>
+								<Link to="/clusttr-world">Clusttr World(NFT)</Link>
 							</li>
 							<li>
 								<a
@@ -96,7 +96,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: any }) {
 							<Link to="/about-us">About Us</Link>
 						</li>
 						<li>
-							<Link to="/clustrr-world">Clusttr World(NFT)</Link>
+							<Link to="/clusttr-world">Clusttr World(NFT)</Link>
 						</li>
 						<li>
 							<a
