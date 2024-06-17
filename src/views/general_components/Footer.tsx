@@ -47,11 +47,11 @@ const Footer = () => {
 						</div>
 						{isMobile ? (
 							<div className="footer_details_links">
-								<div className="footer_details_links_header">Community</div>
-								<div className="footer_details_link">Twitter</div>
-								<div className="footer_details_link">Github</div>
+								<a><div className="footer_details_links_header">Community</div></a>
+								<a target='_blank' href='https://x.com/clusttr_io'><div className="footer_details_link">Twitter</div></a>
+								<a target='_blank' href='https://github.com/Clusttr'><div className="footer_details_link">Github</div></a>
 								<div className="footer_details_link">Linkedin</div>
-								<div className="footer_details_link">Discord</div>
+								<a target='_blank' href='https://discord.gg/bu2TQDCq'><div className="footer_details_link">Discord</div></a>
 							</div>
 						) : (
 							<></>
@@ -79,10 +79,10 @@ const Footer = () => {
 						<></>
 					) : (
 						<div className="more_details_brand_icons">
-							<FontAwesomeIcon icon={faXTwitter} size="lg" />
-							<FontAwesomeIcon icon={faGithub} size="lg" />
+							<a target='_blank' href='https://x.com/clusttr_io'><FontAwesomeIcon icon={faXTwitter} size="lg" /></a>
+							<a target='_blank' href='https://github.com/Clusttr'><FontAwesomeIcon icon={faGithub} size="lg" /></a>
 							<FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-							<FontAwesomeIcon icon={faDiscord} size="lg" />
+							<a target='_blank' href='https://discord.gg/bu2TQDCq'><FontAwesomeIcon icon={faDiscord} size="lg" /></a>
 						</div>
 					)}
 				</div>
@@ -221,7 +221,7 @@ const Style = styled.footer`
 		}
 	}
 
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		& .footer_details {
 			padding: 50px 20px 20px 60px;
 		}
@@ -236,4 +236,6 @@ const Style = styled.footer`
 			gap: 25px;
 		}
 	}
+
+	a { color: inherit; } 
 `;

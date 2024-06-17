@@ -55,15 +55,15 @@ function Header({ open, setOpen }: { open: boolean; setOpen: any }) {
 								<Link to="/about-us">About Us</Link>
 							</li>
 							<li>
-								<Link to="/clustrr-world">Clusttr World(NFT)</Link>
+								<Link to="/clusttr-world">Clusttr World(NFT)</Link>
 							</li>
 							<li>
 								<a
 									id="whitepaper"
 									target="_blank"
-									href="https://clusttr.gitbook.io/clusttrs-white-paper/"
+									href="https://t.co/O5rj43pBFv"
 								>
-									whitepaper
+									Litepaper
 								</a>
 							</li>
 						</ul>
@@ -96,7 +96,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: any }) {
 							<Link to="/about-us">About Us</Link>
 						</li>
 						<li>
-							<Link to="/clustrr-world">Clusttr World(NFT)</Link>
+							<Link to="/clusttr-world">Clusttr World(NFT)</Link>
 						</li>
 						<li>
 							<a

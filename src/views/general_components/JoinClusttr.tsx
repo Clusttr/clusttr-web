@@ -146,7 +146,7 @@ const JoinClusttrStyle = styled.div`
 		}
 	}
 
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		margin: 60px;
 
 		padding: 7rem 20px 5rem;

@@ -81,7 +81,7 @@ const AboutClusttrStyle = styled.div`
 		color: #c8e3df;
 	}
 
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		height: 65vh;
 		align-items: center;
 		background-image: url(${aboutBGTablet});

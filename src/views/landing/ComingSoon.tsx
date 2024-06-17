@@ -100,7 +100,7 @@ const ComingSoonStyle = styled.div`
 		position: absolute;
 		top: 0;
 		left: 0;
-		righ11: 02;
+		right: 0;
 		// background-color: red;
 	}
 

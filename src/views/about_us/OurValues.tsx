@@ -152,7 +152,7 @@ const OurValuesStyle = styled.div`
 		}
 	}
 
-	@media (max-width: 770px) {
+	@media (min-width: 480px) and (max-width: 770px) {
 		padding: 45px 10px;
 
 		& .strokes {
