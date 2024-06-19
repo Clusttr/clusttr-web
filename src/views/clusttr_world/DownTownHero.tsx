@@ -64,10 +64,6 @@ const NavHeader = styled.nav`
     @media (max-width: 48em) {
         padding-left: 1rem;
         padding-right: 1rem;
-
-        .img{
-            scale: 0.6;
-        }
     }
 `;
 const ConnectButton = styled.button`
@@ -84,7 +80,8 @@ const ConnectButton = styled.button`
     @media (max-width: 48em) {
         padding-left: 0.4rem;
         padding-right: 0.4rem;
-
+    }
+    @media (max-width: 19.25rem) {
         span{
             display: none;
         }
@@ -135,8 +132,17 @@ const HeroTextContainer = styled.article`
 
     @media (max-width: 48em) {
         h1 {
-        font-size: 50px;
+        font-size: 40px;
+        padding-left: 1rem;
+        padding-right: 1rem;
         }
+        div{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        p{
+            font-size: 14px;
+        }
+    }
     }
 `;
 
