@@ -18,8 +18,8 @@ const Avatar = ({ avatarsNumber, imgSrc, randomColors }: AvatarType) => {
 						: `${randomColors[avatarsNumber - 1]}`,
 			}}
 		>
-			<div>
-				<img src={imgSrc} alt="community_avatar" />
+			<div >
+				<img src={imgSrc} alt="community_avatar" className='h'/>
 			</div>
 		</AvatarStyle>
 	);

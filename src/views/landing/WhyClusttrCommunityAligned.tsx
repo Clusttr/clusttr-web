@@ -63,8 +63,7 @@ const CommunityDesign = styled.div`
 		gap: 10px;
 		position: absolute;
 		right: -4%;
-		bottom:-4%;
-		
+		bottom: -4%;
 	}
 `;
 

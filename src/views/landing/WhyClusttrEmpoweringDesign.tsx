@@ -46,7 +46,7 @@ const EmpowerDesign = styled.div`
 	bottom: -10%;
 	z-index: 1;
 	cursor: default;
-
+	
 	& .empower_design_header {
 		font-weight: 500;
 		display: flex;
@@ -60,6 +60,11 @@ const EmpowerDesign = styled.div`
 	}
 	& .empower_design_price > :first-child {
 		color: #5d7a76;
+	}
+	@media (max-width: 480px) {
+		width: 80%;
+		bottom: -50%;
+
 	}
 `;
 export default WhyClusttrEmpoweringDesign;

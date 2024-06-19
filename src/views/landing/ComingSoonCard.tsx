@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import chart from '../../assets/coming_soon/chart_line.png';
 import house from '../../assets/coming_soon/house.png';
 import grid from '../../assets/coming_soon/grid.png';
@@ -29,16 +29,13 @@ const ComingSoonCard = ({
 	isEmpoweringDesign,
 }: CardType) => {
 	return (
-		<CardStyle>
+		<CardStyle isEmpoweringDesign={isEmpoweringDesign}>
 			<img className="grid_img" src={grid} alt="" />
 			<div className="card_info_container">
 				<div>
-					<img src={house} alt="" />
+					<img className="house_img" src={house} alt="" />
 				</div>
-				<div
-					className="card_info_inner_container"
-					style={!isEmpoweringDesign ? { minWidth: '300px' } : { minWidth: 0 }}
-				>
+				<div className="card_info_inner_container">
 					<div className="card_info_inner_container_contents">
 						<div className="card_info">
 							<img src={windowEdge} alt="" />
@@ -88,13 +85,13 @@ const ComingSoonCard = ({
 				</div>
 			</div>
 			<div>
-				<img src={chart} alt="" />
+				<img className="chart_img" src={chart} alt="" />
 			</div>
 		</CardStyle>
 	);
 };
 
-const CardStyle = styled.div`
+const CardStyle = styled.div<{ isEmpoweringDesign: boolean }>`
 	display: flex;
 	gap: 30px;
 	background-color: #081517;
@@ -107,6 +104,7 @@ const CardStyle = styled.div`
 
 	& .grid_img {
 		position: absolute;
+		top:0;
 		right: 0;
 	}
 	& .card_info_container {
@@ -118,6 +116,13 @@ const CardStyle = styled.div`
 		width: 100%;
 		gap: 20px;
 	}
+	${(props) =>
+		!props.isEmpoweringDesign &&
+		css`
+			& .card_info_inner_container {
+				min-width: 300px;
+			}
+		`}
 	& .card_info_inner_container_contents {
 		display: flex;
 		flex-direction: column;
@@ -127,13 +132,55 @@ const CardStyle = styled.div`
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		font-weight: 500;
-		font-size: 0.8rem;
+	}
+	.card_info > div:nth-child(2) {
+		font-size: 0.85rem;
 	}
 	& .card_info_fake {
-		width: 3.4rem;
+		width: 3.9rem;
 		height: 0.8rem;
 		background-color: #292929;
+	}
+	${(props) =>
+		props.isEmpoweringDesign &&
+		css`
+			& .card_info_inner_container {
+				min-width: 0;
+			}
+			@media (max-width: 480px) {
+				.house_img {
+					width: 3.4rem;
+				}
+				& .card_info_container {
+					gap: 15px;
+				}
+				& .card_info_inner_container {
+					gap: 10px;
+				}
+				& .card_info_inner_container_contents {
+					gap: 7px;
+				}
+				& .card_info {
+					gap: 5px;
+				}
+				.card_info > img:first-child {
+					width: 0.7rem;
+				}
+				.card_info > div:nth-child(2) {
+					font-size: 0.55rem;
+					font-weight: 500;
+				}
+				
+				.grid_img {
+					width: 30%;
+				}
+				.chart_img{
+					width: 17%;
+					top:25%;
+					right:4%;
+					position: absolute;
+				}
+	`}
 	}
 `;
 
