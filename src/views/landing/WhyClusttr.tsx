@@ -290,11 +290,11 @@ const WhyClusttrStyle = styled.div`
 			width: 25%;
 		}
 		& .why_clusttr_box_header {
-			font-size: 1.15rem;
+			font-size: 1.2rem;
 		}
 		& .why_clusttr_box_info {
-			font-size: 0.82rem;
-			line-height: 20px;
+			font-size: 0.94rem;
+			line-height: 22px;
 		}
 	}
 
