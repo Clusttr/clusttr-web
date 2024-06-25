@@ -58,13 +58,18 @@ const EmpowerDesign = styled.div`
 		gap: 5px;
 		margin-right: 2px;
 	}
-	& .empower_design_price > :first-child {
+	& .empower_design_price > div:first-child {
 		color: #5d7a76;
 	}
 	@media (max-width: 480px) {
-		width: 80%;
-		bottom: -50%;
-
+		width: 82%;
+		bottom: -51%;
+		// justify-content: center;
+		// align-items: center;
+		
+		.empower_design_header {
+			font-size: 0.5rem;
+		}
 	}
 `;
 export default WhyClusttrEmpoweringDesign;

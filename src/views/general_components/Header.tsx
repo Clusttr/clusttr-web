@@ -104,7 +104,7 @@ function Header({ open, setOpen }: { open: boolean; setOpen: any }) {
 								target="_blank"
 								href="https://clusttr.gitbook.io/clusttrs-white-paper/"
 							>
-								whitepaper
+								Litepaper
 							</a>
 						</li>
 					</ul>

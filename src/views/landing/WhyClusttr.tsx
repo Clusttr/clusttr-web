@@ -25,10 +25,15 @@ const WhyClusttr = () => {
 						{/* <div className="why_clusttr_small_box_icon_container">
 							<img src={house} alt="" className="why_clusttr_icon" />
 						</div> */}
-						<div className="why_clusttr_box_header">Empowering Individuals</div>
-						<div className="why_clusttr_box_info">
-							Invest in premium properties with a fraction of the upfront cost &
-							spread your investments across multiple properties and locations.
+						<div className="why_clusttr_box_container">
+							<div className="why_clusttr_box_header">
+								Empowering Individuals
+							</div>
+							<div className="why_clusttr_box_info">
+								Invest in premium properties with a fraction of the upfront cost
+								& spread your investments across multiple properties and
+								locations.
+							</div>
 						</div>
 
 						<WhyClusttrEmpoweringDesign />
@@ -38,12 +43,14 @@ const WhyClusttr = () => {
 						{/* <div className="why_clusttr_big_box_icon_container">
 							<img src={land} alt="" className="why_clusttr_icon" />
 						</div> */}
-						<div className="why_clusttr_box_header">
-							Intelligent Co-Ownership Platform
-						</div>
-						<div className="why_clusttr_box_info">
-							Connect with like-minded co-owners based on your preferences,
-							goals, and investment strategies.
+						<div className="why_clusttr_box_container">
+							<div className="why_clusttr_box_header">
+								Intelligent Co-Ownership Platform
+							</div>
+							<div className="why_clusttr_box_info">
+								Connect with like-minded co-owners based on your preferences,
+								goals, and investment strategies.
+							</div>
 						</div>
 						<WhyClusttrCoOwnershipDesign />
 						<div className="background_grid">
@@ -53,7 +60,6 @@ const WhyClusttr = () => {
 				</div>
 				<div className="why_clusttr_bottom">
 					<div className="why_clusttr_bottom_small_box why_clusttr_box">
-						
 						{/* <div className="why_clusttr_small_box_icon_container">
 							<img src={community} alt="" className="why_clusttr_icon" />
 						</div> */}
@@ -124,15 +130,23 @@ const WhyClusttrStyle = styled.div`
 	}
 	& .why_clusttr_top > div {
 		align-items: center;
+	}
+
+	.why_clusttr_box_container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+	& .why_clusttr_top > div:first-child > div:nth-child(2) > div:nth-child(2) {
+		width: 62%;
+		text-align: center;
+	}
+	& .why_clusttr_top > div:last-child > div:first-child > div:nth-child(2) {
+		width: 80%;
 		text-align: center;
 	}
 
-	& .why_clusttr_top > div:first-child > div:nth-child(3) {
-		width: 57%;
-	}
-	& .why_clusttr_top > div:last-child > div:nth-child(2) {
-		width: 77%;
-	}
 	& .top_light_ray {
 		position: absolute;
 		top: 0;
@@ -171,15 +185,6 @@ const WhyClusttrStyle = styled.div`
 	& .selected_box {
 		border: 2px solid #77859b;
 	}
-	// & .why_clusttr_small_box_icon_container {
-	// 	width: 20%;
-	// }
-	// & .why_clusttr_big_box_icon_container {
-	// 	width: 10%;
-	// }
-	// & .why_clusttr_icon {
-	// 	width: 100%;
-	// }
 	& .why_clusttr_box_header {
 		font-weight: 500;
 		font-size: 1.05rem;
@@ -224,13 +229,13 @@ const WhyClusttrStyle = styled.div`
 	}
 
 	& .why_clusttr_bottom_small_box {
-		
 		padding: 30px 25px 70px;
 	}
 	& .why_clusttr_bottom_big_box {
 		// padding: 100px 20px 200px;
 		padding: 30px;
 	}
+
 	@media (max-width: 480px) {
 		& .why_clusttr_container {
 			padding: 50px 20px 30px;
@@ -241,10 +246,27 @@ const WhyClusttrStyle = styled.div`
 			display: flex;
 			flex-direction: column;
 			gap: 25px;
-
 			margin-top: 0;
 		}
+		.why_clusttr_box_container {
+			align-items: flex-start;
+		}
+		.why_clusttr_top > div:first-child > div:nth-child(2) {
+			margin-bottom: 110px;
+		}
+		.why_clusttr_top > div:first-child > div:nth-child(2) > div:nth-child(2),
+		.why_clusttr_top > div:last-child > div:first-child > div:nth-child(2) {
+			width: 100%;
+			padding-bottom: 0;
+			text-align: left;
+		}
+		.why_clusttr_top > div:last-child {
+			justify-content: space-between;
 
+		}
+		.background_grid{
+			display:none;
+		}
 		& .why_clusttr_bottom {
 			display: flex;
 			flex-direction: column;
@@ -254,6 +276,7 @@ const WhyClusttrStyle = styled.div`
 		& .why_clusttr_box {
 			gap: 15px;
 			padding: 20px;
+			height: 260px;
 		}
 
 		& .why_clusttr_small_box_icon_container {
@@ -263,13 +286,14 @@ const WhyClusttrStyle = styled.div`
 			width: 25%;
 		}
 		& .why_clusttr_box_header {
-			font-size: 1.3rem;
+			font-size: 1.15rem;
 		}
 		& .why_clusttr_box_info {
-			font-size: 1rem;
-			line-height: 22px;
+			font-size: 0.82rem;
+			line-height: 20px;
 		}
 	}
+
 	@media (min-width: 480px) and (max-width: 770px) {
 		& .why_clusttr_container {
 			padding: 50px 40px 30px;

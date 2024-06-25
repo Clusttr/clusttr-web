@@ -96,7 +96,7 @@ const CardStyle = styled.div<{ isEmpoweringDesign: boolean }>`
 	gap: 30px;
 	background-color: #081517;
 	padding: 20px;
-	border-radius: 20px;
+	border-radius: 15px;
 	border: 2px solid #132325;
 	align-items: center;
 	position: relative;
@@ -144,15 +144,16 @@ const CardStyle = styled.div<{ isEmpoweringDesign: boolean }>`
 	${(props) =>
 		props.isEmpoweringDesign &&
 		css`
-			& .card_info_inner_container {
-				min-width: 0;
-			}
-			@media (max-width: 480px) {
+		& .card_info_inner_container {
+			min-width: 0;
+		}
+		@media (max-width: 480px) {
+				border-radius: 10px;
 				.house_img {
-					width: 3.4rem;
+					width: 85%;
 				}
 				& .card_info_container {
-					gap: 15px;
+					gap: 5px;
 				}
 				& .card_info_inner_container {
 					gap: 10px;
@@ -164,20 +165,23 @@ const CardStyle = styled.div<{ isEmpoweringDesign: boolean }>`
 					gap: 5px;
 				}
 				.card_info > img:first-child {
-					width: 0.7rem;
+					width: 0.55rem;
 				}
 				.card_info > div:nth-child(2) {
-					font-size: 0.55rem;
+					font-size: 0.47rem;
 					font-weight: 500;
+				}
+				.card_info > img:last-child {
+					width: 0.55rem;
 				}
 				
 				.grid_img {
 					width: 30%;
 				}
 				.chart_img{
-					width: 17%;
-					top:25%;
-					right:4%;
+					width: 19%;
+					top:28%;
+					right:3%;
 					position: absolute;
 				}
 	`}

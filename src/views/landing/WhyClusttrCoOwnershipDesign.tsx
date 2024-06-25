@@ -10,7 +10,7 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 const WhyClusttrCoOwnershipDesign = () => {
 	return (
 		<BoxDesign>
-			<div className="first_dotted_box"></div>
+			<div className="first_dotted_box dotted_box"></div>
 			<div className="design_inner_container">
 				<div className="design_top_container">
 					<div className="design_top_first_stack">
@@ -63,7 +63,7 @@ const WhyClusttrCoOwnershipDesign = () => {
 					</div>
 				</div>
 			</div>
-			<div className="second_dotted_box"></div>
+			<div className="second_dotted_box dotted_box"></div>
 		</BoxDesign>
 	);
 };
@@ -201,6 +201,24 @@ const BoxDesign = styled.div`
 	}
 	.fake_user_amount_subscribed {
 		font-size: 0.7rem;
+	}
+
+	@media (max-width: 480px) {
+		width: 100%;
+
+		.dotted_box,
+		.design_bottom_container {
+			display: none;
+		}
+		.design_inner_container {
+			align-items: flex-end;
+		}
+		.design_top_container {
+			border: 1.2px solid #0b191b;
+		}
+		.design_top_container {
+			width: 90%;
+		}
 	}
 `;
 
