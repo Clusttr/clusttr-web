@@ -18,8 +18,8 @@ const Avatar = ({ avatarsNumber, imgSrc, randomColors }: AvatarType) => {
 						: `${randomColors[avatarsNumber - 1]}`,
 			}}
 		>
-			<div >
-				<img src={imgSrc} alt="community_avatar" className='h'/>
+			<div>
+				<img src={imgSrc} alt="community_avatar" className="h" />
 			</div>
 		</AvatarStyle>
 	);
@@ -42,6 +42,28 @@ const AvatarStyle = styled.div`
 	> div > img {
 		// aspect-ratio: 1/1;
 		width: 88%;
+	}
+
+	@media (max-width: 480px) {
+		width: 100%;
+		height: 44px;
+		border: 2px solid #00c187;
+
+		> div {
+			top: unset;
+			right: unset;
+			bottom: -2px;
+		}
+
+		> div > img {
+			width: 100%;
+		}
+	}
+	@media (min-width: 321px) and (max-width: 380px) {
+		height: 35px;
+	}
+	@media (max-width: 321px) {
+		height: 25px;
 	}
 `;
 

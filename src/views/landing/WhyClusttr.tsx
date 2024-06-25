@@ -255,21 +255,25 @@ const WhyClusttrStyle = styled.div`
 			margin-bottom: 110px;
 		}
 		.why_clusttr_top > div:first-child > div:nth-child(2) > div:nth-child(2),
-		.why_clusttr_top > div:last-child > div:first-child > div:nth-child(2) {
-			width: 100%;
+		.why_clusttr_top > div:last-child > div:first-child > div:nth-child(2),
+		.why_clusttr_bottom > div:first-child > div:first-child,
+		.why_clusttr_bottom
+			> div:nth-child(2)
+			> div:first-child
+			> div:nth-child(2) {
+			width: unset;
 			padding-bottom: 0;
 			text-align: left;
 		}
 		.why_clusttr_top > div:last-child {
 			justify-content: space-between;
-
 		}
-		.background_grid{
-			display:none;
+		.background_grid {
+			display: none;
 		}
 		& .why_clusttr_bottom {
 			display: flex;
-			flex-direction: column;
+			flex-direction: column-reverse;
 			gap: 25px;
 		}
 
