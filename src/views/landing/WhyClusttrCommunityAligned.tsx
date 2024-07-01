@@ -63,8 +63,28 @@ const CommunityDesign = styled.div`
 		gap: 10px;
 		position: absolute;
 		right: -4%;
-		bottom:-4%;
-		
+		bottom: -4%;
+	}
+
+	@media (max-width: 480px) {
+		> div {
+			width: 75%;
+			gap: 15px;
+			grid-template-columns: repeat(5, 1fr);
+			right: 12.5%;
+			bottom: -32%;
+		}
+	}
+
+	@media (min-width: 321px) and (max-width: 376px) {
+		> div {
+			bottom: -26%;
+		}
+	}
+	@media (max-width: 321px) {
+		> div {
+			bottom: -20%;
+		}
 	}
 `;
 

@@ -119,7 +119,7 @@ const OurValuesStyle = styled.div`
 	& .our_values_info {
 		color: #355358;
 		font-weight: 500;
-		font-size: 1.05rem;
+		font-size: 0.95rem;
 		line-height: 1.7rem;
 	}
 
@@ -179,7 +179,7 @@ const OurValuesStyle = styled.div`
 			font-weight: 500;
 		}
 		& .our_values_info {
-			font-size: 1.25rem;
+			font-size: 1.2rem;
 			line-height: 1.9rem;
 		}
 	}

@@ -47,11 +47,17 @@ const Footer = () => {
 						</div>
 						{isMobile ? (
 							<div className="footer_details_links">
-								<a><div className="footer_details_links_header">Community</div></a>
-								<a target='_blank' href='https://x.com/clusttr_io'><div className="footer_details_link">Twitter</div></a>
-								<a target='_blank' href='https://github.com/Clusttr'><div className="footer_details_link">Github</div></a>
+								<div className="footer_details_links_header">Community</div>
+								<Link target="_blank" to="https://x.com/clusttr_io">
+									<div className="footer_details_link">Twitter</div>
+								</Link>
+								<Link target="_blank" to="https://github.com/Clusttr">
+									<div className="footer_details_link">Github</div>
+								</Link>
 								<div className="footer_details_link">Linkedin</div>
-								<a target='_blank' href='https://discord.gg/bu2TQDCq'><div className="footer_details_link">Discord</div></a>
+								<Link target="_blank" to="https://discord.gg/bu2TQDCq">
+									<div className="footer_details_link">Discord</div>
+								</Link>
 							</div>
 						) : (
 							<></>
@@ -79,10 +85,16 @@ const Footer = () => {
 						<></>
 					) : (
 						<div className="more_details_brand_icons">
-							<a target='_blank' href='https://x.com/clusttr_io'><FontAwesomeIcon icon={faXTwitter} size="lg" /></a>
-							<a target='_blank' href='https://github.com/Clusttr'><FontAwesomeIcon icon={faGithub} size="lg" /></a>
+							<Link target="_blank" to="https://x.com/clusttr_io">
+								<FontAwesomeIcon icon={faXTwitter} size="lg" />
+							</Link>
+							<Link target="_blank" to="https://github.com/Clusttr">
+								<FontAwesomeIcon icon={faGithub} size="lg" />
+							</Link>
 							<FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-							<a target='_blank' href='https://discord.gg/bu2TQDCq'><FontAwesomeIcon icon={faDiscord} size="lg" /></a>
+							<Link target="_blank" to="https://discord.gg/bu2TQDCq">
+								<FontAwesomeIcon icon={faDiscord} size="lg" />
+							</Link>
 						</div>
 					)}
 				</div>
@@ -124,6 +136,9 @@ const Style = styled.footer`
 		display: flex;
 		flex-direction: column;
 		gap: 22px;
+	}
+	.footer_details_links > a {
+		text-decoration: none;
 	}
 	& .footer_details_links_header {
 		font-weight: 500;
@@ -237,5 +252,7 @@ const Style = styled.footer`
 		}
 	}
 
-	a { color: inherit; } 
+	a {
+		color: inherit;
+	}
 `;
