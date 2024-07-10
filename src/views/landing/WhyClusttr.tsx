@@ -236,6 +236,49 @@ const WhyClusttrStyle = styled.div`
 		padding: 30px;
 	}
 
+	@media (min-width: 480px) and (max-width: 770px) {
+		& .why_clusttr_container {
+			padding: 50px 40px 30px;
+			gap: 15px;
+		}
+
+		& .why_clusttr_header {
+			font-size: 0.9rem;
+		}
+
+		& .why_clusttr_top {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+			margin-top: 15px;
+		}
+
+		& .why_clusttr_bottom {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+		}
+
+		& .why_clusttr_box {
+			gap: 15px;
+			padding: 20px 20px 60px;
+		}
+
+		& .why_clusttr_small_box_icon_container {
+			width: 25%;
+		}
+		& .why_clusttr_big_box_icon_container {
+			width: 25%;
+		}
+		& .why_clusttr_box_header {
+			font-size: 1.1rem;
+		}
+		& .why_clusttr_box_info {
+			font-size: 1.07rem;
+			line-height: 30px;
+		}
+	}
+
 	@media (max-width: 480px) {
 		& .why_clusttr_container {
 			padding: 50px 20px 30px;
@@ -293,7 +336,7 @@ const WhyClusttrStyle = styled.div`
 			width: 25%;
 		}
 		& .why_clusttr_box_header {
-			font-size: 1.2rem;
+			font-size: 1.15rem;
 		}
 		& .why_clusttr_box_info {
 			font-size: 0.94rem;
@@ -301,46 +344,14 @@ const WhyClusttrStyle = styled.div`
 		}
 	}
 
-	@media (min-width: 480px) and (max-width: 770px) {
-		& .why_clusttr_container {
-			padding: 50px 40px 30px;
-			gap: 15px;
-		}
-
-		& .why_clusttr_header {
-			font-size: 0.9rem;
-		}
-
-		& .why_clusttr_top {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 15px;
-			margin-top: 15px;
-		}
-
-		& .why_clusttr_bottom {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 15px;
-		}
-
+	@media (min-width: 321px) and (max-width: 400px) {
 		& .why_clusttr_box {
-			gap: 15px;
-			padding: 20px 20px 60px;
+			height: 300px;
 		}
-
-		& .why_clusttr_small_box_icon_container {
-			width: 25%;
-		}
-		& .why_clusttr_big_box_icon_container {
-			width: 25%;
-		}
-		& .why_clusttr_box_header {
-			font-size: 1.1rem;
-		}
-		& .why_clusttr_box_info {
-			font-size: 1.07rem;
-			line-height: 30px;
+	}
+	@media (max-width: 321px) {
+		& .why_clusttr_box {
+			height: 315px;
 		}
 	}
 `;
