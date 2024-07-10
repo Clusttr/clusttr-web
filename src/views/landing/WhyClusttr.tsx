@@ -344,12 +344,12 @@ const WhyClusttrStyle = styled.div`
 		}
 	}
 
-	@media (min-width: 321px) and (max-width: 400px) {
+	@media (min-width: 338px) and (max-width: 422px) {
 		& .why_clusttr_box {
 			height: 300px;
 		}
 	}
-	@media (max-width: 321px) {
+	@media (max-width: 338px) {
 		& .why_clusttr_box {
 			height: 315px;
 		}
