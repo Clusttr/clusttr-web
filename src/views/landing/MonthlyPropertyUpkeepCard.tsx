@@ -1,16 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type UpkeepCardProps = {
 	card: object;
+	hideCard: boolean;
 };
 
-const MonthlyPropertyUpkeepCard = ({ card }: UpkeepCardProps) => {
+const MonthlyPropertyUpkeepCard = ({ card, hideCard }: UpkeepCardProps) => {
 	return (
-		<UpkeepDesign
-			style={
-				card
-			}
-		>
+		<UpkeepDesign style={card} hideCard={hideCard}>
 			<div className="upkeep_side_line"></div>
 			<div className="upkeep_main_content">
 				<div className="upkeep_main_top">
@@ -20,26 +17,27 @@ const MonthlyPropertyUpkeepCard = ({ card }: UpkeepCardProps) => {
 						<div className="active_progress__bar"></div>
 					</div>
 				</div>
-				<div className='blank_box'>
-					<div className='first_box'></div>
-					<div className='second_box'></div>
+				<div className="blank_box">
+					<div className="first_box"></div>
+					<div className="second_box"></div>
 					<div></div>
 					<div></div>
-					<div className='fifth_box'></div>
-					<div className='sixth_box'></div>
+					<div className="fifth_box"></div>
+					<div className="sixth_box"></div>
 				</div>
 			</div>
 		</UpkeepDesign>
 	);
 };
 
-const UpkeepDesign = styled.div`
+const UpkeepDesign = styled.div<{ hideCard: boolean }>`
 	display: flex;
 	border: 2px solid #0e191b;
 	border-radius: 10px;
 	overflow: hidden;
 	width: 100%;
 	position: absolute;
+
 	.upkeep_side_line {
 		height: 70px;
 		border-radius: 10px 0 0 10px;
@@ -50,9 +48,9 @@ const UpkeepDesign = styled.div`
 		width: 100%;
 		background-image: linear-gradient(to bottom, #040d10, #050e11);
 		padding: 10px;
-		display:flex;
-		flex-direction:column;
-		gap:10px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 	.upkeep_main_top {
 		display: flex;
@@ -95,30 +93,64 @@ const UpkeepDesign = styled.div`
 	.blank_box {
 		display: grid;
 		grid-template-columns: auto auto auto auto auto auto;
-		gap:8px;
+		gap: 8px;
 		width: 90%;
 	}
 	.blank_box > div {
-		background-color:#132325;
+		background-color: #132325;
 		width: 100%;
 		height: 3px;
-		
 	}
-	.first_box{
+	.first_box {
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
-	.second_box{
+	.second_box {
 		grid-column-start: 3;
 		grid-column-end: 5;
 	}
-	.fifth_box{
+	.fifth_box {
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
-	.sixth_box{
+	.sixth_box {
 		grid-column-start: 3;
 		grid-column-end: 7;
+	}
+	@media (max-width: 480px) {
+		.upkeep_side_line {
+			height: 55px;
+			border-radius: 8px 0 0 8px;
+		}
+		.upkeep_main_top {
+			font-weight: 500;
+		}
+		.upkeep_main_top > div:first-child {
+			font-size: 0.45rem;
+		}
+		.upkeep_main_top > div:last-child {
+			gap: 5px;
+			font-size: 0.45rem;
+		}
+		.active_progress__bar {
+			padding: 3px;
+		}
+		.active_progress__bar::after {
+			top: 1.3px;
+			left: 1.02px;
+			padding: 2px;
+		}
+		.blank_box {
+			gap: 5px;
+		}
+		.blank_box > div {
+			height: 2px;
+		}
+		${({ hideCard }) =>
+			hideCard &&
+			css`
+				display: none;
+			`}
 	}
 `;
 

@@ -276,7 +276,10 @@ const WhyClusttrStyle = styled.div`
 			flex-direction: column-reverse;
 			gap: 25px;
 		}
-
+		.why_clusttr_bottom > div:nth-child(2) {
+			flex-direction: column;
+			justify-content: unset;
+		}
 		& .why_clusttr_box {
 			gap: 15px;
 			padding: 20px;
