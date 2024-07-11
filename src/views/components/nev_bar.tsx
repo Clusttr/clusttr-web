@@ -6,7 +6,7 @@ function NavBar() {
       <Logo>clusttr</Logo>
 
       <NavLinkGroup>
-        <NavLink>WhitePaper</NavLink>
+        <NavLink>LitePaper</NavLink>
         <NavLink>Contact us</NavLink>
       </NavLinkGroup>
     </Navbar>
