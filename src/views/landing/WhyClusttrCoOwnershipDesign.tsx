@@ -202,7 +202,34 @@ const BoxDesign = styled.div`
 	.fake_user_amount_subscribed {
 		font-size: 0.7rem;
 	}
+	@media (min-width: 480px) and (max-width: 770px) {
+		width: 100%;
 
+		.first_dotted_box,
+		.second_dotted_box {
+			border-radius: 20px;
+			padding: 30px 0;
+			width: 50%;
+			position: absolute;
+		}
+		.first_dotted_box {
+			border: 2px dashed #00c187;
+			border-left: none;
+			border-bottom: none;
+			top: -30%;
+			left: -38%;
+		}
+		.second_dotted_box {
+			border: 2px dashed #00c187;
+			border-top: none;
+			border-right: none;
+			bottom: 2%;
+			right: -38%;
+		}
+		.design_bottom_container {
+			gap: 10px
+		}
+	}
 	@media (max-width: 480px) {
 		width: 100%;
 

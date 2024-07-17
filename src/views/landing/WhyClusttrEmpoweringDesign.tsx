@@ -46,7 +46,7 @@ const EmpowerDesign = styled.div`
 	bottom: -10%;
 	z-index: 1;
 	cursor: default;
-	
+
 	& .empower_design_header {
 		font-weight: 500;
 		display: flex;
@@ -61,15 +61,30 @@ const EmpowerDesign = styled.div`
 	& .empower_design_price > div:first-child {
 		color: #5d7a76;
 	}
+	@media (min-width: 480px) and (max-width: 770px) {
+		width: 91%;
+		bottom: -10%;
+
+		.empower_design_header {
+			font-size: 0.6rem;
+		}
+	}
 	@media (max-width: 480px) {
 		width: 82%;
 		bottom: -51%;
 		// justify-content: center;
 		// align-items: center;
-		
+
 		.empower_design_header {
 			font-size: 0.5rem;
 		}
+	}
+
+	@media (min-width: 338px) and (max-width: 422px) {
+		bottom: -45%;
+	}
+	@media (max-width: 338px) {
+		bottom: -40%;
 	}
 `;
 export default WhyClusttrEmpoweringDesign;

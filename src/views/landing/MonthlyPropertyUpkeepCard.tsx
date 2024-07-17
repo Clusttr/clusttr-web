@@ -117,6 +117,11 @@ const UpkeepDesign = styled.div<{ hideCard: boolean }>`
 		grid-column-start: 3;
 		grid-column-end: 7;
 	}
+	@media (min-width: 480px) and (max-width: 770px) {
+		.upkeep_side_line {
+			height: 87px;
+		}
+	}
 	@media (max-width: 480px) {
 		.upkeep_side_line {
 			height: 55px;

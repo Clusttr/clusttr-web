@@ -32,7 +32,7 @@ const AvatarStyle = styled.div`
 	height: 57px;
 	overflow: hidden;
 	position: relative;
-
+	
 	> div {
 		position: absolute;
 		top: -1px;
@@ -44,6 +44,15 @@ const AvatarStyle = styled.div`
 		width: 88%;
 	}
 
+	@media (min-width: 480px) and (max-width: 770px) {
+		width: 100px;
+		height: 60px;
+		border: 3px solid #00c187;
+
+		> div > img {
+			width: 88%;
+		}
+	}
 	@media (max-width: 480px) {
 		width: 100%;
 		height: 44px;
@@ -59,6 +68,7 @@ const AvatarStyle = styled.div`
 			width: 100%;
 		}
 	}
+
 	@media (min-width: 321px) and (max-width: 380px) {
 		height: 35px;
 	}

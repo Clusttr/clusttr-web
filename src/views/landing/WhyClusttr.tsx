@@ -252,16 +252,36 @@ const WhyClusttrStyle = styled.div`
 			gap: 15px;
 			margin-top: 15px;
 		}
-
+		.why_clusttr_box_container {
+			align-items: flex-start;
+		}
+		.why_clusttr_top > div:first-child > div:nth-child(2) > div:nth-child(2),
+		.why_clusttr_top > div:last-child > div:first-child > div:nth-child(2),
+		.why_clusttr_bottom > div:first-child > div:first-child,
+		.why_clusttr_bottom
+			> div:nth-child(2)
+			> div:first-child
+			> div:nth-child(2) {
+			width: unset;
+			padding-bottom: 0;
+			text-align: left;
+		}
 		& .why_clusttr_bottom {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 15px;
 		}
+		.why_clusttr_bottom > div:nth-child(2) {
+			flex-direction: column;
+			justify-content: unset;
+			gap: 10px;
 
-		& .why_clusttr_box {
-			gap: 15px;
-			padding: 20px 20px 60px;
+		}
+		.why_clusttr_box {
+			gap: 60px;
+			padding: 20px;
+			height: 340px;
+			border-radius: 30px;
 		}
 
 		& .why_clusttr_small_box_icon_container {
@@ -271,11 +291,11 @@ const WhyClusttrStyle = styled.div`
 			width: 25%;
 		}
 		& .why_clusttr_box_header {
-			font-size: 1.1rem;
+			font-size: 1.05rem;
 		}
 		& .why_clusttr_box_info {
-			font-size: 1.07rem;
-			line-height: 30px;
+			font-size: 0.94rem;
+			line-height: 25px;
 		}
 	}
 
@@ -328,7 +348,6 @@ const WhyClusttrStyle = styled.div`
 			padding: 20px;
 			height: 260px;
 		}
-
 		& .why_clusttr_small_box_icon_container {
 			width: 17%;
 		}
@@ -346,7 +365,7 @@ const WhyClusttrStyle = styled.div`
 
 	@media (min-width: 338px) and (max-width: 422px) {
 		& .why_clusttr_box {
-			height: 300px;
+			height: 285px;
 		}
 	}
 	@media (max-width: 338px) {

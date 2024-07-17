@@ -35,6 +35,16 @@ const ServicesDesign = styled.div`
 		position: relative;
 	}
 
+	@media (min-width: 480px) and (max-width: 770px) {
+		display: unset;
+
+		> div {
+			width: 145%;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+		}
+	}
 	@media (max-width: 480px) {
 		display: flex;
 		justify-content: flex-end;
