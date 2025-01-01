@@ -120,9 +120,6 @@ const JoinClusttrWaitlistStyle = styled.div`
 		}
 	}
 
-	@media (max-width: 480px) {
-		display: none;
-	}
 	@media (min-width: 480px) and (max-width: 770px) {
 		color: white;
 		background-color: transparent;
@@ -161,11 +158,14 @@ const JoinClusttrWaitlistStyle = styled.div`
 	& .join-waitlist {
 		max-width: 100%;
 
-
+		
 		& > div {
 			width: 100%;
 
 		}
+	}
+	@media (max-width: 480px) {
+		display: none;
 	}
 `;
 

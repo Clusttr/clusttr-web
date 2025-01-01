@@ -147,6 +147,51 @@ const CardStyle = styled.div<{ isEmpoweringDesign: boolean }>`
 		& .card_info_inner_container {
 			min-width: 0;
 		}
+	@media (min-width: 480px) and (max-width: 770px) {
+		border-radius: 10px;
+		padding: 15px 13px;
+
+		.house_img {
+			width: 85%;
+		}
+		& .card_info_container {
+			gap: 5px;
+		}
+		& .card_info_inner_container {
+			gap: 16px;
+		}
+		& .card_info_inner_container_contents {
+			gap: 7px;
+		}
+		& .card_info {
+			gap: 6px;
+		}
+		.card_info > img:first-child {
+			width: 0.55rem;
+		}
+		.card_info > div:nth-child(2) {
+			font-size: 0.52rem;
+			font-weight: 500;
+		}
+		.card_info > img:last-child {
+			width: 0.55rem;
+		}
+		.card_info_fake {
+			width: 2.5rem;
+			height: 0.6rem;
+			background-color: #292929;
+		}
+		.grid_img {
+			width: 30%;
+		}
+		.chart_img{
+			width: 19%;
+			top:28%;
+			right:3%;
+			position: absolute;
+		}
+		
+	}
 		@media (max-width: 480px) {
 				border-radius: 10px;
 				.house_img {

@@ -66,6 +66,13 @@ const CommunityDesign = styled.div`
 		bottom: -4%;
 	}
 
+	@media (min-width: 480px) and (max-width: 770px) {
+		> div {
+			gap: 10px;
+			right: -5%;
+			bottom: -7%;
+		}
+	}
 	@media (max-width: 480px) {
 		> div {
 			width: 75%;
